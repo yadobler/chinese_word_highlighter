@@ -10,7 +10,7 @@ export default defineConfig({
         vue(),
         vueDevTools(),
     ],
-    base: process.env.GITHUB_ACTIONS ? '/chinese_word_highligher/' : '/',
+    base: '/chinese_word_highligher/',
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
