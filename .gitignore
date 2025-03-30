@@ -11,6 +11,7 @@ packages/server-renderer/client-plugin.js
 packages/template-compiler/build.js
 packages/template-compiler/browser.js
 .vscode
+.envrc
 dist
 temp
 types/v3-generated.d.ts
