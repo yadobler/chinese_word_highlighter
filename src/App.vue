@@ -23,7 +23,8 @@ const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 // --- Lifecycle ---
 onMounted(async () => {
   try {
-    const response = await fetch('/default_values.csv');
+    // It seems like static pages does not resolve base url
+    const response = await fetch('/chinese_word_highligher/default_values.csv');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     csvInput.value = await response.text();
     parseCsvData();
