@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
+type ProcessedSegment = {
+  text: string;
+  type: 'found' | 'not-found'; // Enforces the exact string values
+  data?: {
+    chapter: string;
+    pinyin: string;
+    category: string;
+    meaning: string;
+  };
+};
+
+type Dictionary = Record<string, { chapter: string; pinyin: string; category: string; meaning: string }>;
 // --- State ---
 const csvInput = ref('');
 const scriptInput = ref('');
-const dictionary = ref({});
-const processedOutput = ref([]);
-const selectedSegmentDetails = ref(null);
+const dictionary = ref<Dictionary>({});
+const processedOutput = ref<ProcessedSegment[]>([]);
+const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 
 // --- Lifecycle ---
 onMounted(async () => {
@@ -37,7 +49,7 @@ const parseCsvData = () => {
 // ----
 console.log("Parsing CSV data...");
   const lines = csvInput.value.trim().split(/\r?\n/);
-  const newDictionary = {};
+  const newDictionary: Dictionary = {};
 
   if (lines.length > 1) {
     for (let i = 1; i < lines.length; i++) {
@@ -82,13 +94,13 @@ console.log("Parsing CSV data...");
 const processScript = () => {
   if (Object.keys(dictionary.value).length === 0) {
     console.warn("Dictionary is empty. Cannot process script.");
-    processedOutput.value = [{ text: 'Error: Dictionary not loaded or empty.', type: 'not-found'}];
+    processedOutput.value.push({text: 'Error: Dictionary not loaded or empty.', type: 'not-found', data: undefined});
     return;
   }
   
   const scriptText = scriptInput.value;
   const knownWords = Object.keys(dictionary.value).sort((a, b) => b.length - a.length);
-  const results = [];
+  const results: ProcessedSegment[] = [];
   let i = 0;
 
   while (i < scriptText.length) {
@@ -113,7 +125,7 @@ const processScript = () => {
   processedOutput.value = results;
 };
 
-const showDetails = (segment) => {
+const showDetails = (segment: ProcessedSegment) => {
   if (segment.type === 'found' && segment.data) {
     selectedSegmentDetails.value = segment; // Always update the details box
   }
@@ -144,7 +156,7 @@ const showDetails = (segment) => {
           </span>
       </div>
 
-      <div v-if="selectedSegmentDetails" class="details-box">
+      <div v-if="selectedSegmentDetails?.data" class="details-box">
           <div><strong>Chapter:</strong> {{ selectedSegmentDetails.data.chapter }}</div>
           <div><strong>Pinyin:</strong> {{ selectedSegmentDetails.data.pinyin }}</div>
           <div><strong>Category:</strong> {{ selectedSegmentDetails.data.category }}</div>
