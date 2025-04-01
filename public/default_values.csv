@@ -1,1122 +1,1140 @@
 Simpified,Chapter,Pinyin,Category,Meaning
-你,1,nǐ,Pr,You
-好,1,hǎo,A,good; well; fine; O.K.
-陆雨平,1,lù yǔpíng,PN,(name of a Chinese reporter)
-力波,1,lì bō,PN,(name of a Canadian student)
-吗,1,ma,QPt,(interrogative particle for question expecting yes-no answer)
-我,1,wǒ,Pr,I; me
-很,1,hěn,Adv,very
-呢,1,ne,MdPt,(a modal particle used for elliptical questions)
-也,1,yě,Adv,too; also
-林娜,1,lín nà,PN,(name of a British student)
-忙,2,máng,A,busy
-爸爸,2,bàba,N,dad
-妈妈,2,māma,N,mom
-他们,2,tāmen,Pr,they; them
-他,2,tā,Pr,he; him
-们,2,men,Suf,"(used after pronouns 我, 你, 他 or certain nouns to denote plural)"
-都,2,dōu,Adv,both; all
-不,2,bù,Adv,not; no
-男,2,nán,A,male
-朋友,2,péngyou,N,friend
-哥哥,2,gēge,N,elder brother
-要,2,yào,V,to want
-咖啡,2,kāfēi,N,coffee
-弟弟,2,dìdi,N,younger brother
-我们,2,wǒmen,Pr,we; us
-喝,2,hē,V,to drink
-丁,2,dīng,PN,(a surname)
-她,3,tā,Pr,she; her
-是,3,shì,V,to be
-哪,3,nǎ,QPr,which
-国,3,guó,N,"country, nation"
-人,3,rén,N,"people, person"
-那,3,nà,Pr,that
-谁,3,shéi,QPr,who; whom
-老师,3,lǎoshī,N,teacher
-中国,3,zhōngguó,PN,China
-您,3,nín,Pr,you  (polite form)
-这,3,zhè,Pr,this
-医生,3,yīshēng,N,doctor; physician
-奶奶,3,nǎinai,N,grandmother on the father's side
-陈,3,chén,PN,(a surname)
-认识,4,rènshi,V,to know (somebody)
-高兴,4,gāoxìng,A,happy; pleased
-可以,4,kěyǐ,OpV,may
-进来,4,jìnlai,VC,to come in
-进,4,jìn,V,to enter
-来,4,lái,V,to come
-请,4,qǐng,V,please
-记者,4,jìzhě,N,reporter
-请问,4,qǐngwèn,V,May I ask...?
-贵姓,4,guìxìng,IE,What's your honorable surname?
-姓,4,xìng,V,one's surname is.../surname
-叫,4,jiào,V,to be called
-杨,4,yáng,PN,(a surname)
-语言,4,yǔyán,N,language
-学院,4,xuéyuàn,N,institute; college
-的,4,de,Pt,(a possessive or modifying particle)
-什么,4,shénme,QPr,what
-学习,4,xuéxí,V,to learn; to study
-汉语,4,hànyǔ,N,Chinese (language)
-英国,4,yīngguó,PN,Great Britain; England
-加拿大,4,jiānádà,PN,Canada
-美国,4,měiguó,PN,the United States; America
-餐厅,5,cāntīng,N,dining room
-在,5,zài,V,"to be (here, there); to be (in, on at)"
-哪儿,5,nǎr,QPr,where
-宿舍,5,sùshè,N,dormitory
-女,5,nǚ,A,female
-学生,5,xuésheng,N,student
-坐,5,zuò,V,to sit
-谢谢,5,xièxie,V,to thank
-对不起,5,duìbuqǐ,IE,I'm sorry
-知道,5,zhīdào,V,to know
-没关系,5,méi guānxi,IE,never mind; it doesn't matter
-再见,5,zàijiàn,IE,good-bye
-再,5,zài,Adv,again
-王小云,5,wáng xiǎoyún,PN,(name of a Chinese student)
-小姐,5,xiǎojie,N,Miss; young lady
-二,5,èr,Num,two
-层,5,céng,M,story; floor
-零,5,líng,Num,zero
-四,5,sì,Num,four
-号,5,hào,N,number
-不用,5,búyòng,Adv,need not
-这儿,5,zhèr,Pr,here
-了,5,le,Pt,(modal partical; aspect particle)
-宋华,5,sòng huá,PN,(name of a Chinese student)
-去,6,qù,V,to go
-游泳,6,yóuyǒng,V,to swim
-昨天,6,zuótiān,N,yesterday
-京剧,6,jīngjù,N,Beijing opera
-有意思,6,yǒu yìsi,IE,interesting
-今天,6,jīntiān,N,today
-天,6,tiān,N,day
-天气,6,tiānqì,N,weather
-太,6,tài,Adv,too; extremely
-时候,6,shíhou,N,time; moment
-现在,6,xiànzài,N,now
-明天,6,míngtiān,N,tomorrow
-有,6,yǒu,V,to have
-时间,6,shíjiān,N,time
-说,6,shuō,V,to say; to speak
-遍,6,biàn,M,number of times (of action)
-打球,6,dǎqiú,VO,to play ball
-打,6,dǎ,V,to play
-球,6,qiú,N,ball
-抱歉,6,bàoqiàn,A,to feel sorry; sorry
-恐怕,6,kǒngpà,Adv,to be afraid that; perhaps
-你们,6,nǐmen,Pr,you (plural)
-开学,7,kāixué,VO,to start school
-开,7,kāi,V,to open; to start
-高,7,gāo,A,high; tall
-看,7,kàn,V,to watch; to look at
-问,7,wèn,V,to ask
+一,,yī,Num,one
 一下,7,yíxià,AsPt,"(used after a verb to indicate a short, quick, random, informal action)"
-名片,7,míngpiàn,N,calling card
-啊,7,à,Int,ah; oh
-教授,7,jiàoshòu,N,professor
-教,7,jiāo,V,to teach
-丁力波,7,dīng lìbō,PN,(name of a Canadian student)
-张,7,zhāng,PN,(a surname)
-介绍,7,jièshào,V,to introduce
-名字,7,míngzi,N,name
-中文,7,zhōngwén,N,Chinese
-学,7,xué,V,to learn; to study
-专业,7,zhuānyè,N,major; specialty
-美术,7,měishù,N,fine arts
-美,7,měi,A,beautiful
-文学,7,wénxué,N,literature
-系,7,xì,N,faculty; department
-马大为,7,mǎ dàwéi,PN,(name of an American student)
-历史,7,lìshǐ,N,history
-哲学,7,zhéxué,N,philosophy
-音乐,7,yīnyuè,N,music
-经济,7,jīngjì,N,economy
-数学,7,shùxué,N,mathematics
-物理,7,wùlǐ,N,physics
-化学,7,huàxué,N,chemistry
-教育,7,jiàoyù,N,education
-选修,7,xuǎnxiū,V,take an elective course
-家,8,jiā,N,"family, home"
-几,8,jǐ,QPr,"how many, how much"
-口,8,kǒu,M,number of people in a family
-照片,8,zhàopiàn,N,"picture, photo"
-和,8,hé,Conj,and
-个,8,gè,M,general-use measure word
-姐姐,8,jiějie,N,older sister
-两,8,liǎng,Num,two
-还,8,hái,Adv,in addition
+一会儿,16,yíhuì(r),IE,a little while
 一共,8,yígòng,Adv,altogether
-妹妹,8,mèimei,N,younger sister
-小,8,xiǎo,A,"little, small"
-狗,8,gǒu,N,dog
-张,8,zhāng,M,flat objects
-当然,8,dāngrán,A,as it should be; only natural that
-真,8,zhēn,A,real/really
-可爱,8,kě'ài,A,"lovely, cute"
-爱,8,ài,V,love
-没,8,méi,Adv,not
-做,8,zuò,V,do; make
-工作,8,gōngzuò,V,work/work
-贝贝,8,bèibei,PN,name of a dog
-大,8,dà,A,"big, large"
-多少,8,duōshao,QPr,"how many, how much"
-多,8,duō,A,"many, much"
-喜欢,8,xǐhuan,V,"like, prefer"
-外语,8,wàiyǔ,N,foreign language
-外,8,wài,Prep,outside
-语,8,yǔ,N,language
-外国,8,wàiguó,N,foreign country
-百,8,bǎi,Num,hundred
-车,8,chē,N,car; vehicle
-词典,8,cídiǎn,N,dictionary
-电脑,8,diànnǎo,N,computer
-爷爷,8,yéye,N,paternal grandfather
-外公,8,wàigōng,N,maternal grandfather
-系主任,8,xìzhǔrèn,N,department chairman
-助教,8,zhùjiào,N,teaching assistant
-律师,8,lǜshī,N,lawyer
-工程师,8,gōngchéngshī,N,engineer
-今年,9,jīnnián,N,this year
-年,9,nián,N,year
-岁,9,suì,M,years old (of a person)
-怎么样,9,zěnmeyàng,QPr,"how is ..., what is ... like"
-课,9,kè,N,"class, lesson"
-星期,9,xīngqī,N,week
-上午,9,shàngwǔ,N,morning
-上,9,shàng,Prep,above; last
-下午,9,xiàwǔ,N,afternoon
-下,9,xià,Prep,below; next
-星期日,9,xīngqīrì,N,Sunday
-号,9,hào,N,day of the month
-生日,9,shēngrì,N,birthday
-生,9,shēng,V,be born
-多大,9,duōdà,QPr,how old
-多,9,duō,Adv,how
-大,9,dà,A,old (in reference to a person)
-出生,9,chūshēng,V,be born
-出,9,chū,V,go out; come out
-属,9,shǔ,V,"be born in the year of ... (dog, rooster, etc.)"
-聚会,9,jùhuì,N,get-together; party
-会,9,huì,N,meeting
-祝贺,9,zhùhè,V,congratulate
-祝,9,zhù,V,wish
-参加,9,cānjiā,V,participate; attend
-吃,9,chī,V,eat
-蛋糕,9,dàngāo,N,cake
-蛋,9,dàn,N,egg
-糕,9,gāo,N,cake
-买,9,mǎi,V,buy
-瓶,9,píng,M,bottle
-红葡萄酒,9,hóngpútaojiǔ,N,red wine
-红,9,hóng,A,red
-葡萄,9,pútao,N,grape
-酒,9,jiǔ,N,"wine, liquor"
-北京,9,běijīng,PN,Beijing
-快乐,9,kuàilè,A,happy
-漂亮,9,piàoliang,A,"pretty, beautiful; nice"
-烤鸭,9,kǎoyā,N,roast duck
-鸭,9,yā,N,duck
-寿面,9,shòumiàn,N,"birthday noodles, longevity noodles"
-面,9,miàn,N,noodles
-西餐,9,xīcān,N,Western food
-茶,9,chá,N,tea
-可乐,9,kělè,N,Coke
-雪碧,9,xuěbì,N,Sprite
-啤酒,9,píjiǔ,N,beer
-汉堡,9,hànbǎo,N,hamburger
-热狗,9,règǒu,N,hotdog
-面包,9,miànbāo,N,bread
-牛奶,9,niúnǎi,N,milk
-米饭,9,mǐfàn,N,cooked rice
-在,10,zài,Prep,at; in; on
-光盘,10,guāngpán,N,CD
-商场,10,shāngchǎng,N,market; bazaar; shopping mall
-商,10,shāng,N,trade; commerce; business
-常常,10,chángcháng,Adv,often
-常,10,cháng,Adv,often
-跟,10,gēn,Prep,with/follow
-有名,10,yǒumíng,A,famous
-书,10,shū,N,book
-报,10,bào,N,newspaper
-本子,10,běnzi,N,notebook
-那儿,10,nàr,Pr,there
-梁祝,10,liáng zhù,PN,name of a Chinese violin concerto
-先生,10,xiānsheng,N,Mr.; sir
-师傅,10,shīfu,N,master worker
-香蕉苹果,10,xiāngjiāopíngguǒ,N,a kind of apple that tastes like a banana
-香蕉,10,xiāngjiāo,N,banana
-苹果,10,píngguǒ,N,apple
-怎么,10,zěnme,QPr,how
-容易,10,róngyì,A,easy
-钱,10,qián,N,money
-斤,10,jīn,M,half kilogram
-块(钱),10,kuài(qián),M,"dollar; basic Chinese monetary unit, worth 10 毛(máo)"
-毛(钱),10,máo(qián),M,"dime; Chinese monetary unit, worth one tenth of one 块(kuài)"
-贵,10,guì,A,expensive; precious
-分(钱),10,fēn,M,"cent; Chinese monetary unit, worth one hundredth of one 块(kuài)"
-送,10,sòng,V,give as a gift
-给,10,gěi,V,give
-找(钱),10,zhǎo(qián),V,give change
-笔,10,bǐ,N,pen
-支,10,zhī,M,stick-like objects like pens
-份,10,fèn,M,publications like newspapers
-本,10,běn,M,books and notebooks
-杯,10,bēi,M,cups of things
-作家,10,zuòjiā,N,writer
-便宜,10,piányi,A,cheap
-书店,10,shūdiàn,N,bookstore
-体育馆,10,tǐyùguǎn,N,gym
-卖,10,mài,V,sell
-会,11,huì,OpV,"know how to, can"
-(一)点儿,11,(yì)diǎnr,Nu-M,a little bit
-司机,11,sījī,N,driver
-点(钟),11,diǎn(zhōng),M,o'clock
-差,11,chà,V,"lack, be short of"
-刻,11,kè,M,quarter (of an hour)
-回,11,huí,V,return
-上课,11,shàngkè,VO,go to class (students and teachers)
-上,11,shàng,V,ascend; go to; go up; get on
-能,11,néng,OpV,can; be able to
-到,11,dào,V,arrive
-哪里,11,nǎli,IE,no (expresses modest denial)
-英语,11,yīngyǔ,N,English (language)
-孙女儿,11,sūnnür,N,granddaughter (son's daughter)
-女儿,11,nǚ'ér,N,daughter
-岁数,11,suìshu,N,years (of age)
-还,11,hái,Adv,still
-分,11,fēn,M,minute
-拜拜,11,báibái,IE,bye-bye (transliteration)
-为什么,11,wèishénme,QPr,why
-为,11,wèi,Prep,for
-东西,11,dōngxi,N,things; objects
-玩儿,11,wánr,V,"have fun, play"
-晚上,11,wǎnshang,N,"evening, night"
-晚,11,wǎn,A,late
-半,11,bàn,Num,half
-写,11,xiě,V,write
-汉字,11,hànzì,N,Chinese character
-字,11,zì,N,character
-睡觉,11,shuìjiào,VO,sleep
-睡,11,shuì,V,sleep
-起床,11,qǐchuáng,VO,get up
-起,11,qǐ,V,"get up, rise"
-床,11,chuáng,N,bed
-应该,11,yīnggāi,OpV,should; ought to
-该,11,gāi,OpV,should; ought to
-问题,11,wèntí,N,question
-下课,11,xiàkè,VO,get out of class; finish class
-唱歌,11,chànggē,VO,sing (a song)
-跳舞,11,tiàowǔ,VO,dance
-回答,11,huídá,V,answer
-礼物,11,lǐwù,N,gift; present
-打的,11,dǎdī,VO,take a taxi
-吸烟,11,xīyān,VO,"smoke (cigarettes, etc.)"
-表,11,biǎo,N,wrist watch
-全身,12,quánshēn,N,all over the body
-全,12,quán,A,whole
-身,12,shēn,N,body
-舒服,12,shūfu,A,comfortable
-每,12,měi,Pr,every; each
-锻炼,12,duànliàn,V,do physical exercise
-头,12,tóu,N,head
-疼,12,téng,A,painful
-嗓子,12,sǎngzi,N,throat
-想,12,xiǎng,V,think/want to...
-医院,12,yīyuàn,N,hospital
-看病,12,kànbìng,VO,see a doctor
-病,12,bìng,N,illness/get sick
-身体,12,shēntǐ,N,"body, health"
-要,12,yào,OpV,must; surely
-吧,12,ba,MdPt,modal particle
-还是,12,háishi,Conj,or
+一定,17,yídìng,Adv,must; surely
+一样,19,yíyàng,A,the same; alike
+一点,11,yìdiǎn,Nu-M,a little bit
+一点儿,11,yìdiǎnr,Nu-M,a little bit
 一起,12,yìqǐ,Adv,together
-冷,12,lěng,A,cold
-穿,12,chuān,V,wear
-衣服,12,yīfu,N,clothes
+一路平安,24,yílù píng'ān,IE,have a pleasant journey; bon voyage
+丁,2,dīng,PN,(a surname)
+丁力波,7,dīng lìbō,PN,(name of a Canadian student)
+七,,qī,Num,seven
+万事如意,20,wànshì rúyì,IE,may all your wishes come true
+丈夫,26,zhàngfu,N,husband
+三,,sān,Num,three
+上,11,shàng,V,ascend; go to; go up; get on
+上,21,shàng,N,upper; up
+上,24,shàng,V,"be engaged in (work, study) at a fixed time"
+上,9,shàng,Prep,above; last
+上午,9,shàngwǔ,N,morning
+上海,14,shànghǎi,PN,Shanghai
+上演,22,shàngyǎn,V,stage a show; perform
+上课,11,shàngkè,VO,go to class (students and teachers)
+上边,21,shàngbian,N,above; over; upward
+下,16,xià,V,go down; get off
+下,21,xià,N,down; under
+下,9,xià,Prep,below; next
+下午,9,xiàwǔ,N,afternoon
+下课,11,xiàkè,VO,get out of class; finish class
+下边,21,xiàbian,N,below; underneath
+下雨,24,xiàyǔ,VO,to rain
+下雪,23,xiàxuě,VO,to snow
+不,2,bù,Adv,not; no
+不但,24,búdàn,Conj,not only
+不同,21,bùtóng,A,different
+不好意思,14,bùhǎoyìsi,IE,feel embarrassed
+不怎么样,22,bù zěnmeyàng,IE,not so good
+不敢当,19,bù gǎndāng,IE,I really don't deserve this
+不用,5,búyòng,Adv,need not
+不行,16,bùxíng,V,not be allowed; won't do
+不见不散,26,bújiàn búsàn,IE,don't leave unless we meet
+不错,16,búcuò,A,not bad
+专业,7,zhuānyè,N,major; specialty
+业余,19,yèyú,N,spare time; amateur
+东,21,dōng,N,east
+东西,11,dōngxi,N,things; objects
+东边,21,dōngbian,N,east side
+丝绸,17,sīchóu,N,silk
+丢,25,diū,V,lose
+两,8,liǎng,Num,two
+个,8,gè,M,general-use measure word
+中,0,zhōng,A,Center
+中午,14,zhōngwǔ,N,noon
+中国,3,zhōngguó,PN,China
+中国化,26,zhōngguóhuà,V,make Chinese in quality or characteristics; sinicize
+中国民航,23,zhōngguó mínháng,PN,Civil Aviation Administration of China
+中国画,19,zhōngguóhuà,N,traditional Chinese Painting
+中国通,26,zhōngguótōng,N,expert of China
+中学,14,zhōngxué,N,middle school
+中式,17,zhōngshì,A,Chinese style
+中文,7,zhōngwén,N,Chinese
+中药,12,zhōngyào,N,traditional Chinese medicine
+中餐,26,zhōngcān,N,Chinese food (meal)
+为,11,wèi,Prep,for
+为什么,11,wèishénme,QPr,why
+主要,19,zhǔyào,A,main
+主角,22,zhǔjué,N,leading actor or actress
+举办,26,jǔbàn,V,conduct; hold
+乐器,20,yuèqì,N,musical instrument
+乐曲,20,yuèqǔ,N,musical composition
+乘,18,chéng,V,to ride
+乘客,18,chéngkè,N,passenger
+九,,jiǔ,Num,nine
+也,1,yě,Adv,too; also
+习惯,20,xíguàn,V,be accustomed to/habit
+书,10,shū,N,book
+书店,10,shūdiàn,N,bookstore
+书房,13,shūfáng,N,study
+书法,19,shūfǎ,N,handwriting; calligraphy
+买,9,mǎi,V,buy
+乱,14,luàn,A,in disorder; in a mess
+了,5,le,Pt,(modal partical; aspect particle)
+了不起,17,liǎobuqǐ,IE,amazing; terrific; extraordinary
+了解,26,liǎojiě,V,understand; realize
+事儿,13,shìr,N,matter; affair; thing
+二,,èr,Num,two
+二,5,èr,Num,two
+五,,wǔ,Num,five
+亚洲学系,15,yàzhōuxué xì,N,Department of Asian Studies
+些,18,xiē,M,some
+交,16,jiāo,V,hand in; hand over; pay
+京剧,6,jīngjù,N,Beijing opera
+人,3,rén,N,"people, person"
+人员,15,rényuán,N,personnel; staff
+人民,15,rénmín,N,people
+人民币,15,rénmínbì,N,Renminbi (RMB)
+什么,4,shénme,QPr,what
+今天,6,jīntiān,N,today
+今年,9,jīnnián,N,this year
+介绍,7,jièshào,V,to introduce
+从,15,cóng,Prep,from
+从来,22,cónglái,Adv,all along; always
+他,2,tā,Pr,he; him
+他们,2,tāmen,Pr,they; them
+以为,25,yǐwéi,V,to think or believe (and be wrong)
+以前,22,yǐqián,N,before; ago; previously; formerly
+以后,21,yǐhòu,Adv,after; afterwards
+们,2,men,Suf,"(used after pronouns 我, 你, 他 or certain nouns to denote plural)"
+件,13,jiàn,M,piece
+价,23,jià,N,vacation; holiday
+份,10,fèn,M,publications like newspapers
 休息,12,xiūxi,V,take a rest
-给,12,gěi,Prep,to; for
-挂号,12,guàhào,VO,"register (at a hospital, etc.)"
-有点儿,12,yǒudiǎnr,Adv,somewhat; rather; a bit
+优美,22,yōuměi,A,graceful; fine; exquisite; elegant
+会,11,huì,OpV,"know how to, can"
+会,9,huì,N,meeting
+伤,25,shāng,V,hurt; wound
+但是,22,dànshì,Conj,but; whereas; yet
+位,13,wèi,M,(formal) measure word for people
+低,24,dī,A,low
+住,14,zhù,V,live; stay
+住院,12,zhùyuàn,VO,be in hospital; be hospitalized
+体育馆,10,tǐyùguǎn,N,gym
+作家,10,zuòjiā,N,writer
+你,1,nǐ,Pr,You
+你们,6,nǐmen,Pr,you (plural)
+便宜,10,piányi,A,cheap
+便饭,22,biànfàn,N,simple meal
+信,15,xìn,N,letter
+信封,18,xìnfēng,N,envelope
+信用卡,15,xìnyòngkǎ,N,credit card
+修建,21,xiūjiàn,V,build; construct
+倒霉,25,dǎoméi,A,bad luck
+借,16,jiè,V,borrow; lend
+借书证,16,jièshūzhèng,N,library card
+做,8,zuò,V,do; make
+停,25,tíng,V,stop; park
+停车场,23,tíngchēchǎng,N,parking lot
+偷,25,tōu,V,steal
+像,18,xiàng,V,to seem; to look as if; to appear; to be alike; to take after
+儿子,15,érzi,N,son
+元,15,yuán,M,dollar; measure word for Chinese currency 块 kuài
+元旦,14,yuándàn,N,New Year's Day
+先,16,xiān,Adv,first; before
+先生,10,xiānsheng,N,Mr.; sir
+光盘,10,guāngpán,N,CD
+入,24,rù,V,to enter
+全,12,quán,A,whole
+全身,12,quánshēn,N,all over the body
+八,,bā,Num,eight
+公共,18,gōnggòng,A,public; common; communal
+公共汽车,18,gōnggòng qìchē,N,bus
+公分,17,gōngfēn,N,centimeter
+公司,13,gōngsī,N,company
+公园,17,gōngyuán,N,park
+公斤,18,gōngjīn,M,kilogram
+六,,liù,Num,six
+共,8,gòng,Adv,total
+关,25,guān,V,close; turn off
+兴趣,26,xìngqù,N,interest
+兵,15,bīng,N,soldier; fighter
+兵马俑,15,bīngmǎyǒng,N,(ceremonial clay statues of warriors and horses which are burried with the dead)
+再,5,zài,Adv,again
+再见,5,zàijiàn,IE,good-bye
+写,11,xiě,V,write
+农民,24,nóngmín,N,farmer; peasant
+冬天,23,dōngtiān,N,winter
+冷,12,lěng,A,cold
+冻,24,dòng,V,freeze
+准备,18,zhǔnbèi,N,preparation/prepare; get ready
+凉快,24,liángkuai,A,cool (temperature)
+减肥,19,jiǎnféi,VO,reduce; be on a diet
+几,8,jǐ,QPr,"how many, how much"
+出,9,chū,V,go out; come out
+出发,20,chūfā,V,set out; start off
+出差,21,chūchāi,V,go on a business trip
+出生,9,chūshēng,V,be born
+出租,20,chūzū,V,hire; rent
+出租车,20,chūzūchē,N,taxi; cab
+刀,25,dāo,N,knife
+分(钱),10,fēn,M,"cent; Chinese monetary unit, worth one hundredth of one 块(kuài)"
+分,11,fēn,M,minute
+刚,15,gāng,Adv,just; only a short while ago
+刚才,14,gāngcái,Adv,just now
+别,18,bié,Adv,don't
+别的,19,biéde,Pr,other
+到,11,dào,V,arrive
+刻,11,kè,M,quarter (of an hour)
+前,21,qián,N,front; ahead; forward
+前年,24,qiánnián,N,the year before last; two years ago
+前边,21,qiánbian,N,front; ahead
+前门,18,qiánmén,PN,Qianmen (place in Beijing)
+剧,22,jù,N,opera; dramatic work; play
+剧团,22,jùtuán,N,opera troupe; theatrical group
+力波,1,lì bō,PN,(name of a Canadian student)
+办,13,bàn,V,do
+办公,16,bàngōng,VO,handle official business; work (in an office)
+办公室,16,bàngōngshì,N,office
+加,23,jiā,V,increase; add
+加元,15,jiāyuán,N,Canadian dollar
+加拿大,4,jiānádà,PN,Canada
+加油,23,jiāyóu,VO,make an extra effort; cheer someone on
+动,23,dòng,V,move
+助教,8,zhùjiào,N,teaching assistant
+努力,26,nǔlì,A,make great effort; endeavor; exert oneself
+包,18,bāo,V,wrap
+包括,13,bāokuò,V,include
+包裹,18,bāoguǒ,N,parcel; package
+化,26,huà,V,change; turn
+化妆,20,huàzhuāng,VO,put on makeup
+化学,7,huàxué,N,chemistry
+化验,12,huàyàn,V,have a medical test
+北,21,běi,N,north
+北京,9,běijīng,PN,Beijing
+北方,23,běifāng,N,north
+北边,21,běibian,N,north side
+匹,19,pǐ,M,(measure word for horses)
+区,21,qū,N,district; section; area
+医生,3,yīshēng,N,doctor; physician
+医药费,25,yīyàofèi,N,medical expenses
+医院,12,yīyuàn,N,hospital
+十,,shí,Num,ten
+千,,qiān,Num,thousand
+千,15,qiān,Num,thousand
+半,11,bàn,Num,half
+单,18,dān,N,"sheet, paper"
+卖,10,mài,V,sell
+南,26,nán,N,south
+南方,14,nánfāng,N,south
+南边,21,nánbian,N,south side
+博物馆,26,bówùguǎn,N,museum
+卧,21,wò,V,lie on one's back
+卧室,13,wòshì,N,bedroom
+卫生,21,wèishēng,N,hygiene; health
+卫生间,21,wèishēngjiān,N,washroom; bathroom
+危险,23,wēixiǎn,A,dangerous
+历史,7,lìshǐ,N,history
+厕所,13,cèsuǒ,N,toilet
+厨房,13,chúfáng,N,kitchen
+去,6,qù,V,to go
+去年,21,qùnián,N,last year
+参加,9,cānjiā,V,participate; attend
+参观,15,cānguān,V,visit (a place)
+又,20,yòu,Adv,again
+双,17,shuāng,M,pair
+发展,15,fāzhǎn,V,develop
+发抖,24,fādǒu,V,shake; tremble; shiver
 发炎,12,fāyán,VO,become inflamed
 发烧,12,fāshāo,VO,have a fever
-烧,12,shāo,V,burn
-感冒,12,gǎnmào,V,have a cold/common cold
-住院,12,zhùyuàn,VO,be in hospital; be hospitalized
-水,12,shuǐ,N,water
-药,12,yào,N,medicine
-愿意,12,yuànyì,OpV,be willing to ...
-中药,12,zhōngyào,N,traditional Chinese medicine
-西药,12,xīyào,N,Western medicine
-牙,12,yá,N,tooth
-肚子,12,dùzi,N,abdomen; stomach
-开刀,12,kāidāo,VO,have an operation
-化验,12,huàyàn,V,have a medical test
-血,12,xiě,N,blood
-大便,12,dàbiàn,N,stool
-小便,12,xiǎobiàn,N,urine
-打针,12,dǎzhēn,VO,have an injection
-生活,12,shēnghuó,N,life
-英文,12,yīngwén,N,English (language)
-姑娘,13,gūniang,N,girl
-听说,13,tīngshuō,V,be told
-听,13,tīng,V,listen
-得,13,dé,V,"have, get"
-告诉,13,gàosu,V,tell
-件,13,jiàn,M,piece
-事儿,13,shìr,N,matter; affair; thing
-散步,13,sànbù,VO,take a walk; walk
-步,13,bù,N,step
-电影,13,diànyǐng,N,movie
-影,13,yǐng,N,shadow
-可是,13,kěshì,Conj,but
-找,13,zhǎo,V,look for
-房子,13,fángzi,N,house
-租,13,zū,V,rent
-间,13,jiān,M,"measure word for rooms, houses"
-厨房,13,chúfáng,N,kitchen
-厕所,13,cèsuǒ,N,toilet
-房租,13,fángzū,N,rent (for a house or apartment)
-公司,13,gōngsī,N,company
-办,13,bàn,V,do
-打电话,13,dǎ diànhuà,VO,make a phone call
-电话,13,diànhuà,N,telephone; phone call
-让,13,ràng,V,let; allow; make
-帮助,13,bāngzhù,V,help
-喂,13,wèi,Int,hello; hey
-位,13,wèi,M,(formal) measure word for people
-经理,13,jīnglǐ,N,manager
-可能,13,kěnéng,OpV,maybe
-吃饭,13,chīfàn,VO,eat (a meal)
-饭,13,fàn,N,meal
-等,13,děng,V,wait
-家美,13,jiāměi,PN,name of a house rental agency
-客厅,13,kètīng,N,living room
-卧室,13,wòshì,N,bedroom
-书房,13,shūfáng,N,study
-方便,13,fāngbiàn,A,convenient
-巧,13,qiǎo,A,coincidental
-热心,13,rèxīn,A,enthusiastic
-包括,13,bāokuò,V,include
-水电费,13,shuǐdiànfèi,N,utility bill or fee
-新,13,xīn,A,new
-回信,13,huíxìn,N,reply/reply
-中午,14,zhōngwǔ,N,noon
-刚才,14,gāngcái,Adv,just now
-邮局,14,yóujú,N,post office
-邮,14,yóu,V,"post, mail"
-局,14,jú,N,office; bureau
-寄,14,jì,V,"post, mail"
-打扫,14,dǎsǎo,V,clean
-扫,14,sǎo,V,sweep
-脏,14,zāng,A,dirty
-不好意思,14,bùhǎoyìsi,IE,feel embarrassed
-洗,14,xǐ,V,wash
-外婆,14,wàipó,N,maternal grandmother
-中学,14,zhōngxué,N,middle school
-打工,14,dǎgōng,V,have a part-time job
-南方,14,nánfāng,N,south
-旅行,14,lǚxíng,V,travel
-想,14,xiǎng,V,miss; remember with longing
-留学生,14,liúxuéshēng,N,student studying abroad; international student
-住,14,zhù,V,live; stay
-楼,14,lóu,N,building
-对,14,duì,A,"right, correct"
-念,14,niàn,V,read
-生词,14,shēngcí,N,new word
-生,14,shēng,A,new
-词,14,cí,N,word
-复习,14,fùxí,V,review
-课文,14,kèwén,N,text
-练习,14,liànxí,V,practice/exercise
-练,14,liàn,V,practice
-口语,14,kǒuyǔ,N,spoken language
-语法,14,yǔfǎ,N,grammar
-过,14,guò,V,spend (time); celebrate (a birthday or holiday)
-节,14,jié,N,festival
-圣诞,14,shèngdàn,PN,Christmas
-欧洲,14,ōuzhōu,PN,Europe
-上海,14,shànghǎi,PN,Shanghai
-整理,14,zhěnglǐ,V,put in order; arrange; sort out
-乱,14,luàn,A,in disorder; in a mess
-日记,14,rìjì,N,diary
-晴,14,qíng,A,sunny
-惊喜,14,jīngxǐ,N,pleasant surprise
-圣诞老人,14,shèngdàn lǎorén,N,Santa Clause
-元旦,14,yuándàn,N,New Year's Day
-春节,14,chūn jié,N,Spring Festival
-感恩节,14,gǎn'ēn jié,N,Thanksgiving
-复活节,14,fùhuó jié,N,Easter
-得,15,de,StPt,(structural particle)
-早,15,zǎo,A,early
-银行,15,yínháng,N,bank
-少,15,shǎo,A,few; little
-排队,15,páiduì,VO,form a line; queue up
-排,15,pái,V,arrange; put in order
-队,15,duì,N,row of people; line
-换,15,huàn,V,exchange; change
-英镑,15,yīngbàng,N,pound sterling
-人民币,15,rénmínbì,N,Renminbi (RMB)
-人民,15,rénmín,N,people
-得,15,děi,OpV,need; must; have to
-用,15,yòng,V,use
-刚,15,gāng,Adv,just; only a short while ago
-从,15,cóng,Prep,from
-非常,15,fēicháng,Adv,very; extremely; highly
-次,15,cì,M,(measure word for actions)
-参观,15,cānguān,V,visit (a place)
-兵马俑,15,bīngmǎyǒng,N,(ceremonial clay statues of warriors and horses which are burried with the dead)
-兵,15,bīng,N,soldier; fighter
-明信片,15,míngxìnpiàn,N,postcard
-信,15,xìn,N,letter
-该,15,gāi,V,to be somone's turn to do something
-工作人员,15,gōngzuò rényuán,N,working personnel; staff member
-人员,15,rényuán,N,personnel; staff
-千,15,qiān,Num,thousand
-数,15,shǔ,V,count
-王府井,15,wángfǔjǐng,PN,(name of a famous commercial district in Beijing)
-西安,15,xī'ān,PN,(name of the capital of Shaanxi Province)
-好久不见,15,hǎojiǔ bújiàn,IE,"""long time no see""; haven't seen someone for a long time"
-好久,15,hǎojiǔ,IE,long time
-发展,15,fāzhǎn,V,develop
-快,15,kuài,A,fast; quick; rapid
-话,15,huà,N,dialect; language
-普通话,15,pǔtōnghuà,N,common speech; Mandarin Chinese
-年轻,15,niánqīng,A,young
-轻,15,qīng,A,light; small
-流利,15,liúlì,A,fluent
-懂,15,dǒng,V,understand
-就,15,jiù,Adv,exactly; precisely
-美元,15,měiyuán,N,U.S. dollar
-欧元,15,ōuyuán,N,Euro
-加元,15,jiāyuán,N,Canadian dollar
-元,15,yuán,M,dollar; measure word for Chinese currency 块 kuài
-亚洲学系,15,yàzhōuxué xì,N,Department of Asian Studies
-汇率,15,huìlǜ,N,exchange rate
-现金,15,xiànjīn,N,cash
-信用卡,15,xìnyòngkǎ,N,credit card
-城市,15,chéngshì,N,city
-儿子,15,érzi,N,son
-把,16,bǎ,Prep,(denoting the disposal of something)
-忘,16,wàng,V,forget
-图书馆,16,túshūguǎn,N,library
-图书,16,túshū,N,books
-馆,16,guǎn,N,shop; place for cultural activities
-办公室,16,bàngōngshì,N,office
-办公,16,bàngōng,VO,handle official business; work (in an office)
-室,16,shì,N,room
-先,16,xiān,Adv,first; before
-借书证,16,jièshūzhèng,N,library card
-借,16,jiè,V,borrow; lend
-证,16,zhèng,N,certificate; card
-一会儿,16,yíhuì(r),IE,a little while
-下,16,xià,V,go down; get off
-带,16,dài,V,bring
-填,16,tián,V,fill in; write
-表,16,biǎo,N,form; table; list
-拿,16,ná,V,take; hold; get
-慢,16,màn,A,slow; slowly
-不行,16,bùxíng,V,not be allowed; won't do
-生活,16,shēnghuó,V,live/life
-自己,16,zìjǐ,Pr,oneself
-姓名,16,xìngmíng,N,full name
-性别,16,xìngbié,N,sex; gender
-职业,16,zhíyè,N,occupation; profession
-交,16,jiāo,V,hand in; hand over; pay
-长,16,cháng,A,long
-考试,16,kǎoshì,V,give or take an exam/exam
-考,16,kǎo,V,give or take an exam; to test
-不错,16,búcuò,A,not bad
-翻译,16,fānyì,V,translate; interpret
-课本,16,kèběn,N,textbook
-还,16,huán,V,give back; return
-过期,16,guòqī,VO,be overdue
-过,16,guò,V,pass
-期,16,qī,N,period of time
-罚款,16,fákuǎn,VO,impose a fine or forfeit/fine
-罚,16,fá,V,punish; penalize
-款,16,kuǎn,N,sum of money
-电,16,diàn,N,electricity
-脑,16,nǎo,N,brain
-查,16,chá,V,check; look up
-新实用汉语课本,16,xīn shíyòng hànyǔ kèběn,PN,New Practical Chinese Reader
-实用,16,shíyòng,A,practical
-阅览室,16,yuèlǎnshì,N,reading room
-杂志,16,zázhì,N,magazine
-问答,16,wèndá,N,questions and answers
-预定,16,yùdìng,V,to reserve; to book
-房间,16,fángjiān,N,room
-国籍,16,guójí,N,nationality
-钥匙,16,yàoshi,N,key
-目录,16,mùlù,N,catalogue; list
-续借,16,xùjiè,V,renew
-年龄,16,niánlíng,N,age
-广东,16,guǎngdōng,PN,Guangdong Province
-茶楼,16,chálóu,N,tearooms; tea house
-老人,16,lǎorén,N,the elderly; the aged; old man or woman
-开始,16,kāishǐ,V,start; begin
-热闹,16,rènao,A,lively; bustling with noise and excitement
-旗袍,17,qípáo,N,cheongsam; long formal dress with a slit skirt
-比,17,bǐ,Prep,than (indicating comparison)
-中式,17,zhōngshì,A,Chinese style
-式,17,shì,N,type; style
-已经,17,yǐjīng,Adv,already
-商店,17,shāngdiàn,N,shop; store
-店,17,diàn,N,shop; store
-极了,17,jí(le),Adv,extremely
-一定,17,yídìng,Adv,must; surely
-差,17,chà,A,not up to standard; poor; bad
-太极拳,17,tàijíquán,N,Taiji Boxing
-套,17,tào,M,set; suit; suite
-帅,17,shuài,A,handsome; smart
-颜色,17,yánsè,N,color
-黑,17,hēi,A,black
-白,17,bái,A,white
-公园,17,gōngyuán,N,park
-走,17,zǒu,V,walk; go
-小时,17,xiǎoshí,N,hour
-过去,17,guòqù,V,to pass
-衬衫,17,chènshān,N,shirt
-绿,17,lǜ,A,green
-样子,17,yàngzi,N,shape; sample; model; pattern
-售货员,17,shòuhuòyuán,N,shop assistant; salesclerk
-售,17,shòu,V,sell
-货,17,huò,N,goods
-试,17,shì,V,try on; have a try
-觉得,17,juéde,V,feel; think
-合适,17,héshì,A,suitable; appropriate; right
-短,17,duǎn,A,short
-公分,17,gōngfēn,N,centimeter
-麻烦,17,máfan,V,bother someone; trouble someone
-丝绸,17,sīchóu,N,silk
-西服,17,xīfú,N,western-style clothes; suit
-双,17,shuāng,M,pair
-鞋子,17,xié(zi),N,shoes
-头发,17,tóufa,N,hair
-打折,17,dǎzhé,VO,sell at a discount; give a disount
-裤子,17,kùzi,N,trousers; pants
-相声,17,xiàngshēng,N,comic dialogue; repartee
-了不起,17,liǎobuqǐ,IE,amazing; terrific; extraordinary
-薄,17,báo,A,thin
-页,17,yè,M,page
-料子,17,liàozi,N,material for making clothing
-布,17,bù,N,cloth; fabric
-总是,17,zǒngshì,Adv,always
-记,18,jì,V,remember; bear in mind
-错,18,cuò,A,wrong; erroneous
-包裹,18,bāoguǒ,N,parcel; package
-些,18,xiē,M,some
-旧,18,jiù,A,old; past; used
-包,18,bāo,V,wrap
-往,18,wǎng,Prep,to; toward
-航空,18,hángkōng,N,aviation
-空,18,kōng,N,sky; air
-海运,18,hǎiyùn,N,sea transporation; ocean shipping; ocean freight
-海,18,hǎi,N,sea; big lake
-邮费,18,yóufèi,N,postage
-费,18,fèi,N,fee; expenses; charge
 取,18,qǔ,V,take; get; fetch
-通知单,18,tōngzhīdān,N,advice note; letter of notice
-通知,18,tōngzhī,V,notify; inform/notification
-单,18,dān,N,"sheet, paper"
-海关,18,hǎiguān,N,customhouse; customs
-别,18,bié,Adv,don't
-护照,18,hùzhào,N,passport
-客气,18,kèqi,A,polite; curteous
-建国门,18,jiànguó mén,PN,Jianguo Men (place in Beijing)
-门,18,mén,N,door; gate; entrance
-路,18,lù,N,route
-公共汽车,18,gōnggòng qìchē,N,bus
-公共,18,gōnggòng,A,public; common; communal
-汽车,18,qìchē,N,automobile; motor vehicle; car
-经过,18,jīngguò,V,to pass; to go through
-好像,18,hǎoxiàng,V,to seem; to be like
-像,18,xiàng,V,to seem; to look as if; to appear; to be alike; to take after
-咱们,18,zánmen,Pr,we; us
-收票员,18,shòupiàoyuán,N,ticket seller; conductor
-票,18,piào,N,ticket
-大家,18,dàjiā,Pr,all; everybody
-里边,18,lǐ(bian),N,in; inside; within
-站,18,zhàn,N,station; stop
-乘客,18,chéngkè,N,passenger
-乘,18,chéng,V,to ride
-客,18,kè,N,visitor; guest
-地铁,18,dìtiě,N,underground railway; subway
-放心,18,fàngxīn,VO,set one's mind at rest; be at ease; feel relieved
-糟糕,18,zāogāo,A,in a wretched state; in a mess; too bad
-前门,18,qiánmén,PN,Qianmen (place in Beijing)
-公斤,18,gōngjīn,M,kilogram
-邮票,18,yóupiào,N,stamp
-纪念,18,jìniàn,N,commemorate
-然后,18,ránhòu,Adv,then
-准备,18,zhǔnbèi,N,preparation/prepare; get ready
-封,18,fēng,M,(measure word for letter)
-信封,18,xìnfēng,N,envelope
-贴,18,tiē,V,to stick; to paste
-孙子,18,sūnzi,N,grandson
-中国画,19,zhōngguóhuà,N,traditional Chinese Painting
-画儿,19,huàr,N,painting
-油画,19,yóuhuà,N,oil painting
-油,19,yóu,N,oil
-一样,19,yíyàng,A,the same; alike
-美术馆,19,měishùguǎn,N,art gallery
-开门,19,kāimén,VO,open the door; begin a day's business
-画,19,huà,V,to paint
-老,19,lǎo,A,old; experienced
-画家,19,huàjiā,N,painter; artist
-家,19,jiā,N,specialist
-不敢当,19,bù gǎndāng,IE,I really don't deserve this
-爱好,19,àihào,N,hobby/to like
-唱,19,chàng,V,to sing
-马马虎虎,19,mǎmǎhūhū,A,so-so; careless
-马虎,19,mǎhu,A,careless
-幅,19,fú,M,"(measure word for paintings, cloth)"
-徐悲鸿,19,xú bēihóng,PN,(name of a well-known Chinese painter)
-电梯,19,diàntī,N,elevator
-开玩笑,19,kāi wánxiào,VO,crack a joke; make fun of
-材料,19,cáiliào,N,material
-纸,19,zhǐ,N,paper
-主要,19,zhǔyào,A,main
-墨,19,mò,N,Chinese ink
-油彩,19,yóucǎi,N,greasepaint
-别的,19,biéde,Pr,other
-空白,19,kòngbái,N,blank space
-只,19,zhǐ,Adv,only
-匹,19,pǐ,M,(measure word for horses)
-想像,19,xiǎngxiàng,V,imagine
-跑,19,pǎo,V,run
-它,19,tā,Pr,it
-风,19,fēng,N,wind
-虾,19,xiā,N,shrimp
-它们,19,tāmen,Pr,"they (refering to things, animals)"
-游,19,yóu,V,swim
-齐白石,19,qí báishí,PN,(name of a well-known Chinese painter)
-骑,19,qí,V,to ride (a horse or bike); to sit on the back of
-自行车,19,zìxíngchē,N,bicycle
-远,19,yuǎn,A,far
-跑步,19,pǎobù,VO,run; jog
-书法,19,shūfǎ,N,handwriting; calligraphy
-业余,19,yèyú,N,spare time; amateur
-节目,19,jiémù,N,program
-瘦,19,shòu,A,thin
-减肥,19,jiǎnféi,VO,reduce; be on a diet
-管,19,guǎn,V,to discipline
-生气,19,shēngqì,VO,get angry; take offense
-钢琴,19,gāngqín,N,piano
-孩子,19,háizi,N,child; children
-教育,19,jiàoyù,V,teach; educate
-观点,19,guāndiǎn,N,opinion
-新年,20,xīnnián,N,new year
-火锅,20,huǒguō,N,hotpot
-火,20,huǒ,N,fire; heat
-锅,20,guō,N,pot; pan
-饭馆,20,fànguǎn,N,restaurant
-因为,20,yīnwèi,Conj,because
-所以,20,suǒyǐ,Conj,so
-涮羊肉,20,shuànyángròu,N,thin slices of mutton boiled in water
-涮,20,shuàn,V,cook thin slices of meat in boiling water
-羊,20,yáng,N,sheep
-肉,20,ròu,N,meat
-热,20,rè,A,hot
-开车,20,kāichē,VO,drive a car
-开,20,kāi,V,drive; operate
-郊区,20,jiāoqū,N,suburb; outskirts
-或者,20,huòzhě,Conj,or
-音乐会,20,yīnyuèhuì,N,concert
-化妆,20,huàzhuāng,VO,put on makeup
-妆,20,zhuāng,N,makeup
-正式,20,zhèngshì,A,formal
-民乐,20,mínyuè,N,folk music played with traditional instruments
-西方,20,xīfāng,N,western; the West
-西,20,xī,N,west
-民族,20,mínzú,N,nation; nationality
-乐器,20,yuèqì,N,musical instrument
-器,20,qì,N,utensil
-演奏,20,yǎnzòu,V,give an instrumental performance
-揍,20,zòu,V,play a musical instrument
-习惯,20,xíguàn,V,be accustomed to/habit
-乐曲,20,yuèqǔ,N,musical composition
-曲,20,qǔ,N,tune; melody
-出租车,20,chūzūchē,N,taxi; cab
-出租,20,chūzū,V,hire; rent
-路上,20,lùshang,VO,on the road; on the way
-花儿,20,huā(r),N,flower
-过去,20,guòqù,N,in or of the past
-照相机,20,zhàoxiàngjī,N,camera
-照相,20,zhàoxiàng,VO,take a picture; to photograph
-旁边,20,pángbiān,N,side
-出发,20,chūfā,V,set out; start off
-篇,20,piān,M,(measure word for essays and articles)
-文章,20,wénzhāng,N,essay; article
-恭喜,20,gōngxǐ,IE,congratulations
-火车,20,huǒchē,N,train
-又,20,yòu,Adv,again
-着急,20,zháojí,VO,feel anxious/anxious
-春江花月夜,20,chūnjiānghuā yuèyè,PN,"(a famous, traditional Chinese music composition)"
-春,20,chūn,N,spring
-江,20,jiāng,N,river
-月,20,yuè,N,moon
-夜,20,yè,N,night
-小学,20,xiǎoxué,N,primary school; elementary school
-辆,20,liàng,M,(measure word for vehicles)
-音乐厅,20,yīnyuètīng,N,concert hall
-幸福,20,xìngfú,A,happy
-万事如意,20,wànshì rúyì,IE,may all your wishes come true
-蛇,20,shé,N,snake
-最,20,zuì,Adv,the most
-添,20,tiān,V,add
-脚,20,jiǎo,N,foot
-多余,20,duōyú,A,superfluous; uncalled for; surplus
-足,20,zú,N,foot
-队员,21,duìyuán,N,team member
-队,21,duì,N,team
-不同,21,bùtóng,A,different
-国家,21,guójiā,N,country
-赢,21,yíng,V,win
-场,21,chǎng,M,"match; set; (measure word for sports, films, performances)"
-足球,21,zúqiú,N,soccer
-比赛,21,bǐsài,N,match/compete; have a match
-赛,21,sài,N,race; match/compete; race
-同学,21,tóngxué,N,classmate; schoolmate
-大学生,21,dàxuéshēng,N,university student; college student
-学校,21,xuéxiào,N,school
-水平,21,shuǐpíng,N,level
-教练,21,jiàoliàn,N,coach
-去年,21,qùnián,N,last year
-以后,21,yǐhòu,Adv,after; afterwards
-提高,21,tígāo,V,improve; increase
-提,21,tí,V,lift
-踢,21,tī,V,kick
-左边,21,zuǒbian,N,left side
-左,21,zuǒ,N,left
-右边,21,yòubian,N,right side
-右,21,yòu,N,right
-东边,21,dōngbian,N,east side
-东,21,dōng,N,east
-离,21,lí,Prep,away; off; from
-花园小区,21,huāyuán xiǎoqū,N,garden district
-花园,21,huāyuán,N,garden
-区,21,qū,N,district; section; area
-车站,21,chēzhàn,N,bus stop
-前边,21,qiánbian,N,front; ahead
-前,21,qián,N,front; ahead; forward
-拐,21,guǎi,V,turn
-下边,21,xiàbian,N,below; underneath
-下,21,xià,N,down; under
-上边,21,shàngbian,N,above; over; upward
-上,21,shàng,N,upper; up
-平方米,21,píngfāngmǐ,M,square meter
-平方,21,píngfāng,A,square
-米,21,mǐ,M,meter
-卫生间,21,wèishēngjiān,N,washroom; bathroom
-卫生,21,wèishēng,N,hygiene; health
-北边,21,běibian,N,north side
-北,21,běi,N,north
-卧,21,wò,V,lie on one's back
-外边,21,wàibian,N,outside
-阳台,21,yángtái,N,balcony
-电影院,21,diànyǐngyuàn,N,movie theater; cinema
-咖啡馆,21,kāfēiguǎn,N,café
-南边,21,nánbian,N,south side
-足球场,21,zúqiúchǎng,N,soccer field
-出差,21,chūchāi,V,go on a business trip
-后边,21,hòubian,N,back side; behind
-输,21,shū,V,lose
-天堂,21,tiāntáng,N,heaven; paradise
-苏杭,21,sū háng,PN,Suzhou and Hangzhou
-苏州,21,sūzhōu,PN,Suzhou
-杭州,21,hángzhōu,PN,Hangzhou
-山水,21,shānshuǐ,N,landscape
-山,21,shān,N,hill; mountain
-园林,21,yuánlín,N,garden; park
-修建,21,xiūjiàn,V,build; construct
-诗人,21,shīrén,N,poet
-设计,21,shèjì,V,design
-建筑师,21,jiànzhùshī,N,architect
-过,22,guo,AsPt,(indicating a past experience)
-越剧,22,yuèjù,N,Shaoxing opera
-剧,22,jù,N,opera; dramatic work; play
-虽然,22,suīrán,Conj,although; though
-但是,22,dànshì,Conj,but; whereas; yet
-剧团,22,jùtuán,N,opera troupe; theatrical group
-地方戏,22,dìfāngxì,N,regional opera
-戏,22,xì,N,drama; play; show
-上演,22,shàngyǎn,V,stage a show; perform
-演,22,yǎn,V,act; perform; play
-古典,22,gǔdiǎn,A,classical
-小说,22,xiǎoshuō,N,novel; fiction
-部,22,bù,M,"(measure word for films, works of literature)"
-爱情,22,àiqíng,N,love
-故事,22,gùshi,N,story; tale
-感人,22,gǎnrén,A,touching; moving
-座位,22,zuòwèi,N,seat
-排,22,pái,N,line; row
-西边,22,xībian,N,west side
-见,22,jiàn,V,see; meet with
-长安大戏院,22,cháng'ān dà xìyuàn,PN,Chang'an Theater
-戏院,22,xìyuàn,N,theater
-红楼梦,22,hónglóu méng,PN,Dream of the Red Chamber
-梦,22,mèng,N,dream
-从来,22,cónglái,Adv,all along; always
-这么,22,zhème,Pr,so; such; like this
-主角,22,zhǔjué,N,leading actor or actress
-特别,22,tèbié,Adv,extraordinary; especially; particularly
-优美,22,yōuměi,A,graceful; fine; exquisite; elegant
-风格,22,fēnggé,N,style; manner
-以前,22,yǐqián,N,before; ago; previously; formerly
-演员,22,yǎnyuán,N,actor; actress; performer
-角色,22,juésè,N,character; role
-种类,22,zhǒnglèi,N,kind; sort; type; variety
-种,22,zhǒng,M,kind; sort; type
-地方,22,dìfang,N,place; region
-访问,22,fǎngwèn,V,visit; call on
-有的,22,yǒude,Pr,some
-难,22,nán,A,difficult; hard
-研究,22,yánjiū,V,study; discuss; consider
-顿,22,dùn,M,(measure word for meals)
-便饭,22,biànfàn,N,simple meal
-太太,22,tàitài,N,wife; Mrs.
-不怎么样,22,bù zěnmeyàng,IE,not so good
-悲伤,22,bēishāng,A,sad; sorrow
-贾宝玉,22,jiǎ bǎoyù,PN,(name of the lead male character in Dream of the Red Chamber)
-聪明,22,cōngming,A,clever; bright
-林黛玉,22,lín dàiyù,PN,(name of the lead female character in Dream of the Red Chamber)
-诗,22,shī,N,poem; poetry
-相爱,22,xiāng'ài,V,fall in love
-结婚,22,jiéhūn,VO,get married
-骗,22,piàn,V,cheat; trick
-哭,22,kū,V,cry; weep
-死,22,sǐ,V,die
-回忆,22,huíyì,V,reminisce; recollect; recall
-离开,22,líkāi,V,leave; depart from
-爬,23,pá,V,climb
-放假,23,fàngjià,VO,have a holiday or vacation
-价,23,jià,N,vacation; holiday
-打算,23,dǎsuan,N,plan/to plan; to intend to
-提,23,tí,V,put forward; raise
-飞机,23,fēijī,N,airplane
-飞,23,fēi,V,fly
-机,23,jī,N,machine
-顶,23,dǐng,N,peak; tip; top
-教书,23,jiāoshū,VO,teach
-建议,23,jiànyì,V,make suggestions/suggestion; advice
-气温,23,qìwēn,N,air temperature
-景色,23,jǐngsè,N,scene; scenery; landscape
-景,23,jǐng,N,view; scene
-色,23,sè,N,scene
-冬天,23,dōngtiān,N,winter
-夏天,23,xiàtiān,N,summer
-导游,23,dǎoyóu,N,tour guide
-导,23,dǎo,V,to guide; to lead
-游,23,yóu,V,travel
-行,23,xíng,V,to be O.K.
-长城,23,chángchéng,PN,the Great Wall
-泰山,23,tàishān,PN,Taishan Mountain; Mount Tai
-海南岛,23,hǎinán dǎo,PN,Hainan Island
-孔子,23,kǒngzǐ,PN,Confucius
-小燕子,23,xiǎo yànzi,PN,(name of a Chinese tour guide)
-加油,23,jiāyóu,VO,make an extra effort; cheer someone on
-加,23,jiā,V,increase; add
-累,23,lèi,A,tired
-条,23,tiáo,M,"strip; long narrow piece; (measure word for rivers, dragons, pants, fish)"
-龙,23,lóng,N,dragon
-拍,23,pāi,V,pat; beat; take (a picture)
-秋天,23,qiūtiān,N,autumn; fall
-阴天,23,yīntiān,N,cloudy sky; overcast sky
-下雪,23,xiàxuě,VO,to snow
-雪,23,xuě,N,snow
-零下,23,língxià,N,below zero
-度,23,dù,M,degree (for temperature)
-北方,23,běifāng,N,north
-春天,23,chūntiān,N,spring (season)
-帮忙,23,bāngmáng,VO,to help
-帮,23,bāng,V,to help; assist
-站,23,zhàn,V,stand
-广州,23,guǎngzhōu,PN,Guangzhou
-天气预报,23,tiānqì yùbào,N,weather forecast
-晴天,23,qíngtiān,N,sunny sky
-中国民航,23,zhōngguó mínháng,PN,Civil Aviation Administration of China
-起飞,23,qǐfēi,V,take off (flying)
-停车场,23,tíngchēchǎng,N,parking lot
-菜单,23,càidān,N,menu
-渴,23,kě,A,thirsty
-熊,23,xióng,N,bear
-害怕,23,hàipà,V,be afraid
-棵,23,kē,M,"(measure word for trees, plants)"
-树,23,shù,N,tree
-装,23,zhuāng,V,pretend to be something or someone
-动,23,dòng,V,move
-危险,23,wēixiǎn,A,dangerous
-舅舅,24,jiùjiu,N,uncle (mother's brother)
-舅妈,24,jiùmā,N,aunt (wife of mother's brother)
-农民,24,nóngmín,N,farmer; peasant
-当,24,dāng,V,serve as; act as; to be (occupation)
-蔬菜,24,shūcài,N,vegetable
-菜,24,cài,N,food; dish; vegetable
-正在,24,zhèngzài,Adv,in the process of; in the middle of; (key word of a progressive construction)
-在,24,zài,Adv,(used to indicate an action in progress)
-问路,24,wènlù,VO,ask directions to get somewhere
 变化,24,biànhuà,N,change
-不但,24,búdàn,Conj,not only
-而且,24,érqiě,Conj,but also; and also
-可不,24,kěbù,IE,exactly; right; that's just the way it is
-小孩儿,24,xiǎohái(r),N,kid; child
-地图,24,dìtú,N,map
-向,24,xiàng,Prep,towards; to
-上,24,shàng,V,"be engaged in (work, study) at a fixed time"
-年级,24,niánjí,N,grade (in school)
-大学,24,dàxué,N,university; college
-辛苦,24,xīnkǔ,A,work hard; laborious
-下雨,24,xiàyǔ,VO,to rain
-雨,24,yǔ,N,rain
-种,24,zhòng,V,grow; to plant
-温室,24,wēnshì,N,greenhouse
-温,24,wēn,A,warm
-收入,24,shōurù,N,income; earnings
-收,24,shōu,V,accept; receive
-入,24,rù,V,to enter
-前年,24,qiánnián,N,the year before last; two years ago
-盖,24,gài,V,build
-座,24,zuò,M,"(measure word for mountains, buildings and other immovable objects)"
-城,24,chéng,N,city; wall
-村,24,cūn,N,village
-文化,24,wénhuà,N,culture; education; literacy
-低,24,dī,A,low
-技术,24,jìshù,N,technology; skill
-管理,24,guǎnlǐ,V,manage; administer
-暖和,24,nuǎnhuo,A,warm
-凉快,24,liángkuai,A,cool (temperature)
-机场,24,jīchǎng,N,airport
-接,24,jiē,V,pick up (someone)
-行李,24,xíngli,N,baggage; luggage
-箱子,24,xiāngzi,N,box; case; trunk
-一路平安,24,yílù píng'ān,IE,have a pleasant journey; bon voyage
-爱人,24,àiren,N,husband; wife; spouse; lover
-士兵,24,shìbīng,N,soldier
-将军,24,jiāngjūn,N,general
-站岗,24,zhàngǎng,VO,stand guard
-冻,24,dòng,V,freeze
-发抖,24,fādǒu,V,shake; tremble; shiver
-生火,24,shēnghuǒ,VO,make a fire
-正常,24,zhèngcháng,A,normal; regular
-声,24,shēng,N,sound; voice
-着,25,zhe,Pt,(indicating the continuous aspect)
-送,25,sòng,V,take someone somewhere; see someone off
-被,25,bèi,Prep,by (indicates passive voice)
-撞,25,zhuàng,V,knock; collide
-伤,25,shāng,V,hurt; wound
-第,25,dì,Pref,(indicates ordinal numbers)
-检查,25,jiǎnchá,V,examine
-重,25,zhòng,A,serious; heavy
-完,25,wán,V,finish; run out of
-马上,25,mǎshàng,Adv,right away; immediately
-胳膊,25,gēbo,N,arm
-腿,25,tuǐ,N,leg
-笑,25,xiào,V,laugh; smile
-注意,25,zhùyì,V,pay attention to
-停,25,tíng,V,stop; park
-医药费,25,yīyàofèi,N,medical expenses
-以为,25,yǐwéi,V,to think or believe (and be wrong)
-如果,25,rúguǒ,Conj,if
-躺,25,tǎng,V,lie down
-电视,25,diànshì,N,television
-视,25,shì,V,look at
-束,25,shù,M,bunch (of flowers)
-放,25,fàng,V,put; place
-桌子,25,zhuōzi,N,table; desk
-结果,25,jiéguǒ,N,result; outcome
-关,25,guān,V,close; turn off
-弯,25,wān,V,bend
-倒霉,25,dǎoméi,A,bad luck
-坏,25,huài,A,bad; broken
-消息,25,xiāoxi,N,news
-小偷,25,xiǎotōu,N,thief
-偷,25,tōu,V,steal
-派出所,25,pàichūsuǒ,N,police substation
-抓,25,zhuā,V,clutch; catch; arrest
-丢,25,diū,V,lose
-型号,25,xínghào,N,model; type
-补,25,bǔ,V,mend
-挂失,25,guàshī,VO,report the loss of something
-项链,25,xiàngliàn,N,necklace
-警车,25,jǐngchē,N,police car; police van
-手机,25,shǒujī,N,cellular phone
-突然,25,tūrán,A,sudden; suddenly
-刀,25,dāo,N,knife
-警察,25,jǐngchá,N,policeman
-吓,25,xià,V,scare; frighten
-手,25,shǒu,N,hand
-掉,25,diào,V,drop; fall
-地上,25,dìshang,N,ground; floor
-成,26,chéng,V,become
-中国通,26,zhōngguótōng,N,expert of China
-情况,26,qíngkuàng,N,situation
-实在,26,shízài,A,honest/truly; really
-越来越,26,yuèláiyuè,IE,more and more
-南,26,nán,N,south
-特点,26,tèdiǎn,N,characteristic; feature
-博物馆,26,bówùguǎn,N,museum
-举办,26,jǔbàn,V,conduct; hold
-展览,26,zhǎnlǎn,N,exhibition; show
-图片,26,túpiàn,N,picture; photograph
-对,26,duì,Prep,to
-感兴趣,26,gǎn xìngqù,IE,be interested in something
-感,26,gǎn,V,feel; sense
-兴趣,26,xìngqù,N,interest
-结业,26,jiéyè,VO,complete a course
-记得,26,jìde,V,remember; retain
-中餐,26,zhōngcān,N,Chinese food (meal)
-饿,26,è,A,hungry
-聊,26,liáo,V,chat
-老外,26,lǎowài,N,foreigner
-中国化,26,zhōngguóhuà,V,make Chinese in quality or characteristics; sinicize
-化,26,huà,V,change; turn
-才,26,cái,Adv,just
-那样,26,nàyàng,Pr,such; so; like that
-妻子,26,qīzi,N,wife
-小伙子,26,xiǎohuǒzi,N,young man
-丈夫,26,zhàngfu,N,husband
-声调,26,shēngdiào,N,tone
-努力,26,nǔlì,A,make great effort; endeavor; exert oneself
-认真,26,rènzhēn,A,earnest; serious
-热情,26,rèqíng,A,warm; warmhearted; enthusiastic
-进步,26,jìnbù,N,progress; advancement/make progress
-明年,26,míngnián,N,next year
-陪,26,péi,V,to accompany
-不见不散,26,bújiàn búsàn,IE,don't leave unless we meet
-散,26,sàn,V,break up; disperse
-了解,26,liǎojiě,V,understand; realize
-熟悉,26,shúxī,V,be familiar with
-见面,26,jiànmiàn,VO,meet; see
-毕业,26,bìyè,VO,finish school; graduate
-经验,26,jīngyàn,N,experience
-方法,26,fāngfǎ,N,method
-艺术,26,yìshù,N,art
-请客,26,qǐngkè,VO,feast; treat someone to a meal
-客人,26,kèrén,N,guest
-意思,26,yìsi,N,meaning
+口,8,kǒu,M,number of people in a family
+口语,14,kǒuyǔ,N,spoken language
+古典,22,gǔdiǎn,A,classical
 句,26,jù,M,sentence
-，,0,,Punct,comma
-、,0,,Punct,enumeration comma
-·,0,,Punct,name separating mark
-「,0,,Punct,quotation marks
-」,0,,Punct,quotation marks
-﹁,0,,Punct,quotation marks
-﹂,0,,Punct,quotation marks
-“,0,,Punct,quotation marks
-”,0,,Punct,quotation marks
-《,0,,Punct,title opening brackets
-》,0,,Punct,title closing brackets
-〈,0,,Punct,title opening brackets
-〉,0,,Punct,title closing brackets
-…,0,,Punct,elipsis dots
-。,0,,Punct,full stop
--,0,,Punct,hyphen
-：,0,,Punct,colon
-；,0,,Punct,semicolon
-",",0,,Punct,comma
-.,0,,Punct,period
-:,0,,Punct,colon
+只,19,zhǐ,Adv,only
+叫,4,jiào,V,to be called
+可不,24,kěbù,IE,exactly; right; that's just the way it is
+可乐,9,kělè,N,Coke
+可以,4,kěyǐ,OpV,may
+可是,13,kěshì,Conj,but
+可爱,8,kě'ài,A,"lovely, cute"
+可能,13,kěnéng,OpV,maybe
+右,21,yòu,N,right
+右边,21,yòubian,N,right side
+号,5,hào,N,number
+号,9,hào,N,day of the month
+司机,11,sījī,N,driver
+吃,9,chī,V,eat
+吃饭,13,chīfàn,VO,eat (a meal)
+合适,17,héshì,A,suitable; appropriate; right
+同学,21,tóngxué,N,classmate; schoolmate
+名字,7,míngzi,N,name
+名片,7,míngpiàn,N,calling card
+后边,21,hòubian,N,back side; behind
+向,24,xiàng,Prep,towards; to
+吓,25,xià,V,scare; frighten
+吗,1,ma,QPt,(interrogative particle for question expecting yes-no answer)
+吧,12,ba,MdPt,modal particle
+听,13,tīng,V,listen
+听说,13,tīngshuō,V,be told
+吸烟,11,xīyān,VO,"smoke (cigarettes, etc.)"
+告诉,13,gàosu,V,tell
+呢,1,ne,MdPt,(a modal particle used for elliptical questions)
+和,8,hé,Conj,and
+咖啡,2,kāfēi,N,coffee
+咖啡馆,21,kāfēiguǎn,N,café
+咱们,18,zánmen,Pr,we; us
+哥哥,2,gēge,N,elder brother
+哪,3,nǎ,QPr,which
+哪儿,5,nǎr,QPr,where
+哪里,11,nǎli,IE,no (expresses modest denial)
+哭,22,kū,V,cry; weep
+哲学,7,zhéxué,N,philosophy
+售,17,shòu,V,sell
+售货员,17,shòuhuòyuán,N,shop assistant; salesclerk
+唱,19,chàng,V,to sing
+唱歌,11,chànggē,VO,sing (a song)
+商,10,shāng,N,trade; commerce; business
+商场,10,shāngchǎng,N,market; bazaar; shopping mall
+商店,17,shāngdiàn,N,shop; store
+啊,7,à,Int,ah; oh
+啤酒,9,píjiǔ,N,beer
+喂,13,wèi,Int,hello; hey
+喜欢,8,xǐhuan,V,"like, prefer"
+喝,2,hē,V,to drink
+嗓子,12,sǎngzi,N,throat
+器,20,qì,N,utensil
+四,,sì,Num,four
+四,5,sì,Num,four
+回,11,huí,V,return
+回信,13,huíxìn,N,reply/reply
+回忆,22,huíyì,V,reminisce; recollect; recall
+回答,11,huídá,V,answer
+因为,20,yīnwèi,Conj,because
+园林,21,yuánlín,N,garden; park
+国,3,guó,N,"country, nation"
+国家,21,guójiā,N,country
+国籍,16,guójí,N,nationality
+图书,16,túshū,N,books
+图书馆,16,túshūguǎn,N,library
+图片,26,túpiàn,N,picture; photograph
+圣诞,14,shèngdàn,PN,Christmas
+圣诞老人,14,shèngdàn lǎorén,N,Santa Clause
+在,10,zài,Prep,at; in; on
+在,24,zài,Adv,(used to indicate an action in progress)
+在,5,zài,V,"to be (here, there); to be (in, on at)"
+地上,25,dìshang,N,ground; floor
+地图,24,dìtú,N,map
+地方,22,dìfang,N,place; region
+地方戏,22,dìfāngxì,N,regional opera
+地铁,18,dìtiě,N,underground railway; subway
+场,21,chǎng,M,"match; set; (measure word for sports, films, performances)"
+坏,25,huài,A,bad; broken
+坐,5,zuò,V,to sit
+块(钱),10,kuài(qián),M,"dollar; basic Chinese monetary unit, worth 10 毛(máo)"
+型号,25,xínghào,N,model; type
+城,24,chéng,N,city; wall
+城市,15,chéngshì,N,city
+填,16,tián,V,fill in; write
+墨,19,mò,N,Chinese ink
+士兵,24,shìbīng,N,soldier
+声,24,shēng,N,sound; voice
+声调,26,shēngdiào,N,tone
+复习,14,fùxí,V,review
+复活节,14,fùhuó jié,N,Easter
+夏天,23,xiàtiān,N,summer
+外,8,wài,Prep,outside
+外公,8,wàigōng,N,maternal grandfather
+外国,8,wàiguó,N,foreign country
+外婆,14,wàipó,N,maternal grandmother
+外语,8,wàiyǔ,N,foreign language
+外边,21,wàibian,N,outside
+多,8,duō,A,"many, much"
+多,9,duō,Adv,how
+多余,20,duōyú,A,superfluous; uncalled for; surplus
+多大,9,duōdà,QPr,how old
+多少,8,duōshao,QPr,"how many, how much"
+夜,20,yè,N,night
+大,8,dà,A,"big, large"
+大,9,dà,A,old (in reference to a person)
+大便,12,dàbiàn,N,stool
+大学,24,dàxué,N,university; college
+大学生,21,dàxuéshēng,N,university student; college student
+大家,18,dàjiā,Pr,all; everybody
+天,6,tiān,N,day
+天堂,21,tiāntáng,N,heaven; paradise
+天气,6,tiānqì,N,weather
+天气预报,23,tiānqì yùbào,N,weather forecast
+太,6,tài,Adv,too; extremely
+太太,22,tàitài,N,wife; Mrs.
+太极拳,17,tàijíquán,N,Taiji Boxing
+头,12,tóu,N,head
+头发,17,tóufa,N,hair
+套,17,tào,M,set; suit; suite
+女,5,nǚ,A,female
+女儿,11,nǚ'ér,N,daughter
+奶奶,3,nǎinai,N,grandmother on the father's side
+她,3,tā,Pr,she; her
+好,1,hǎo,A,good; well; fine; O.K.
+好久,15,hǎojiǔ,IE,long time
+好久不见,15,hǎojiǔ bújiàn,IE,"""long time no see""; haven't seen someone for a long time"
+好像,18,hǎoxiàng,V,to seem; to be like
+如果,25,rúguǒ,Conj,if
+妆,20,zhuāng,N,makeup
+妈妈,2,māma,N,mom
+妹妹,8,mèimei,N,younger sister
+妻子,26,qīzi,N,wife
+姐姐,8,jiějie,N,older sister
+姑娘,13,gūniang,N,girl
+姓,4,xìng,V,one's surname is.../surname
+姓名,16,xìngmíng,N,full name
+孔子,23,kǒngzǐ,PN,Confucius
+字,11,zì,N,character
+孙女儿,11,sūnnür,N,granddaughter (son's daughter)
+孙子,18,sūnzi,N,grandson
+学,7,xué,V,to learn; to study
+学习,4,xuéxí,V,to learn; to study
+学校,21,xuéxiào,N,school
+学生,5,xuésheng,N,student
+学院,4,xuéyuàn,N,institute; college
+孩子,19,háizi,N,child; children
+它,19,tā,Pr,it
+它们,19,tāmen,Pr,"they (refering to things, animals)"
+宋华,5,sòng huá,PN,(name of a Chinese student)
+完,25,wán,V,finish; run out of
+实在,26,shízài,A,honest/truly; really
+实用,16,shíyòng,A,practical
+客,18,kè,N,visitor; guest
+客人,26,kèrén,N,guest
+客厅,13,kètīng,N,living room
+客气,18,kèqi,A,polite; curteous
+室,16,shì,N,room
+害怕,23,hàipà,V,be afraid
+家,19,jiā,N,specialist
+家,8,jiā,N,"family, home"
+家美,13,jiāměi,PN,name of a house rental agency
+容易,10,róngyì,A,easy
+宿舍,5,sùshè,N,dormitory
+寄,14,jì,V,"post, mail"
+对,14,duì,A,"right, correct"
+对,26,duì,Prep,to
+对不起,5,duìbuqǐ,IE,I'm sorry
+导,23,dǎo,V,to guide; to lead
+导游,23,dǎoyóu,N,tour guide
+寿面,9,shòumiàn,N,"birthday noodles, longevity noodles"
+封,18,fēng,M,(measure word for letter)
+将军,24,jiāngjūn,N,general
+小,8,xiǎo,A,"little, small"
+小伙子,26,xiǎohuǒzi,N,young man
+小便,12,xiǎobiàn,N,urine
+小偷,25,xiǎotōu,N,thief
+小姐,5,xiǎojie,N,Miss; young lady
+小学,20,xiǎoxué,N,primary school; elementary school
+小孩儿,24,xiǎohái(r),N,kid; child
+小时,17,xiǎoshí,N,hour
+小燕子,23,xiǎo yànzi,PN,(name of a Chinese tour guide)
+小说,22,xiǎoshuō,N,novel; fiction
+少,15,shǎo,A,few; little
+就,15,jiù,Adv,exactly; precisely
+局,14,jú,N,office; bureau
+层,5,céng,M,story; floor
+展览,26,zhǎnlǎn,N,exhibition; show
+属,9,shǔ,V,"be born in the year of ... (dog, rooster, etc.)"
+山,21,shān,N,hill; mountain
+山水,21,shānshuǐ,N,landscape
+岁,9,suì,M,years old (of a person)
+岁数,11,suìshu,N,years (of age)
+工作,8,gōngzuò,V,work/work
+工作人员,15,gōngzuò rényuán,N,working personnel; staff member
+工程师,8,gōngchéngshī,N,engineer
+左,21,zuǒ,N,left
+左边,21,zuǒbian,N,left side
+巧,13,qiǎo,A,coincidental
+差,11,chà,V,"lack, be short of"
+差,17,chà,A,not up to standard; poor; bad
+已经,17,yǐjīng,Adv,already
+布,17,bù,N,cloth; fabric
+帅,17,shuài,A,handsome; smart
+师傅,10,shīfu,N,master worker
+带,16,dài,V,bring
+帮,23,bāng,V,to help; assist
+帮助,13,bāngzhù,V,help
+帮忙,23,bāngmáng,VO,to help
+常,10,cháng,Adv,often
+常常,10,chángcháng,Adv,often
+幅,19,fú,M,"(measure word for paintings, cloth)"
+平方,21,píngfāng,A,square
+平方米,21,píngfāngmǐ,M,square meter
+年,9,nián,N,year
+年级,24,niánjí,N,grade (in school)
+年轻,15,niánqīng,A,young
+年龄,16,niánlíng,N,age
+幸福,20,xìngfú,A,happy
+广东,16,guǎngdōng,PN,Guangdong Province
+广州,23,guǎngzhōu,PN,Guangzhou
+床,11,chuáng,N,bed
+应该,11,yīnggāi,OpV,should; ought to
+店,17,diàn,N,shop; store
+度,23,dù,M,degree (for temperature)
+座,24,zuò,M,"(measure word for mountains, buildings and other immovable objects)"
+座位,22,zuòwèi,N,seat
+建国门,18,jiànguó mén,PN,Jianguo Men (place in Beijing)
+建筑师,21,jiànzhùshī,N,architect
+建议,23,jiànyì,V,make suggestions/suggestion; advice
+开,20,kāi,V,drive; operate
+开,7,kāi,V,to open; to start
+开刀,12,kāidāo,VO,have an operation
+开始,16,kāishǐ,V,start; begin
+开学,7,kāixué,VO,to start school
+开玩笑,19,kāi wánxiào,VO,crack a joke; make fun of
+开车,20,kāichē,VO,drive a car
+开门,19,kāimén,VO,open the door; begin a day's business
+式,17,shì,N,type; style
+弟弟,2,dìdi,N,younger brother
+张,7,zhāng,PN,(a surname)
+张,8,zhāng,M,flat objects
+弯,25,wān,V,bend
+当,24,dāng,V,serve as; act as; to be (occupation)
+当然,8,dāngrán,A,as it should be; only natural that
+影,13,yǐng,N,shadow
+往,18,wǎng,Prep,to; toward
+很,1,hěn,Adv,very
+律师,8,lǜshī,N,lawyer
+徐悲鸿,19,xú bēihóng,PN,(name of a well-known Chinese painter)
+得,13,dé,V,"have, get"
+得,15,de,StPt,(structural particle)
+得,15,děi,OpV,need; must; have to
+忘,16,wàng,V,forget
+忙,2,máng,A,busy
+快,15,kuài,A,fast; quick; rapid
+快乐,9,kuàilè,A,happy
+念,14,niàn,V,read
+怎么,10,zěnme,QPr,how
+怎么样,9,zěnmeyàng,QPr,"how is ..., what is ... like"
+性别,16,xìngbié,N,sex; gender
+总是,17,zǒngshì,Adv,always
+恐怕,6,kǒngpà,Adv,to be afraid that; perhaps
+恭喜,20,gōngxǐ,IE,congratulations
+您,3,nín,Pr,you  (polite form)
+悲伤,22,bēishāng,A,sad; sorrow
+情况,26,qíngkuàng,N,situation
+惊喜,14,jīngxǐ,N,pleasant surprise
+想,12,xiǎng,V,think/want to...
+想,14,xiǎng,V,miss; remember with longing
+想像,19,xiǎngxiàng,V,imagine
+意思,26,yìsi,N,meaning
+感,26,gǎn,V,feel; sense
+感人,22,gǎnrén,A,touching; moving
+感兴趣,26,gǎn xìngqù,IE,be interested in something
+感冒,12,gǎnmào,V,have a cold/common cold
+感恩节,14,gǎn'ēn jié,N,Thanksgiving
+愿意,12,yuànyì,OpV,be willing to ...
+慢,16,màn,A,slow; slowly
+懂,15,dǒng,V,understand
+戏,22,xì,N,drama; play; show
+戏院,22,xìyuàn,N,theater
+成,26,chéng,V,become
+我,1,wǒ,Pr,I; me
+我们,2,wǒmen,Pr,we; us
+或者,20,huòzhě,Conj,or
+房子,13,fángzi,N,house
+房租,13,fángzū,N,rent (for a house or apartment)
+房间,16,fángjiān,N,room
+所以,20,suǒyǐ,Conj,so
+手,25,shǒu,N,hand
+手机,25,shǒujī,N,cellular phone
+才,26,cái,Adv,just
+打,6,dǎ,V,to play
+打工,14,dǎgōng,V,have a part-time job
+打扫,14,dǎsǎo,V,clean
+打折,17,dǎzhé,VO,sell at a discount; give a disount
+打球,6,dǎqiú,VO,to play ball
+打电话,13,dǎ diànhuà,VO,make a phone call
+打的,11,dǎdī,VO,take a taxi
+打算,23,dǎsuan,N,plan/to plan; to intend to
+打针,12,dǎzhēn,VO,have an injection
+扫,14,sǎo,V,sweep
+找(钱),10,zhǎo(qián),V,give change
+找,13,zhǎo,V,look for
+技术,24,jìshù,N,technology; skill
+把,16,bǎ,Prep,(denoting the disposal of something)
+抓,25,zhuā,V,clutch; catch; arrest
+护照,18,hùzhào,N,passport
+报,10,bào,N,newspaper
+抱歉,6,bàoqiàn,A,to feel sorry; sorry
+拍,23,pāi,V,pat; beat; take (a picture)
+拐,21,guǎi,V,turn
+拜拜,11,báibái,IE,bye-bye (transliteration)
+拿,16,ná,V,take; hold; get
+挂号,12,guàhào,VO,"register (at a hospital, etc.)"
+挂失,25,guàshī,VO,report the loss of something
+换,15,huàn,V,exchange; change
+掉,25,diào,V,drop; fall
+排,15,pái,V,arrange; put in order
+排,22,pái,N,line; row
+排队,15,páiduì,VO,form a line; queue up
+接,24,jiē,V,pick up (someone)
+揍,20,zòu,V,play a musical instrument
+提,21,tí,V,lift
+提,23,tí,V,put forward; raise
+提高,21,tígāo,V,improve; increase
+撞,25,zhuàng,V,knock; collide
+支,10,zhī,M,stick-like objects like pens
+收,24,shōu,V,accept; receive
+收入,24,shōurù,N,income; earnings
+收票员,18,shòupiàoyuán,N,ticket seller; conductor
+放,25,fàng,V,put; place
+放假,23,fàngjià,VO,have a holiday or vacation
+放心,18,fàngxīn,VO,set one's mind at rest; be at ease; feel relieved
+故事,22,gùshi,N,story; tale
+教,7,jiāo,V,to teach
+教书,23,jiāoshū,VO,teach
+教授,7,jiàoshòu,N,professor
+教练,21,jiàoliàn,N,coach
+教育,19,jiàoyù,V,teach; educate
+教育,7,jiàoyù,N,education
+散,26,sàn,V,break up; disperse
+散步,13,sànbù,VO,take a walk; walk
+数,15,shǔ,V,count
+数学,7,shùxué,N,mathematics
+整理,14,zhěnglǐ,V,put in order; arrange; sort out
+文化,24,wénhuà,N,culture; education; literacy
+文学,7,wénxué,N,literature
+文章,20,wénzhāng,N,essay; article
+料子,17,liàozi,N,material for making clothing
+斤,10,jīn,M,half kilogram
+新,13,xīn,A,new
+新实用汉语课本,16,xīn shíyòng hànyǔ kèběn,PN,New Practical Chinese Reader
+新年,20,xīnnián,N,new year
+方便,13,fāngbiàn,A,convenient
+方法,26,fāngfǎ,N,method
+旁边,20,pángbiān,N,side
+旅行,14,lǚxíng,V,travel
+旗袍,17,qípáo,N,cheongsam; long formal dress with a slit skirt
+日记,14,rìjì,N,diary
+旧,18,jiù,A,old; past; used
+早,15,zǎo,A,early
+时候,6,shíhou,N,time; moment
+时间,6,shíjiān,N,time
+明信片,15,míngxìnpiàn,N,postcard
+明天,6,míngtiān,N,tomorrow
+明年,26,míngnián,N,next year
+星期,9,xīngqī,N,week
+星期日,9,xīngqīrì,N,Sunday
+春,20,chūn,N,spring
+春天,23,chūntiān,N,spring (season)
+春江花月夜,20,chūnjiānghuā yuèyè,PN,"(a famous, traditional Chinese music composition)"
+春节,14,chūn jié,N,Spring Festival
+昨天,6,zuótiān,N,yesterday
+是,3,shì,V,to be
+晚,11,wǎn,A,late
+晚上,11,wǎnshang,N,"evening, night"
+普通话,15,pǔtōnghuà,N,common speech; Mandarin Chinese
+景,23,jǐng,N,view; scene
+景色,23,jǐngsè,N,scene; scenery; landscape
+晴,14,qíng,A,sunny
+晴天,23,qíngtiān,N,sunny sky
+暖和,24,nuǎnhuo,A,warm
+曲,20,qǔ,N,tune; melody
+最,20,zuì,Adv,the most
+月,20,yuè,N,moon
+有,6,yǒu,V,to have
+有名,10,yǒumíng,A,famous
+有意思,6,yǒu yìsi,IE,interesting
+有点儿,12,yǒudiǎnr,Adv,somewhat; rather; a bit
+有的,22,yǒude,Pr,some
+朋友,2,péngyou,N,friend
+期,16,qī,N,period of time
+本,10,běn,M,books and notebooks
+本子,10,běnzi,N,notebook
+机,23,jī,N,machine
+机场,24,jīchǎng,N,airport
+杂志,16,zázhì,N,magazine
+材料,19,cáiliào,N,material
+村,24,cūn,N,village
+束,25,shù,M,bunch (of flowers)
+条,23,tiáo,M,"strip; long narrow piece; (measure word for rivers, dragons, pants, fish)"
+来,4,lái,V,to come
+杨,4,yáng,PN,(a surname)
+杭州,21,hángzhōu,PN,Hangzhou
+杯,10,bēi,M,cups of things
+极了,17,jí(le),Adv,extremely
+林娜,1,lín nà,PN,(name of a British student)
+林黛玉,22,lín dàiyù,PN,(name of the lead female character in Dream of the Red Chamber)
+查,16,chá,V,check; look up
+树,23,shù,N,tree
+样,19,yàng,M,type; the likes of
+样子,17,yàngzi,N,shape; sample; model; pattern
+桌子,25,zhuōzi,N,table; desk
+梁祝,10,liáng zhù,PN,name of a Chinese violin concerto
+梦,22,mèng,N,dream
+检查,25,jiǎnchá,V,examine
+棵,23,kē,M,"(measure word for trees, plants)"
+楼,14,lóu,N,building
+次,15,cì,M,(measure word for actions)
+欧元,15,ōuyuán,N,Euro
+欧洲,14,ōuzhōu,PN,Europe
+款,16,kuǎn,N,sum of money
+正在,24,zhèngzài,Adv,in the process of; in the middle of; (key word of a progressive construction)
+正常,24,zhèngcháng,A,normal; regular
+正式,20,zhèngshì,A,formal
+步,13,bù,N,step
+死,22,sǐ,V,die
+每,12,měi,Pr,every; each
+比,17,bǐ,Prep,than (indicating comparison)
+比赛,21,bǐsài,N,match/compete; have a match
+毕业,26,bìyè,VO,finish school; graduate
+毛(钱),10,máo(qián),M,"dime; Chinese monetary unit, worth one tenth of one 块(kuài)"
+民乐,20,mínyuè,N,folk music played with traditional instruments
+民族,20,mínzú,N,nation; nationality
+气温,23,qìwēn,N,air temperature
+水,12,shuǐ,N,water
+水平,21,shuǐpíng,N,level
+水电费,13,shuǐdiànfèi,N,utility bill or fee
+汇率,15,huìlǜ,N,exchange rate
+汉堡,9,hànbǎo,N,hamburger
+汉字,11,hànzì,N,Chinese character
+汉语,4,hànyǔ,N,Chinese (language)
+江,20,jiāng,N,river
+汽车,18,qìchē,N,automobile; motor vehicle; car
+没,8,méi,Adv,not
+没关系,5,méi guānxi,IE,never mind; it doesn't matter
+油,19,yóu,N,oil
+油彩,19,yóucǎi,N,greasepaint
+油画,19,yóuhuà,N,oil painting
+注意,25,zhùyì,V,pay attention to
+泰山,23,tàishān,PN,Taishan Mountain; Mount Tai
+洗,14,xǐ,V,wash
+派出所,25,pàichūsuǒ,N,police substation
+流利,15,liúlì,A,fluent
+海,18,hǎi,N,sea; big lake
+海关,18,hǎiguān,N,customhouse; customs
+海南岛,23,hǎinán dǎo,PN,Hainan Island
+海运,18,hǎiyùn,N,sea transporation; ocean shipping; ocean freight
+消息,25,xiāoxi,N,news
+涮,20,shuàn,V,cook thin slices of meat in boiling water
+涮羊肉,20,shuànyángròu,N,thin slices of mutton boiled in water
+添,20,tiān,V,add
+温,24,wēn,A,warm
+温室,24,wēnshì,N,greenhouse
+渴,23,kě,A,thirsty
+游,19,yóu,V,swim
+游,23,yóu,V,travel
+游泳,6,yóuyǒng,V,to swim
+漂亮,9,piàoliang,A,"pretty, beautiful; nice"
+演,22,yǎn,V,act; perform; play
+演员,22,yǎnyuán,N,actor; actress; performer
+演奏,20,yǎnzòu,V,give an instrumental performance
+火,20,huǒ,N,fire; heat
+火车,20,huǒchē,N,train
+火锅,20,huǒguō,N,hotpot
+点(钟),11,diǎn(zhōng),M,o'clock
+点儿,11,(yì)diǎnr,Nu-M,a little bit
+烤鸭,9,kǎoyā,N,roast duck
+烧,12,shāo,V,burn
+热,20,rè,A,hot
+热心,13,rèxīn,A,enthusiastic
+热情,26,rèqíng,A,warm; warmhearted; enthusiastic
+热狗,9,règǒu,N,hotdog
+热闹,16,rènao,A,lively; bustling with noise and excitement
+然后,18,ránhòu,Adv,then
+照片,8,zhàopiàn,N,"picture, photo"
+照相,20,zhàoxiàng,VO,take a picture; to photograph
+照相机,20,zhàoxiàngjī,N,camera
+熊,23,xióng,N,bear
+熟悉,26,shúxī,V,be familiar with
+爬,23,pá,V,climb
+爱,8,ài,V,love
+爱人,24,àiren,N,husband; wife; spouse; lover
+爱好,19,àihào,N,hobby/to like
+爱情,22,àiqíng,N,love
+爷爷,8,yéye,N,paternal grandfather
+爸爸,2,bàba,N,dad
+牙,12,yá,N,tooth
+牛奶,9,niúnǎi,N,milk
+物理,7,wùlǐ,N,physics
+特别,22,tèbié,Adv,extraordinary; especially; particularly
+特点,26,tèdiǎn,N,characteristic; feature
+狗,8,gǒu,N,dog
+王小云,5,wáng xiǎoyún,PN,(name of a Chinese student)
+王府井,15,wángfǔjǐng,PN,(name of a famous commercial district in Beijing)
+玩儿,11,wánr,V,"have fun, play"
+现在,6,xiànzài,N,now
+现金,15,xiànjīn,N,cash
+球,6,qiú,N,ball
+瓶,9,píng,M,bottle
+生,14,shēng,A,new
+生,9,shēng,V,be born
+生日,9,shēngrì,N,birthday
+生气,19,shēngqì,VO,get angry; take offense
+生活,12,shēnghuó,N,life
+生活,16,shēnghuó,V,live/life
+生火,24,shēnghuǒ,VO,make a fire
+生词,14,shēngcí,N,new word
+用,15,yòng,V,use
+电,16,diàn,N,electricity
+电影,13,diànyǐng,N,movie
+电影院,21,diànyǐngyuàn,N,movie theater; cinema
+电梯,19,diàntī,N,elevator
+电脑,8,diànnǎo,N,computer
+电视,25,diànshì,N,television
+电话,13,diànhuà,N,telephone; phone call
+男,2,nán,A,male
+画,19,huà,V,to paint
+画儿,19,huàr,N,painting
+画家,19,huàjiā,N,painter; artist
+留学生,14,liúxuéshēng,N,student studying abroad; international student
+疼,12,téng,A,painful
+病,12,bìng,N,illness/get sick
+瘦,19,shòu,A,thin
+白,17,bái,A,white
+百,,bǎi,Num,hundred
+百,8,bǎi,Num,hundred
+的,4,de,Pt,(a possessive or modifying particle)
+盖,24,gài,V,build
+目录,16,mùlù,N,catalogue; list
+相声,17,xiàngshēng,N,comic dialogue; repartee
+相爱,22,xiāng'ài,V,fall in love
+看,7,kàn,V,to watch; to look at
+看病,12,kànbìng,VO,see a doctor
+真,8,zhēn,A,real/really
+着,25,zhe,Pt,(indicating the continuous aspect)
+着急,20,zháojí,VO,feel anxious/anxious
+睡,11,shuì,V,sleep
+睡觉,11,shuìjiào,VO,sleep
+知道,5,zhīdào,V,to know
+短,17,duǎn,A,short
+研究,22,yánjiū,V,study; discuss; consider
+礼物,11,lǐwù,N,gift; present
+祝,9,zhù,V,wish
+祝贺,9,zhùhè,V,congratulate
+票,18,piào,N,ticket
+离,21,lí,Prep,away; off; from
+离开,22,líkāi,V,leave; depart from
+秋天,23,qiūtiān,N,autumn; fall
+种,22,zhǒng,M,kind; sort; type
+种,24,zhòng,V,grow; to plant
+种类,22,zhǒnglèi,N,kind; sort; type; variety
+租,13,zū,V,rent
+空,18,kōng,N,sky; air
+空白,19,kòngbái,N,blank space
+穿,12,chuān,V,wear
+突然,25,tūrán,A,sudden; suddenly
+站,18,zhàn,N,station; stop
+站,23,zhàn,V,stand
+站岗,24,zhàngǎng,VO,stand guard
+笑,25,xiào,V,laugh; smile
+笔,10,bǐ,N,pen
+第,25,dì,Pref,(indicates ordinal numbers)
+等,13,děng,V,wait
+管,19,guǎn,V,to discipline
+管理,24,guǎnlǐ,V,manage; administer
+箱子,24,xiāngzi,N,box; case; trunk
+篇,20,piān,M,(measure word for essays and articles)
+米,21,mǐ,M,meter
+米饭,9,mǐfàn,N,cooked rice
+糕,9,gāo,N,cake
+糟糕,18,zāogāo,A,in a wretched state; in a mess; too bad
+系,7,xì,N,faculty; department
+系主任,8,xìzhǔrèn,N,department chairman
+累,23,lèi,A,tired
+红,9,hóng,A,red
+红楼梦,22,hónglóu méng,PN,Dream of the Red Chamber
+红葡萄酒,9,hóngpútaojiǔ,N,red wine
+纪念,18,jìniàn,N,commemorate
+纸,19,zhǐ,N,paper
+练,14,liàn,V,practice
+练习,14,liànxí,V,practice/exercise
+经济,7,jīngjì,N,economy
+经理,13,jīnglǐ,N,manager
+经过,18,jīngguò,V,to pass; to go through
+经验,26,jīngyàn,N,experience
+结业,26,jiéyè,VO,complete a course
+结婚,22,jiéhūn,VO,get married
+结果,25,jiéguǒ,N,result; outcome
+给,10,gěi,V,give
+给,12,gěi,Prep,to; for
+续借,16,xùjiè,V,renew
+绿,17,lǜ,A,green
+罚,16,fá,V,punish; penalize
+罚款,16,fákuǎn,VO,impose a fine or forfeit/fine
+羊,20,yáng,N,sheep
+美,7,měi,A,beautiful
+美元,15,měiyuán,N,U.S. dollar
+美国,4,měiguó,PN,the United States; America
+美术,7,měishù,N,fine arts
+美术馆,19,měishùguǎn,N,art gallery
+翻译,16,fānyì,V,translate; interpret
+老,19,lǎo,A,old; experienced
+老人,16,lǎorén,N,the elderly; the aged; old man or woman
+老外,26,lǎowài,N,foreigner
+老师,3,lǎoshī,N,teacher
+考,16,kǎo,V,give or take an exam; to test
+考试,16,kǎoshì,V,give or take an exam/exam
+而且,24,érqiě,Conj,but also; and also
+聊,26,liáo,V,chat
+职业,16,zhíyè,N,occupation; profession
+聚会,9,jùhuì,N,get-together; party
+聪明,22,cōngming,A,clever; bright
+肉,20,ròu,N,meat
+肚子,12,dùzi,N,abdomen; stomach
+胳膊,25,gēbo,N,arm
+能,11,néng,OpV,can; be able to
+脏,14,zāng,A,dirty
+脑,16,nǎo,N,brain
+脚,20,jiǎo,N,foot
+腿,25,tuǐ,N,leg
+自己,16,zìjǐ,Pr,oneself
+自行车,19,zìxíngchē,N,bicycle
+舅妈,24,jiùmā,N,aunt (wife of mother's brother)
+舅舅,24,jiùjiu,N,uncle (mother's brother)
+舒服,12,shūfu,A,comfortable
+航空,18,hángkōng,N,aviation
+色,23,sè,N,scene
+艺术,26,yìshù,N,art
+节,14,jié,N,festival
+节目,19,jiémù,N,program
+花儿,20,huā(r),N,flower
+花园,21,huāyuán,N,garden
+花园小区,21,huāyuán xiǎoqū,N,garden district
+苏州,21,sūzhōu,PN,Suzhou
+苏杭,21,sū háng,PN,Suzhou and Hangzhou
+英国,4,yīngguó,PN,Great Britain; England
+英文,12,yīngwén,N,English (language)
+英语,11,yīngyǔ,N,English (language)
+英镑,15,yīngbàng,N,pound sterling
+苹果,10,píngguǒ,N,apple
+茶,9,chá,N,tea
+茶楼,16,chálóu,N,tearooms; tea house
+药,12,yào,N,medicine
+菜,24,cài,N,food; dish; vegetable
+菜单,23,càidān,N,menu
+葡萄,9,pútao,N,grape
+蔬菜,24,shūcài,N,vegetable
+薄,17,báo,A,thin
+虽然,22,suīrán,Conj,although; though
+虾,19,xiā,N,shrimp
+蛇,20,shé,N,snake
+蛋,9,dàn,N,egg
+蛋糕,9,dàngāo,N,cake
+血,12,xiě,N,blood
+行,23,xíng,V,to be O.K.
+行李,24,xíngli,N,baggage; luggage
+衣服,12,yīfu,N,clothes
+补,25,bǔ,V,mend
+表,11,biǎo,N,wrist watch
+表,16,biǎo,N,form; table; list
+衬衫,17,chènshān,N,shirt
+被,25,bèi,Prep,by (indicates passive voice)
+装,23,zhuāng,V,pretend to be something or someone
+裤子,17,kùzi,N,trousers; pants
+西,20,xī,N,west
+西安,15,xī'ān,PN,(name of the capital of Shaanxi Province)
+西方,20,xīfāng,N,western; the West
+西服,17,xīfú,N,western-style clothes; suit
+西药,12,xīyào,N,Western medicine
+西边,22,xībian,N,west side
+西餐,9,xīcān,N,Western food
+要,12,yào,OpV,must; surely
+要,2,yào,V,to want
+见,22,jiàn,V,see; meet with
+见面,26,jiànmiàn,VO,meet; see
+观点,19,guāndiǎn,N,opinion
+视,25,shì,V,look at
+觉得,17,juéde,V,feel; think
+角色,22,juésè,N,character; role
+警察,25,jǐngchá,N,policeman
+警车,25,jǐngchē,N,police car; police van
+认真,26,rènzhēn,A,earnest; serious
+认识,4,rènshi,V,to know (somebody)
+让,13,ràng,V,let; allow; make
+记,18,jì,V,remember; bear in mind
+记得,26,jìde,V,remember; retain
+记者,4,jìzhě,N,reporter
+设计,21,shèjì,V,design
+访问,22,fǎngwèn,V,visit; call on
+证,16,zhèng,N,certificate; card
+词,14,cí,N,word
+词典,8,cídiǎn,N,dictionary
+试,17,shì,V,try on; have a try
+诗,22,shī,N,poem; poetry
+诗人,21,shīrén,N,poet
+话,15,huà,N,dialect; language
+该,11,gāi,OpV,should; ought to
+该,15,gāi,V,to be somone's turn to do something
+语,8,yǔ,N,language
+语法,14,yǔfǎ,N,grammar
+语言,4,yǔyán,N,language
+说,6,shuō,V,to say; to speak
+请,4,qǐng,V,please
+请客,26,qǐngkè,VO,feast; treat someone to a meal
+请问,4,qǐngwèn,V,May I ask...?
+课,9,kè,N,"class, lesson"
+课文,14,kèwén,N,text
+课本,16,kèběn,N,textbook
+谁,3,shéi,QPr,who; whom
+谢谢,5,xièxie,V,to thank
+贝贝,8,bèibei,PN,name of a dog
+货,17,huò,N,goods
+贴,18,tiē,V,to stick; to paste
+贵,10,guì,A,expensive; precious
+贵姓,4,guìxìng,IE,What's your honorable surname?
+费,18,fèi,N,fee; expenses; charge
+贾宝玉,22,jiǎ bǎoyù,PN,(name of the lead male character in Dream of the Red Chamber)
+赛,21,sài,N,race; match/compete; race
+赢,21,yíng,V,win
+走,17,zǒu,V,walk; go
+起,11,qǐ,V,"get up, rise"
+起床,11,qǐchuáng,VO,get up
+起飞,23,qǐfēi,V,take off (flying)
+越剧,22,yuèjù,N,Shaoxing opera
+越来越,26,yuèláiyuè,IE,more and more
+足,20,zú,N,foot
+足球,21,zúqiú,N,soccer
+足球场,21,zúqiúchǎng,N,soccer field
+跑,19,pǎo,V,run
+跑步,19,pǎobù,VO,run; jog
+跟,10,gēn,Prep,with/follow
+路,18,lù,N,route
+路,24,lù,N,road; way
+路上,20,lùshang,VO,on the road; on the way
+跳舞,11,tiàowǔ,VO,dance
+踢,21,tī,V,kick
+身,12,shēn,N,body
+身体,12,shēntǐ,N,"body, health"
+躺,25,tǎng,V,lie down
+车,8,chē,N,car; vehicle
+车站,21,chēzhàn,N,bus stop
+轻,15,qīng,A,light; small
+辆,20,liàng,M,(measure word for vehicles)
+输,21,shū,V,lose
+辛苦,24,xīnkǔ,A,work hard; laborious
+过,14,guò,V,spend (time); celebrate (a birthday or holiday)
+过,16,guò,V,pass
+过,22,guo,AsPt,(indicating a past experience)
+过去,17,guòqù,V,to pass
+过去,20,guòqù,N,in or of the past
+过期,16,guòqī,VO,be overdue
+还,11,hái,Adv,still
+还,16,huán,V,give back; return
+还,8,hái,Adv,in addition
+还是,12,háishi,Conj,or
+这,3,zhè,Pr,this
+这么,22,zhème,Pr,so; such; like this
+这儿,5,zhèr,Pr,here
+进,4,jìn,V,to enter
+进来,4,jìnlai,VC,to come in
+进步,26,jìnbù,N,progress; advancement/make progress
+远,19,yuǎn,A,far
+送,10,sòng,V,give as a gift
+送,25,sòng,V,take someone somewhere; see someone off
+选修,7,xuǎnxiū,V,take an elective course
+通知,18,tōngzhī,V,notify; inform/notification
+通知单,18,tōngzhīdān,N,advice note; letter of notice
+遍,6,biàn,M,number of times (of action)
+那,3,nà,Pr,that
+那儿,10,nàr,Pr,there
+那样,26,nàyàng,Pr,such; so; like that
+邮,14,yóu,V,"post, mail"
+邮局,14,yóujú,N,post office
+邮票,18,yóupiào,N,stamp
+邮费,18,yóufèi,N,postage
+郊区,20,jiāoqū,N,suburb; outskirts
+部,22,bù,M,"(measure word for films, works of literature)"
+都,2,dōu,Adv,both; all
+酒,9,jiǔ,N,"wine, liquor"
+里边,18,lǐ(bian),N,in; inside; within
+重,25,zhòng,A,serious; heavy
+钢琴,19,gāngqín,N,piano
+钥匙,16,yàoshi,N,key
+钱,10,qián,N,money
+银行,15,yínháng,N,bank
+锅,20,guō,N,pot; pan
+错,18,cuò,A,wrong; erroneous
+锻炼,12,duànliàn,V,do physical exercise
+长,16,cháng,A,long
+长城,23,chángchéng,PN,the Great Wall
+长安大戏院,22,cháng'ān dà xìyuàn,PN,Chang'an Theater
+门,18,mén,N,door; gate; entrance
+问,7,wèn,V,to ask
+问答,16,wèndá,N,questions and answers
+问路,24,wènlù,VO,ask directions to get somewhere
+问题,11,wèntí,N,question
+间,13,jiān,M,"measure word for rooms, houses"
+阅览室,16,yuèlǎnshì,N,reading room
+队,15,duì,N,row of people; line
+队,21,duì,N,team
+队员,21,duìyuán,N,team member
+阳台,21,yángtái,N,balcony
+阴天,23,yīntiān,N,cloudy sky; overcast sky
+陆雨平,1,lù yǔpíng,PN,(name of a Chinese reporter)
+陈,3,chén,PN,(a surname)
+陪,26,péi,V,to accompany
+难,22,nán,A,difficult; hard
+雨,24,yǔ,N,rain
+雪,23,xuě,N,snow
+雪碧,9,xuěbì,N,Sprite
+零,5,líng,Num,zero
+零下,23,língxià,N,below zero
+非常,15,fēicháng,Adv,very; extremely; highly
+面,9,miàn,N,noodles
+面包,9,miànbāo,N,bread
+鞋子,17,xié(zi),N,shoes
+音乐,7,yīnyuè,N,music
+音乐会,20,yīnyuèhuì,N,concert
+音乐厅,20,yīnyuètīng,N,concert hall
+页,17,yè,M,page
+顶,23,dǐng,N,peak; tip; top
+项链,25,xiàngliàn,N,necklace
+顿,22,dùn,M,(measure word for meals)
+预定,16,yùdìng,V,to reserve; to book
+颜色,17,yánsè,N,color
+风,19,fēng,N,wind
+风格,22,fēnggé,N,style; manner
+飞,23,fēi,V,fly
+飞机,23,fēijī,N,airplane
+餐厅,5,cāntīng,N,dining room
+饭,13,fàn,N,meal
+饭馆,20,fànguǎn,N,restaurant
+饿,26,è,A,hungry
+馆,16,guǎn,N,shop; place for cultural activities
+香蕉,10,xiāngjiāo,N,banana
+香蕉苹果,10,xiāngjiāopíngguǒ,N,a kind of apple that tastes like a banana
+马上,25,mǎshàng,Adv,right away; immediately
+马大为,7,mǎ dàwéi,PN,(name of an American student)
+马虎,19,mǎhu,A,careless
+马马虎虎,19,mǎmǎhūhū,A,so-so; careless
+骑,19,qí,V,to ride (a horse or bike); to sit on the back of
+骗,22,piàn,V,cheat; trick
+高,7,gāo,A,high; tall
+高兴,4,gāoxìng,A,happy; pleased
+鸭,9,yā,N,duck
+麻烦,17,máfan,V,bother someone; trouble someone
+黑,17,hēi,A,black
+齐白石,19,qí báishí,PN,(name of a well-known Chinese painter)
+龙,23,lóng,N,dragon
+，,,,Punct,comma
+、,,,Punct,enumeration comma
+·,,,Punct,name separating mark
+「,,,Punct,quotation marks
+」,,,Punct,quotation marks
+﹁,,,Punct,quotation marks
+﹂,,,Punct,quotation marks
+“,,,Punct,quotation marks
+”,,,Punct,quotation marks
+《,,,Punct,title opening brackets
+》,,,Punct,title closing brackets
+〈,,,Punct,title opening brackets
+〉,,,Punct,title closing brackets
+…,,,Punct,elipsis dots
+。,,,Punct,full stop
+-,,,Punct,hyphen
+：,,,Punct,colon
+；,,,Punct,semicolon
+",",,,Punct,comma
+.,,,Punct,period
+:,,,Punct,colon
 
