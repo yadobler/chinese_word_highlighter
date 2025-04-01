@@ -1098,4 +1098,14 @@ Simpified,Chapter,Pinyin,Category,Meaning
 客人,26,kèrén,N,guest
 意思,26,yìsi,N,meaning
 句,26,jù,M,sentence
+，,0,,Punct,comma
+《,0,,Punct,title opening brackets
+》,0,,Punct,title closing brackets
+。,0,,Punct,full stop
+-,0,,Punct,hyphen
+：,0,,Punct,colon
+；,0,,Punct,semicolon
+",",0,,Punct,comma
+.,0,,Punct,period
+:,0,,Punct,colon
 
