@@ -1099,8 +1099,19 @@ Simpified,Chapter,Pinyin,Category,Meaning
 意思,26,yìsi,N,meaning
 句,26,jù,M,sentence
 ，,0,,Punct,comma
+、,0,,Punct,enumeration comma
+·,0,,Punct,name separating mark
+「,0,,Punct,quotation marks
+」,0,,Punct,quotation marks
+﹁,0,,Punct,quotation marks
+﹂,0,,Punct,quotation marks
+“,0,,Punct,quotation marks
+”,0,,Punct,quotation marks
 《,0,,Punct,title opening brackets
 》,0,,Punct,title closing brackets
+〈,0,,Punct,title opening brackets
+〉,0,,Punct,title closing brackets
+…,0,,Punct,elipsis dots
 。,0,,Punct,full stop
 -,0,,Punct,hyphen
 ：,0,,Punct,colon
