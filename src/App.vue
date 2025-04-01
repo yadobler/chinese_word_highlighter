@@ -3,16 +3,21 @@ import { ref, onMounted } from 'vue';
 
 type ProcessedSegment = {
   text: string;
-  type: 'found' | 'not-found'; // Enforces the exact string values
-  data?: {
+  type: 'found' | 'not-found';
+  data?: { // Now an array of meanings
     chapter: string;
     pinyin: string;
     category: string;
     meaning: string;
-  };
+  }[];
 };
 
-type Dictionary = Record<string, { chapter: string; pinyin: string; category: string; meaning: string }>;
+type Dictionary = Record<string, { 
+  chapter: string; 
+  pinyin: string; 
+  category: string; 
+  meaning: string; 
+}[]>;
 // --- State ---
 const csvInput = ref('');
 const scriptInput = ref('');
@@ -36,19 +41,7 @@ onMounted(async () => {
 
 // --- Core Logic Functions ---
 const parseCsvData = () => {
-// --- Placeholder: CSV Parsing Logic ---
-// 1. Get text from csvInput.value
-// 2. Split into lines. Handle potential '\r\n' or '\n'.
-// 3. Ignore empty lines or header (or process header).
-// 4. For each line:
-//    a. Split by comma. Be mindful of commas within quoted fields if applicable.
-//       A simple split(',') might work if meanings don't contain commas.
-//       Otherwise, use a more robust CSV parsing approach.
-//    b. Extract Simplified, Pinyin, Category, Meaning. Trim whitespace.
-//    c. Store in the `dictionary` ref. Using the Simplified form as the key is common.
-// Example structure: dictionary.value = { '你好': { pinyin: 'nǐ hǎo', category: 'Idiometic Expression', meaning: 'Hello' }, ... }
-// ----
-console.log("Parsing CSV data...");
+  console.log("Parsing CSV data...");
   const lines = csvInput.value.trim().split(/\r?\n/);
   const newDictionary: Dictionary = {};
 
@@ -69,17 +62,22 @@ console.log("Parsing CSV data...");
           currentPart += char;
         }
       }
-      parts.push(currentPart.trim()); // Add the last part
+      parts.push(currentPart.trim()); // Add last part
 
       if (parts.length === 5) {
         const simplified = parts[0].trim();
         if (simplified) {
-          newDictionary[simplified] = {
+          const entry = {
             chapter: parts[1].trim(),
             pinyin: parts[2].trim(),
             category: parts[3].trim(),
-            meaning: parts[4].trim().replace(/^"|"$/g, ''), // Basic quote removal
+            meaning: parts[4].trim().replace(/^"|"$/g, '')
           };
+
+          if (!newDictionary[simplified]) {
+            newDictionary[simplified] = [];
+          }
+          newDictionary[simplified].push(entry);
         }
       } else {
         console.warn(`Skipping malformed CSV line ${i + 1}: ${lines[i]}`);
@@ -89,7 +87,6 @@ console.log("Parsing CSV data...");
 
   dictionary.value = newDictionary;
   console.log("Dictionary populated:", dictionary.value);
-  // ---- End Placeholder ----
 };
 
 const processScript = () => {
@@ -108,7 +105,7 @@ const processScript = () => {
     let matchFound = false;
     for (const word of knownWords) {
       if (scriptText.startsWith(word, i)) {
-        results.push({ text: word, type: 'found', data: dictionary.value[word] });
+        results.push({ text: word, type: 'found', data: dictionary.value[word] }); // Store multiple meanings
         i += word.length;
         matchFound = true;
         break;
@@ -127,8 +124,8 @@ const processScript = () => {
 };
 
 const showDetails = (segment: ProcessedSegment) => {
-  if (segment.type === 'found' && segment.data) {
-    selectedSegmentDetails.value = segment; // Always update the details box
+  if (segment.type === 'found' && segment.data?.length) {
+    selectedSegmentDetails.value = segment;
   }
 };
 </script>
@@ -156,12 +153,15 @@ const showDetails = (segment: ProcessedSegment) => {
               {{ segment.text }}
           </span>
       </div>
-
       <div v-if="selectedSegmentDetails?.data" class="details-box">
-          <div><strong>Chapter:</strong> {{ selectedSegmentDetails.data.chapter }}</div>
-          <div><strong>Pinyin:</strong> {{ selectedSegmentDetails.data.pinyin }}</div>
-          <div><strong>Category:</strong> {{ selectedSegmentDetails.data.category }}</div>
-          <div><strong>Meaning:</strong> {{ selectedSegmentDetails.data.meaning }}</div>
+          <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
+              <div><strong>Entry {{ idx + 1 }}:</strong></div>
+              <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
+              <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+              <div><strong>Category:</strong> {{ entry.category }}</div>
+              <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
+              <hr v-if="idx < selectedSegmentDetails.data.length - 1">
+          </div>
       </div>
   </div>
 </div>
