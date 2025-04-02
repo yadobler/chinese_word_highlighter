@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
+import { ungzip } from 'pako'
 import Papa from 'papaparse';
 
 // --- Types ---
@@ -56,10 +57,19 @@ onMounted(async () => {
     // Load and decompress CC-CEDICT
     const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
     if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
-    ccCedict.value = JSON.parse(await dictResponse.text());
+    const compressedData = await dictResponse.arrayBuffer();
+    const decompressedData = await ungzip(new Uint8Array(compressedData));
+    ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
 
   } catch (error) {
     console.error("Error loading dictionaries:", error);
+    try {
+        const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
+        if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
+        ccCedict.value = JSON.parse(await dictResponse.text());
+    } catch (error) {
+    console.error("Error loading dictionaries (backup):", error);
+    }
   }
 });
 
