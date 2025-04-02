@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+    import { ref, onMounted } from 'vue';
 import Papa from 'papaparse';
 
 // --- Types ---
@@ -68,32 +68,29 @@ const parseCsvData = () => {
   console.log("Parsing CSV data...");
 
   const result = Papa.parse(csvInput.value.trim(), {
-    header: true, // Since there's no explicit header row
+    header: true, 
     skipEmptyLines: true
   });
 
+  const parsedData = result.data as Record<string, string>[];
   const newDictionary: CsvDictionary = {};
 
-  result.data.forEach((parts: string[], index: number) => {
-    if (parts.length === 5) {
-      const simplified = parts[0].trim();
-      if (simplified) {
-        const entry = {
-          chapter: parts[1].trim(),
-          pinyin: parts[2].trim(),
-          category: parts[3].trim(),
-          meaning: parts[4].trim()
-        };
+parsedData.forEach((entry_raw) => {
+  const simplified = entry_raw["Simplified"];
+  if (simplified) {
+    const entry = {
+      chapter: entry_raw["Chapter"]?.trim() || "",
+      pinyin: entry_raw["Pinyin"]?.trim() || "",
+      category: entry_raw["Category"]?.trim() || "",
+      meaning: entry_raw["Meaning"]?.trim() || ""
+    };
 
-        if (!newDictionary[simplified]) {
-          newDictionary[simplified] = [];
-        }
-        newDictionary[simplified].push(entry);
-      }
-    } else {
-      console.warn(`Skipping malformed CSV line ${index + 1}: ${parts}`);
+    if (!newDictionary[simplified]) {
+      newDictionary[simplified] = [];
     }
-  });
+    newDictionary[simplified].push(entry);
+  }
+});
 
   csvDictionary.value = newDictionary;
   console.log("CSV Dictionary populated:", csvDictionary.value);
@@ -115,10 +112,10 @@ const processScript = () => {
 
   while (i < scriptText.length) {
     let matchFound = false;
-    if (!scriptText[i].trim()) {
-      i += 1;
-      continue;
-    }
+    // if (!scriptText[i].trim()) {
+    //   i += 1;
+    //   continue;
+    // }
 
     for (const word of cedictWords) {
       if (scriptText.startsWith(word, i)) {
@@ -173,6 +170,7 @@ const showDetails = (segment: ProcessedSegment) => {
     selectedSegmentDetails.value = segment;
   }
 };
+
 </script>
 
 <template>
