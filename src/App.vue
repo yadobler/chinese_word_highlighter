@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { ungzip } from 'pako';
-import { Papa } from 'papaparse';
+import Papa from 'papaparse';
 
 // --- Types ---
 type ProcessedSegment = {
@@ -57,10 +56,7 @@ onMounted(async () => {
     // Load and decompress CC-CEDICT
     const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
     if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
-    const compressedData = await dictResponse.arrayBuffer();
-
-    const decompressedData = await ungzip(new Uint8Array(compressedData));
-    ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
+    ccCedict.value = JSON.parse(await dictResponse.text());
 
   } catch (error) {
     console.error("Error loading dictionaries:", error);
@@ -72,7 +68,7 @@ const parseCsvData = () => {
   console.log("Parsing CSV data...");
 
   const result = Papa.parse(csvInput.value.trim(), {
-    header: false, // Since there's no explicit header row
+    header: true, // Since there's no explicit header row
     skipEmptyLines: true
   });
 
