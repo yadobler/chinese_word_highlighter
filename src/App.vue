@@ -116,8 +116,26 @@ const processScript = () => {
   const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
   const results: ProcessedSegment[] = [];
   const unknownSet = new Set<string>();
-  let i = 0;
+ 
+ function GetSegmentsInCsv(word: string): string[] | null {
+  if (csvDictionary.value[word]) return [word]; // Direct match
 
+  // Generate all possible segmentations
+  const validSegments: string[] = [];
+  for (let i = 1; i < word.length; i++) {
+    const left = word.substring(0, i);
+    const right = word.substring(i);
+
+    if (csvDictionary.value[left] && csvDictionary.value[right]) {
+      validSegments.push(left, right);
+      return validSegments;
+    }
+  }
+
+  return null; // No valid segmentation found
+}
+
+  let i = 0;
   while (i < scriptText.length) {
     let matchFound = false;
     if (!scriptText[i].trim()) {
@@ -126,21 +144,32 @@ const processScript = () => {
     }
 
     for (const word of cedictWords) {
-      if (scriptText.startsWith(word, i)) {
-        matchFound = true;
-        const inCsv = !!csvDictionary.value[word];
+    if (scriptText.startsWith(word, i)) {
+      matchFound = true;
+      const validSegments = GetSegmentsInCsv(word);
 
+      if (validSegments) {
+        // Push each segment separately
+        for (const segment of validSegments) {
+          results.push({
+            text: segment,
+            type: 'found',
+            data: csvDictionary.value[segment]
+          });
+        }
+      } else {
         results.push({
           text: word,
-          type: inCsv ? 'found' : 'not-found',
-          data: inCsv ? csvDictionary.value[word] : ccCedict.value[word]
+          type: 'not-found',
+          data: ccCedict.value[word]
         });
-
-        if (!inCsv) unknownSet.add(word); // Collect "not-found" words
-        i += word.length;
-        break;
+        unknownSet.add(word); // Collect "not-found" words
       }
+
+      i += word.length;
+      break;
     }
+  }
 
     if (!matchFound) {
       for (const word in csvDictionary.value) {
@@ -209,8 +238,11 @@ const showDetails = (segment: ProcessedSegment) => {
                 </div>
 
                 <div v-if="selectedSegmentDetails?.data" class="details-box">
+                    <div><h3>{{ selectedSegmentDetails.text }}</h3></div>
                     <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
                         <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+                        <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
+                        <div><strong>Category:</strong> {{ entry.category }}</div>
                         <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
                         <hr v-if="idx < selectedSegmentDetails.data.length - 1">
                     </div>
