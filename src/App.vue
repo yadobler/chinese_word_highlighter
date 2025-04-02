@@ -74,23 +74,21 @@ const parseCsvData = () => {
 
   const parsedData = result.data as Record<string, string>[];
   const newDictionary: CsvDictionary = {};
-
-parsedData.forEach((entry_raw) => {
-  const simplified = entry_raw["Simplified"];
-  if (simplified) {
-    const entry = {
-      chapter: entry_raw["Chapter"]?.trim() || "",
-      pinyin: entry_raw["Pinyin"]?.trim() || "",
-      category: entry_raw["Category"]?.trim() || "",
-      meaning: entry_raw["Meaning"]?.trim() || ""
-    };
-
-    if (!newDictionary[simplified]) {
-      newDictionary[simplified] = [];
-    }
-    newDictionary[simplified].push(entry);
-  }
-});
+  parsedData.forEach((entry_raw) => {
+      const simplified = entry_raw["Simplified"];
+      if (simplified) {
+          const entry = {
+              chapter: entry_raw["Chapter"].trim(),
+              pinyin: entry_raw["Pinyin"].trim(),
+              category: entry_raw["Category"].trim(),
+              meaning: entry_raw["Meaning"].trim()
+          };
+          if (!newDictionary[simplified]) {
+            newDictionary[simplified] = [];
+          }
+          newDictionary[simplified].push(entry);
+        }
+    });
 
   csvDictionary.value = newDictionary;
   console.log("CSV Dictionary populated:", csvDictionary.value);
@@ -173,62 +171,62 @@ const showDetails = (segment: ProcessedSegment) => {
 
 </script>
 
-<template>
-    <div class="app-container">
-        <h1>Chinese Word Highlighter</h1>
+    <template>
+        <div class="app-container">
+            <h1>Chinese Word Highlighter</h1>
 
-        <div class="input-area">
-            <div class="textarea-container">
-                <label for="csvInput">Dictionary</label>
-                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
-            </div>
-            <div class="textarea-container">
-                <label for="scriptInput">Script Text</label>
-                <textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
-            </div>
-        </div>
-
-        <button @click="processScript" class="process-button">Process Script</button>
-
-        <div class="output-container">
-            <div class="output-display">
-                <span v-for="(segment, index) in processedOutput" 
-                      :key="index" 
-                      :class="segment.type" 
-                      @click="showDetails(segment)">
-                    {{ segment.text }}
-                </span>
-            </div>
-
-            <div v-if="selectedSegmentDetails?.data" class="details-box">
-                <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
-                    <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
-                    <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
-                    <hr v-if="idx < selectedSegmentDetails.data.length - 1">
+            <div class="input-area">
+                <div class="textarea-container">
+                    <label for="csvInput">Dictionary</label>
+                    <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
+                </div>
+                <div class="textarea-container">
+                    <label for="scriptInput">Script Text</label>
+                    <textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
                 </div>
             </div>
-        </div>
 
-        <div v-if="unknownWords.length > 0" class="unknown-words-table">
-            <h2>Not Found Words</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Word</th>
-                        <th>Pinyin</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="word in unknownWords" :key="word.index">
-                        <td>{{ word.index }}</td>
-                        <td>{{ word.word }}</td>
-                        <td>{{ word.pinyin }}</td>
-                        <td>{{ word.meaning }}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <button @click="processScript" class="process-button">Process Script</button>
+
+            <div class="output-container">
+                <div class="output-display">
+                    <span v-for="(segment, index) in processedOutput" 
+                          :key="index" 
+                                :class="segment.type" 
+                                        @click="showDetails(segment)">
+                                                {{ segment.text }}
+                    </span>
+                </div>
+
+                <div v-if="selectedSegmentDetails?.data" class="details-box">
+                    <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
+                        <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+                        <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
+                        <hr v-if="idx < selectedSegmentDetails.data.length - 1">
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="unknownWords.length > 0" class="unknown-words-table">
+                <h2>New Words</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Word</th>
+                            <th>Pinyin</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="word in unknownWords" :key="word.index">
+                            <td>{{ word.index }}</td>
+                            <td>{{ word.word }}</td>
+                            <td>{{ word.pinyin }}</td>
+                            <td>{{ word.meaning }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-</template>
+    </template>
