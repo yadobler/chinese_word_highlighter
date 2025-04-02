@@ -1,12 +1,5 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
 a,
 .green {
   text-decoration: none;
@@ -21,15 +14,123 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: var(--color-background);
+  font-family: "Noto Sans", "Arial", sans-serif;
+}
+
+.app-container {
+  width: 90%;
+  max-width: 900px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+h1 {
+  color: #333;
+}
+
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.textarea-container {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Ensures consistent text size */
+  font-family: "Noto Sans", "Arial", sans-serif; /* Supports Pinyin */
+}
+
+.process-button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.process-button:hover {
+  background-color: #0056b3;
+}
+
+.output-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.output-display, .details-box {
+  flex: 1;
+  min-width: 300px;
+  text-align: justify;
+}
+
+.details-box {
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.found {
+  color: black;
+  border: 1px solid #aaa;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.found:hover {
+  background-color: #aaa;
+}
+
+.not-found {
+  color: red;
 }

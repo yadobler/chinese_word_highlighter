@@ -137,6 +137,7 @@ const showDetails = (segment: ProcessedSegment) => {
     <div class="textarea-container">
       <label for="csvInput">Dictionary</label>
       <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
+      <label for="csvInput">Format (CSV): Character, Chapter, Pinyin, Category, Meaning</label>
     </div>
     <div class="textarea-container">
       <label for="scriptInput">Script Text</label>
@@ -166,103 +167,3 @@ const showDetails = (segment: ProcessedSegment) => {
   </div>
 </div>
 </template>
-
-<style scoped>
-.app-container {
-  font-family: sans-serif;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-h1, h2 {
-  text-align: center;
-  color: #333
-}
-
-.input-area {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.textarea-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-textarea {
-    width: 100%; /* Fill container */
-    box-sizing: border-box; /* Include padding and border in width */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 0.9em;
-}
-
-.process-button {
-    display: block;
-    margin: 0 auto 20px auto; /* Center button */
-    padding: 10px 25px;
-    font-size: 1.1em;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.process-button:hover {
-    background-color: #0056b3;
-}
-
-.output-container {
-  display: flex;
-  gap: 20px; /* Space between output and details */
-  margin-top: 20px;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-}
-
-.output-display, .details-box {
-  flex: 1; /* Each takes equal space */
-  min-width: 300px; /* Prevents boxes from shrinking too much */
-}
-
-.details-box {
-  color: black;
-  border: 1px solid #ddd;
-  background-color: #f4f4f4;
-  padding: 15px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: 'Courier New', Courier, monospace;
-  min-height: 100px;
-  border-radius: 4px;
-}
-
-.found {
-  color: black;
-  border: 1px solid #aaa;
-}
-
-.found:hover {
-    background-color: #aaa;
-}
-
-.not-found {
-  color: red;
-}
-</style>
