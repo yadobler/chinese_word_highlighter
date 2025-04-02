@@ -112,6 +112,13 @@ textarea {
   min-width: 300px;
   text-align: justify;
 }
+.unknown-words-container, tr {
+  max-width: 80%;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 4px;
+}
 
 .details-box {
   border: 1px solid #ddd;
