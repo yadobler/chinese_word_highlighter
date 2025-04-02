@@ -180,6 +180,7 @@ Simplified,Chapter,Pinyin,Category,Meaning
 出租车,20,chūzūchē,N,taxi; cab
 刀,25,dāo,N,knife
 分(钱),10,fēn,M,"cent; Chinese monetary unit, worth one hundredth of one 块(kuài)"
+分钱,10,fēn,M,"cent; Chinese monetary unit, worth one hundredth of one 块(kuài)"
 分,11,fēn,M,minute
 刚,15,gāng,Adv,just; only a short while ago
 刚才,14,gāngcái,Adv,just now
@@ -334,7 +335,8 @@ Simplified,Chapter,Pinyin,Category,Meaning
 场,21,chǎng,M,"match; set; (measure word for sports, films, performances)"
 坏,25,huài,A,bad; broken
 坐,5,zuò,V,to sit
-块(钱),10,kuài(qián),M,"dollar; basic Chinese monetary unit, worth 10 毛(máo)"
+块钱,10,kuài(qián),M,"dollar; basic Chinese monetary unit, worth 10 毛(máo)"
+块,10,kuài,M,"dollar; basic Chinese monetary unit, worth 10 毛(máo)"
 型号,25,xínghào,N,model; type
 城,24,chéng,N,city; wall
 城市,15,chéngshì,N,city
@@ -557,7 +559,8 @@ Simplified,Chapter,Pinyin,Category,Meaning
 打算,23,dǎsuan,N,plan/to plan; to intend to
 打针,12,dǎzhēn,VO,have an injection
 扫,14,sǎo,V,sweep
-找(钱),10,zhǎo(qián),V,give change
+找钱,10,zhǎo(qián),V,give change
+找,10,zhǎo,V,give change
 找,13,zhǎo,V,look for
 技术,24,jìshù,N,technology; skill
 把,16,bǎ,Prep,(denoting the disposal of something)
@@ -687,7 +690,8 @@ Simplified,Chapter,Pinyin,Category,Meaning
 比,17,bǐ,Prep,than (indicating comparison)
 比赛,21,bǐsài,N,match/compete; have a match
 毕业,26,bìyè,VO,finish school; graduate
-毛(钱),10,máo(qián),M,"dime; Chinese monetary unit, worth one tenth of one 块(kuài)"
+毛,10,máo,M,"dime; Chinese monetary unit, worth one tenth of one 块(kuài)"
+毛钱,10,máo(qián),M,"dime; Chinese monetary unit, worth one tenth of one 块(kuài)"
 民乐,20,mínyuè,N,folk music played with traditional instruments
 民族,20,mínzú,N,nation; nationality
 气温,23,qìwēn,N,air temperature
@@ -731,7 +735,9 @@ Simplified,Chapter,Pinyin,Category,Meaning
 火,20,huǒ,N,fire; heat
 火车,20,huǒchē,N,train
 火锅,20,huǒguō,N,hotpot
-点(钟),11,diǎn(zhōng),M,o'clock
+日,9,rì,N,day
+点钟,11,diǎnzhōng,M,o'clock
+点,11,diǎn,M,o'clock
 点儿,11,(yì)diǎnr,Nu-M,a little bit
 烤鸭,9,kǎoyā,N,roast duck
 烧,12,shāo,V,burn

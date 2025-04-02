@@ -127,6 +127,7 @@ table, tr, td, th {
 
 table {
   border-collapse: collapse;
+  background-color: #ffffff;
 }
 
 .details-box {
