@@ -112,12 +112,21 @@ textarea {
   min-width: 300px;
   text-align: justify;
 }
-.unknown-words-container, tr {
+.unknown-words-container {
   max-width: 80%;
   border: 1px solid #ddd;
   padding: 15px;
   margin: 20px;
   border-radius: 4px;
+}
+
+table, tr, td, th {
+  border: 1px solid;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 .details-box {

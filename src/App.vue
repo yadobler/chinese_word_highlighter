@@ -112,10 +112,10 @@ const processScript = () => {
 
   while (i < scriptText.length) {
     let matchFound = false;
-    // if (!scriptText[i].trim()) {
-    //   i += 1;
-    //   continue;
-    // }
+    if (!scriptText[i].trim()) {
+      i += 1;
+      continue;
+    }
 
     for (const word of cedictWords) {
       if (scriptText.startsWith(word, i)) {
