@@ -1158,16 +1158,16 @@ Simplified,Chapter,Pinyin,Category,Meaning
 ＾,,,Punct,carot
 ｜,,,Punct,pipe
 \,,,Punct,backslash
-1,,,Num,one
-2,,,Num,two
-3,,,Num,three
-4,,,Num,four
-5,,,Num,five
-6,,,Num,six
-7,,,Num,seven
-8,,,Num,eight
-9,,,Num,nine
-0,,,Num,zero
+1,,1,Num,one
+2,,2,Num,two
+3,,3,Num,three
+4,,4,Num,four
+5,,5,Num,five
+6,,6,Num,six
+7,,7,Num,seven
+8,,8,Num,eight
+9,,9,Num,nine
+0,,0,Num,zero
 *,,,Punct,asterisk
 ％,,,Punct,percentage sign
 /,,,Punct,shash
