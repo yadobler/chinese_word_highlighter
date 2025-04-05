@@ -116,7 +116,7 @@ const processScript = () => {
   const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
   const results: ProcessedSegment[] = [];
   const unknownSet = new Set<string>();
- 
+
  function GetSegmentsInCsv(word: string): string[] | null {
   if (csvDictionary.value[word]) return [word]; // Direct match
 
@@ -137,12 +137,24 @@ const processScript = () => {
 
   let i = 0;
   while (i < scriptText.length) {
-    let matchFound = false;
+    if (scriptText[i] == '\n') {
+      results.push({ text: '\n', type: 'unknown' });
+      i += 1
+      continue;
+    }
+
+    if (scriptText[i].match(/[a-z]/i)) {
+      results.push({ text: scriptText[i], data: {pinyin: scriptText[i]}, type: 'found' });
+      i += 1
+      continue;
+    }
+
     if (!scriptText[i].trim()) {
       i += 1;
       continue;
     }
 
+    let matchFound = false;
     for (const word of cedictWords) {
     if (scriptText.startsWith(word, i)) {
       matchFound = true;
@@ -210,65 +222,91 @@ const showDetails = (segment: ProcessedSegment) => {
 
 </script>
 
-    <template>
-        <div class="app-container">
-            <h1>Chinese Word Highlighter</h1>
+<template>
+    <div class="app-container">
+        <h1>Chinese Word Highlighter</h1>
 
-            <div class="input-area">
-                <div class="textarea-container">
-                    <label for="csvInput">Dictionary</label>
-                    <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
-                </div>
-                <div class="textarea-container">
-                    <label for="scriptInput">Script Text</label>
-                    <textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
-                </div>
+        <!-- Input -->
+        <div class="input-area">
+            <div class="textarea-container">
+                <label for="csvInput">Dictionary</label>
+                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
             </div>
-
-            <button @click="processScript" class="process-button">Process Script</button>
-
-            <div class="output-container">
-                <div class="output-display">
-                    <span v-for="(segment, index) in processedOutput" 
-                          :key="index" 
-                                :class="segment.type" 
-                                        @click="showDetails(segment)">
-                                                {{ segment.text }}
-                    </span>
-                </div>
-
-                <div v-if="selectedSegmentDetails?.data" class="details-box">
-                    <div><h3>{{ selectedSegmentDetails.text }}</h3></div>
-                    <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
-                        <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
-                        <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
-                        <div><strong>Category:</strong> {{ entry.category }}</div>
-                        <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
-                        <hr v-if="idx < selectedSegmentDetails.data.length - 1">
-                    </div>
-                </div>
-            </div>
-
-            <div v-if="unknownWords.length > 0" class="unknown-words-table">
-                <h2>New Words</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Word</th>
-                            <th>Pinyin</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="word in unknownWords" :key="word.index">
-                            <td>{{ word.index }}</td>
-                            <td>{{ word.word }}</td>
-                            <td>{{ word.pinyin }}</td>
-                            <td>{{ word.meaning }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="textarea-container">
+                <label for="scriptInput">Script Text</label>
+                <textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
             </div>
         </div>
-    </template>
+
+        <!-- Button -->
+        <button @click="processScript" class="process-button">Process Script</button>
+
+        <!-- Output -->
+        <div class="output-container">
+
+            <!-- normal Highlighted text -->
+            <div class="output-display">
+                <template v-for="(segment, index) in processedOutput" :key="index">
+                    <span v-if="segment.text !== '\n'" :class="segment.type" @click="showDetails(segment)">
+                        {{ segment.text }}
+                    </span>
+                    <br v-else> <!-- Insert <br> for newlines -->
+                </template>
+            </div>
+
+            <!-- Info -->
+            <div v-if="selectedSegmentDetails?.data" class="details-box">
+                <div><h3>{{ selectedSegmentDetails.text }}</h3></div>
+                <div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
+                    <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+                    <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
+                    <div><strong>Category:</strong> {{ entry.category }}</div>
+                    <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
+                    <hr v-if="idx < selectedSegmentDetails.data.length - 1">
+                </div>
+            </div>
+
+            <!-- annotated -->
+            <div class="output-annotated">
+                <template v-for="(segment, index) in processedOutput" :key="index">
+                    <span v-if="segment.text !== '\n'">
+                        <ruby v-if="segment.data && segment.data.length">
+                            {{ segment.text }}
+                            <rt>{{ segment.data[0].pinyin }}</rt> <!-- Show pinyin above -->
+                        </ruby>
+                        <span v-else>{{ segment.text }}</span> <!-- Show normal text if no pinyin -->
+                    </span>
+                    <br v-else> <!-- Insert <br> for newlines -->
+                </template>
+            </div>
+
+        </div>
+
+
+        <!-- Table -->
+        <div v-if="unknownWords.length > 0" class="unknown-words-table">
+            <br>
+            <h2>New Words</h2>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Word</th>
+                        <th>Pinyin</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="word in unknownWords" :key="word.index">
+                        <td>{{ word.index }}</td>
+                        <td>{{ word.word }}</td>
+                        <td>{{ word.pinyin }}</td>
+                        <td>{{ word.meaning }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</template>

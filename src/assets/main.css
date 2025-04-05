@@ -1,5 +1,6 @@
 @import './base.css';
 
+
 a,
 .green {
   text-decoration: none;
@@ -101,17 +102,13 @@ textarea {
 .output-container {
   display: flex;
   flex-wrap: wrap;
+    flex-direction: column;
   gap: 20px;
   width: 100%;
   margin-top: 20px;
-  justify-content: center;
+  justify-content: start;
 }
 
-.output-display, .details-box {
-  flex: 1;
-  min-width: 300px;
-  text-align: justify;
-}
 .unknown-words-container {
   max-width: 80%;
   border: 1px solid #ddd;
@@ -123,11 +120,11 @@ textarea {
 table, tr, td, th {
   border: 1px solid;
   padding: 5px;
+  background-color: #ffffff;
 }
 
 table {
   border-collapse: collapse;
-  background-color: #ffffff;
 }
 
 .details-box {
@@ -137,17 +134,44 @@ table {
   border-radius: 4px;
 }
 
-.found {
+br {
+  display: block;
+}
+
+.output-annotated,
+.output-display, 
+.details-box {
+  align-items: flex-start; /* Align items to the top if they have different heights */
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: flex-start;  /* Align content to the left */
+  margin-top: 20px;
+  min-width: 300px;
+  gap: 1px;  /* Reduce gap slightly if needed */
+  padding: 10px;
+  text-align: justify;
+  white-space: normal; /* Ensures wrapping works */
+  width: 100%;
+}
+
+.output-display > .found {
   color: black;
   border: 1px solid #aaa;
   padding: 2px;
   cursor: pointer;
 }
 
-.found:hover {
+.output-display > .found:hover {
   background-color: #aaa;
+}
+
+.output-annotated > .found {
+  color: black;
 }
 
 .not-found {
   color: red;
 }
+
