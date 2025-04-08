@@ -337,7 +337,14 @@ const showDetails = (segment: ProcessedSegment) => {
                     <h3>{{ selectedSegmentDetails?.text }}</h3>
                 </div>
                 <div v-for="(entry, idx) in selectedSegmentDetails?.data" :key="idx">
-                    <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+                    <div><strong>Pinyin: </strong> 
+                            <template v-for="(tone, i) in entry.tones" :key="i">
+                                <span :class="'tone-' + tone">
+                                    {{ entry.pinyin[i] }}
+                                    <span> </span>
+                                </span>
+                            </template>
+                    </div>
                     <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
                     <div><strong>Category:</strong> {{ entry.category }}</div>
                     <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
