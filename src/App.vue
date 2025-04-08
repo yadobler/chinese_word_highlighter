@@ -55,7 +55,7 @@ const clearCsv = () => {
 };
 
 const loadDefaultCsv = async () => {
-    const csvResponse = await fetch('/chinese_word_highligher/default_values.csv');
+    const csvResponse = await fetch('/chinese_word_highlighter/default_values.csv');
     if (!csvResponse.ok) throw new Error("Failed to load CSV dictionary.");
     csvInput.value = await csvResponse.text();
     parseCsvData();
@@ -100,7 +100,7 @@ onMounted(async () => {
     try {
         
         // Load and decompress CC-CEDICT
-        const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
+        const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
         if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
         const compressedData = await dictResponse.arrayBuffer();
         const decompressedData = ungzip(new Uint8Array(compressedData));
@@ -113,7 +113,7 @@ onMounted(async () => {
             // try 2
             
             // Load and decompress CC-CEDICT
-            const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
+            const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
             if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
             ccCedict.value = JSON.parse(await dictResponse.text());
             // Load default CSV dictionary
