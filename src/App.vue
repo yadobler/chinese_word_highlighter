@@ -31,23 +31,23 @@ const newWords = ref<ProcessedSegment[]>([]);
 
 const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 
-const getToneNumber = (num_text: number, pinyin_tones: string) : { pinyin: string[], tones: number[] } => {
-    // const match = pinyin.match(/(?:\D)(\d\s|\d\$)/);
-    // return match ? match[0] : "5";
-    const tones = Array(num_text);
-    const pinyin = Array(num_text);
+const getToneNumber = (chars: string) : { pinyin: string[], tones: number[] } => {
+    return {pinyin: [], tones: []};
+    // const entry = ccCedict.value[chars]?.[0];
+    // return {pinyin: entry.pinyin || [], tones: entry.tones || []};
+    // const tones = Array(num_text);
+    // const pinyin = Array(num_text);
 
-    for(const word in pinyin_tones.split(" ")) {
-        const match = pinyin_tones.match(/(?:\D)(\d\s|\d\$)/);
-        if (match) {
-            tones.push(Number.parseInt(match[0]))
-            pinyin.push(word.slice(0, -1))
-        } else {
-            tones.push(5)
-            pinyin.push(word)
-        }
-    }
-    return {pinyin: pinyin, tones: tones};
+    // for(const word in pinyin_tones.split(" ")) {
+    //     if () {
+    //         tones.push(Number.parseInt(match[0]))
+    //         pinyin.push(word.slice(0, -1))
+    //     } else {
+    //         tones.push(5)
+    //         pinyin.push(word)
+    //     }
+    // }
+    // return {pinyin: pinyin, tones: tones};
 };
 
 const clearCsv = () => {
@@ -140,7 +140,7 @@ const parseCsvData = () => {
     parsedData.forEach((entry_raw) => {
         const simplified = entry_raw["Simplified"];
         if (simplified) {
-            const pinyin_tones = getToneNumber(simplified.length, entry_raw["Pinyin"].trim())
+            const pinyin_tones = getToneNumber(simplified);
             const entry = {
                 chapter: entry_raw["Chapter"].trim(),
                 pinyin: pinyin_tones["pinyin"],
@@ -151,7 +151,7 @@ const parseCsvData = () => {
 
             if (!newDictionary[simplified]) {
                 newDictionary[simplified] = [];
-            }
+            };
             newDictionary[simplified].push(entry);
         }
     });
@@ -174,7 +174,7 @@ const processScript = () => {
     const newWordsSet = new Set<string>();
 
     function GetPhrasesInCsv(word: string): string[] | null {
-        if (csvDictionary.value[word]) return [word]; // Direct match
+        if (csvDictionary.value[word]?.[0]) return [word]; // Direct match
 
         // Generate all possible segmentations
         const validSegments: string[] = [];
@@ -229,7 +229,13 @@ const processScript = () => {
                         results.push({
                             text: phrase,
                             type: 'found',
-                            data: csvDictionary.value[phrase]
+                            data: [{
+                                pinyin: ccCedict.value[phrase]?.[0].pinyin,
+                                tones: ccCedict.value[phrase]?.[0].tones,
+                                meaning: csvDictionary.value[phrase]?.[0].meaning,
+                                chapter: csvDictionary.value[phrase]?.[0].chapter,
+                                category: csvDictionary.value[phrase]?.[0].category
+                            }]
                         });
                     }
                 } else {
@@ -347,10 +353,11 @@ const showDetails = (segment: ProcessedSegment) => {
                         <span v-if="segment.text !== '\n'">
                             <template v-if="segment.data && segment.data.length">
                                 <ruby v-for="i in segment.text.length" :class="'tone-' + segment.data[0].tones[i - 1]">
-                                        {{ segment.text[i - 1] }} <!-- Display the character -->
+                                        {{ segment.text[i - 1] }}
                                         <rt>{{ segment.data[0].pinyin[i - 1] }}</rt>
                                 </ruby>
                             </template>
+                        <span>|</span>
                         </span>
                         <span v-else>{{ segment.text }}</span>
                         <br v-else>
@@ -385,7 +392,14 @@ const showDetails = (segment: ProcessedSegment) => {
                                 </span>
                             </template>
                         </td>
-                        <td>{{ word.data?.[0].pinyin }}</td>
+                        <td>
+                            <template v-for="(tone, i) in word.data?.[0].tones" :key="i">
+                                <span :class="'tone-' + tone">
+                                    {{ word.data?.[0].pinyin[i]}} 
+                                    <span> </span>
+                                </span>
+                            </template>
+                        </td>
                         <td>{{ word.data?.[0].meaning }}</td>
                     </tr>
                 </tbody>
