@@ -14,6 +14,8 @@ PinyinToneMark = {
 def decode_pinyin(s):
     """Converts numbered Pinyin to tone-marked Pinyin and appends the tone number back."""
     s = s.replace(" : ", " ").lower()
+    if s == ":":
+         return ""
     r = ""
     t = ""
     tone_number = "0"
@@ -34,11 +36,9 @@ def decode_pinyin(s):
                         vowel_seq = m.group(0)
                         index = PinyinToneMark[0].index(vowel_seq[0])  # Get first vowel match
                         t = t[:m.start(0)] + PinyinToneMark[tone][index] + t[m.end(0):]
-            r += t + tone_number  # Append tone number
+            r += t
             t = ""
             tone_number = "0"  # Reset tone number
-
-    r
     return r
 
 def parse_cedict_line(line):
@@ -58,11 +58,12 @@ def parse_cedict_line(line):
         return None  # Ignore invalid lines
 
     simplified = characters[1]
-    raw_pinyin = char_and_pinyin[1].rstrip("]")
+    raw_pinyin = char_and_pinyin[1].rstrip("]").replace("]","").rstrip().split(" ")
 
     return {
         "simplified": simplified,
-        "pinyin": decode_pinyin(raw_pinyin),
+        "pinyin": [decode_pinyin(x) for x in raw_pinyin],
+        "tones": [int(x[-1]) if (x[-1].isdigit() and len(x) > 1) else 5 for x in raw_pinyin],
         "meaning": english
     }
 
@@ -79,7 +80,8 @@ def preprocess_cedict(input_file, output_file):
                     dictionary[simplified] = []
                 dictionary[simplified].append({
                     "pinyin": entry["pinyin"],
-                    "meaning": entry["meaning"]
+                    "meaning": entry["meaning"],
+                    "tones": entry["tones"]
                 })
 
     # Compress and save as a JSON file

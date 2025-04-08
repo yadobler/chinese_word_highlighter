@@ -5,9 +5,9 @@ import Papa from 'papaparse';
 
 // --- Types ---
 type RawSegment = { 
-    pinyin: string;
-    meaning: string;
+    pinyin: string[];
     tones: number[];
+    meaning: string;
     chapter?: string;
     category?: string;
 };
@@ -31,9 +31,23 @@ const newWords = ref<ProcessedSegment[]>([]);
 
 const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 
-const getToneNumber = (pinyin: string) => {
-    const match = pinyin.match(/(?:\D)(\d\s|\d\$)/);
-    return match ? match[0] : "5";
+const getToneNumber = (num_text: number, pinyin_tones: string) : { pinyin: string[], tones: number[] } => {
+    // const match = pinyin.match(/(?:\D)(\d\s|\d\$)/);
+    // return match ? match[0] : "5";
+    const tones = Array(num_text);
+    const pinyin = Array(num_text);
+
+    for(const word in pinyin_tones.split(" ")) {
+        const match = pinyin_tones.match(/(?:\D)(\d\s|\d\$)/);
+        if (match) {
+            tones.push(Number.parseInt(match[0]))
+            pinyin.push(word.slice(0, -1))
+        } else {
+            tones.push(5)
+            pinyin.push(word)
+        }
+    }
+    return {pinyin: pinyin, tones: tones};
 };
 
 const clearCsv = () => {
@@ -84,20 +98,27 @@ const importCsv = async () => {
 // --- Lifecycle ---
 onMounted(async () => {
     try {
-        // Load default CSV dictionary
-        await loadDefaultCsv();
+        
         // Load and decompress CC-CEDICT
         const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
         if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
         const compressedData = await dictResponse.arrayBuffer();
         const decompressedData = ungzip(new Uint8Array(compressedData));
         ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
+        // Load default CSV dictionary
+        await loadDefaultCsv();
     } catch (error) {
         console.error("Error loading dictionaries:", error);
         try {
+            // try 2
+            
+            // Load and decompress CC-CEDICT
             const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
             if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
             ccCedict.value = JSON.parse(await dictResponse.text());
+            // Load default CSV dictionary
+            await loadDefaultCsv();
+            
         } catch (error) {
             console.error("Error loading dictionaries (backup):", error);
         }
@@ -119,12 +140,13 @@ const parseCsvData = () => {
     parsedData.forEach((entry_raw) => {
         const simplified = entry_raw["Simplified"];
         if (simplified) {
+            const pinyin_tones = getToneNumber(simplified.length, entry_raw["Pinyin"].trim())
             const entry = {
                 chapter: entry_raw["Chapter"].trim(),
-                pinyin: entry_raw["Pinyin"].trim(),
+                pinyin: pinyin_tones["pinyin"],
                 category: entry_raw["Category"].trim(),
                 meaning: entry_raw["Meaning"].trim(),
-                tones: Array(simplified.length).fill(5)
+                tones: pinyin_tones["tones"]
             };
 
             if (!newDictionary[simplified]) {
@@ -181,7 +203,7 @@ const processScript = () => {
                 text: scriptText[i], 
                 type: 'found',
                 data: [{
-                    pinyin: scriptText[i],
+                    pinyin: [scriptText[i]],
                     meaning: scriptText[i],
                     tones: Array(1).fill(5),
                 }], 
@@ -273,7 +295,8 @@ const showDetails = (segment: ProcessedSegment) => {
         <div class="input-area">
             <div class="textarea-container">
                 <label for="csvInput">Dictionary</label>
-                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
+                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..."
+                    @change="parseCsvData"></textarea>
             </div>
             <div class="textarea-container">
                 <label for="scriptInput">Script Text</label>
@@ -293,7 +316,7 @@ const showDetails = (segment: ProcessedSegment) => {
         <div class="output-container">
 
             <!-- normal Highlighted text -->
-``           <div v-if="processedOutput.values.length > 0" class="output-display">
+            <div v-if="processedOutput.length > 0" class="output-display">
                 <template v-for="(segment, index) in processedOutput" :key="index">
                     <span v-if="segment.text !== '\n'" :class="segment.type" @click="showDetails(segment)">
                         {{ segment.text }}
@@ -304,7 +327,9 @@ const showDetails = (segment: ProcessedSegment) => {
 
             <!-- Info -->
             <div v-if="selectedSegmentDetails?.data" class="details-box">
-                <div><h3>{{ selectedSegmentDetails?.text }}</h3></div>
+                <div>
+                    <h3>{{ selectedSegmentDetails?.text }}</h3>
+                </div>
                 <div v-for="(entry, idx) in selectedSegmentDetails?.data" :key="idx">
                     <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
                     <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
@@ -320,14 +345,14 @@ const showDetails = (segment: ProcessedSegment) => {
                 <div class="output-annotated">
                     <template v-for="(segment, index) in processedOutput" :key="index">
                         <span v-if="segment.text !== '\n'">
-                            <ruby v-if="segment.data && segment.data.length">
-                                {{ segment.text }}
-                                <rt :class="'tone-' + getToneNumber(segment.data[0].pinyin)">
-                                    {{ segment.data[0].pinyin.replace(/\d$/, '') }}
-                                </rt>
-                            </ruby>
-                            <span v-else>{{ segment.text }}</span>
+                            <template v-if="segment.data && segment.data.length">
+                                <ruby v-for="i in segment.text.length" :class="'tone-' + segment.data[0].tones[i - 1]">
+                                        {{ segment.text[i - 1] }} <!-- Display the character -->
+                                        <rt>{{ segment.data[0].pinyin[i - 1] }}</rt>
+                                </ruby>
+                            </template>
                         </span>
+                        <span v-else>{{ segment.text }}</span>
                         <br v-else>
                     </template>
                 </div>
@@ -353,7 +378,13 @@ const showDetails = (segment: ProcessedSegment) => {
                 <tbody>
                     <tr v-for="(word, index) in newWords" :key="index">
                         <td>{{ index + 1 }}</td>
-                        <td>{{ word.text }}</td>
+                        <td>
+                            <template v-for="(tone, i) in word.data?.[0].tones" :key="i">
+                                <span :class="'tone-' + tone">
+                                    {{ word.text.substring(i, i + 1) }}
+                                </span>
+                            </template>
+                        </td>
                         <td>{{ word.data?.[0].pinyin }}</td>
                         <td>{{ word.data?.[0].meaning }}</td>
                     </tr>
