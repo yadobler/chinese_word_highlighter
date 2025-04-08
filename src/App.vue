@@ -4,77 +4,73 @@ import { ungzip } from 'pako'
 import Papa from 'papaparse';
 
 // --- Types ---
+type RawSegment = { 
+    pinyin: string;
+    meaning: string;
+    tones: number[];
+    chapter?: string;
+    category?: string;
+};
+
 type ProcessedSegment = {
     text: string;
     type: 'found' | 'not-found' | 'unknown';
-    data?: {
-        chapter?: string;
-        pinyin: string;
-        category?: string;
-        meaning: string;
-        tone?: number;
-    }[];
-};
+    data?: RawSegment[];
+}
 
-type Dictionary = Record<string, { 
-    pinyin: string; 
-    meaning: string; 
-}[]>;
-
-type CsvDictionary = Record<string, { 
-    chapter: string;
-    pinyin: string;
-    category: string;
-    meaning: string;
-}[]>;
-
-type UnknownWord = {
-    index: number;
-    word: string;
-    pinyin?: string;
-    meaning?: string;
-    tone?: number;
-};
 
 // --- State ---
 const csvInput = ref('');
 const scriptInput = ref('');
 
-const ccCedict = ref<Dictionary>({});
-const csvDictionary = ref<CsvDictionary>({});
+const ccCedict = ref<Record<string, RawSegment[]>>({});
+const csvDictionary = ref<Record<string, RawSegment[]>>({});
+
 const processedOutput = ref<ProcessedSegment[]>([]);
+const newWords = ref<ProcessedSegment[]>([]);
 
 const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
-const unknownWords = ref<UnknownWord[]>([]);
 
-const getToneNumber = (pinyin) => {
-    const match = pinyin.match(/\d$/);
+const getToneNumber = (pinyin: string) => {
+    const match = pinyin.match(/(?:\D)(\d\s|\d\$)/);
     return match ? match[0] : "5";
-}
-
-const loadDefaultCsv = async () => {
-        const csvResponse = await fetch('/chinese_word_highligher/default_values.csv');
-        if (!csvResponse.ok) throw new Error("Failed to load CSV dictionary.");
-        csvInput.value = await csvResponse.text();
-        parseCsvData();
 };
 
-const importCsv = (event) => {
-      try {
-      const file = event.target.files[0];
-      if (!file) throw new Error("Unable to upload CSV File.");
-      
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        this.csvInput = e.target.result;
-      };
-      reader.readAsText(file);
+const clearCsv = () => {
+    csvInput.value = '';
+};
 
-        parseCsvData();
+const loadDefaultCsv = async () => {
+    const csvResponse = await fetch('/chinese_word_highligher/default_values.csv');
+    if (!csvResponse.ok) throw new Error("Failed to load CSV dictionary.");
+    csvInput.value = await csvResponse.text();
+    parseCsvData();
+};
+
+const importCsv = async () => {
+    try {
+        const fileHandle = await (window as any).showOpenFilePicker({
+            types: [{ description: "CSV Files", accept: { "text/csv": [".csv"] } }],
+            multiple: false,
+        });
+
+        if (!fileHandle || fileHandle.length === 0) {
+            throw new Error("No file selected.");
+        }
+
+        const file = await fileHandle[0].getFile();
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            csvInput.value = e.target?.result?.toString() || '';
+            parseCsvData();
+        };
+
+        reader.readAsText(file);
     } catch (error) {
-        alert("Error parsing CSV: \n" + error)
+        alert("Error selecting or parsing CSV:\n" + error);
     }
-}
+};
 
 // --- Lifecycle ---
 onMounted(async () => {
@@ -85,9 +81,8 @@ onMounted(async () => {
         const dictResponse = await fetch('/chinese_word_highligher/cedict.json.gz');
         if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
         const compressedData = await dictResponse.arrayBuffer();
-        const decompressedData = await ungzip(new Uint8Array(compressedData));
+        const decompressedData = ungzip(new Uint8Array(compressedData));
         ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
-
     } catch (error) {
         console.error("Error loading dictionaries:", error);
         try {
@@ -110,7 +105,8 @@ const parseCsvData = () => {
     });
 
     const parsedData = result.data as Record<string, string>[];
-    const newDictionary: CsvDictionary = {};
+    const newDictionary: Record<string, RawSegment[]> = {};
+
     parsedData.forEach((entry_raw) => {
         const simplified = entry_raw["Simplified"];
         if (simplified) {
@@ -118,8 +114,10 @@ const parseCsvData = () => {
                 chapter: entry_raw["Chapter"].trim(),
                 pinyin: entry_raw["Pinyin"].trim(),
                 category: entry_raw["Category"].trim(),
-                meaning: entry_raw["Meaning"].trim()
+                meaning: entry_raw["Meaning"].trim(),
+                tones: Array(simplified.length).fill(5)
             };
+
             if (!newDictionary[simplified]) {
                 newDictionary[simplified] = [];
             }
@@ -142,9 +140,9 @@ const processScript = () => {
     const scriptText = scriptInput.value;
     const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
     const results: ProcessedSegment[] = [];
-    const unknownSet = new Set<string>();
+    const newWordsSet = new Set<string>();
 
-    function GetSegmentsInCsv(word: string): string[] | null {
+    function GetPhrasesInCsv(word: string): string[] | null {
         if (csvDictionary.value[word]) return [word]; // Direct match
 
         // Generate all possible segmentations
@@ -158,7 +156,6 @@ const processScript = () => {
                 return validSegments;
             }
         }
-
         return null; // No valid segmentation found
     }
 
@@ -171,7 +168,15 @@ const processScript = () => {
         }
 
         if (scriptText[i].match(/[a-z]/i)) {
-            results.push({ text: scriptText[i], data: {pinyin: scriptText[i]}, type: 'found' });
+            results.push({ 
+                text: scriptText[i], 
+                type: 'found',
+                data: [{
+                    pinyin: scriptText[i],
+                    meaning: scriptText[i],
+                    tones: Array(1).fill(5),
+                }], 
+            });
             i += 1
             continue;
         }
@@ -185,15 +190,15 @@ const processScript = () => {
         for (const word of cedictWords) {
             if (scriptText.startsWith(word, i)) {
                 matchFound = true;
-                const validSegments = GetSegmentsInCsv(word);
+                const ValidPhrases = GetPhrasesInCsv(word);
 
-                if (validSegments) {
+                if (ValidPhrases) {
                     // Push each segment separately
-                    for (const segment of validSegments) {
+                    for (const phrase of ValidPhrases) {
                         results.push({
-                            text: segment,
+                            text: phrase,
                             type: 'found',
-                            data: csvDictionary.value[segment]
+                            data: csvDictionary.value[phrase]
                         });
                     }
                 } else {
@@ -202,7 +207,7 @@ const processScript = () => {
                         type: 'not-found',
                         data: ccCedict.value[word]
                     });
-                    unknownSet.add(word); // Collect "not-found" words
+                    newWordsSet.add(word); // Collect "not-found" words
                 }
 
                 i += word.length;
@@ -231,12 +236,14 @@ const processScript = () => {
     }
 
     processedOutput.value = results;
-
-    unknownWords.value = Array.from(unknownSet).map((word, index) => ({
-        index: index + 1,
-        word: word,
-        pinyin: ccCedict.value[word]?.[0]?.pinyin || "",
-        meaning: ccCedict.value[word]?.[0]?.meaning || ""
+    newWords.value =  Array.from(newWordsSet).map((word: string) => ({
+        text: word,
+        type: 'not-found',
+        data: ccCedict.value[word] || [{
+            tones: Array(word.length).fill(5),
+            pinyin: "",
+            meaning: ""
+        }]
     }));
 };
 
@@ -250,100 +257,100 @@ const showDetails = (segment: ProcessedSegment) => {
 </script>
 
 <template>
-<div class="app-container">
-<h1>Chinese Word Highlighter</h1>
+    <div class="app-container">
+        <h1>Chinese Word Highlighter</h1>
 
-<!-- Input -->
-<div class="input-area">
-<div class="textarea-container">
-<label for="csvInput">Dictionary</label>
-<textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
-</div>
-<div class="textarea-container">
-<label for="scriptInput">Script Text</label>
-<textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
-</div>
-</div>
+        <!-- Input -->
+        <div class="input-area">
+            <div class="textarea-container">
+                <label for="csvInput">Dictionary</label>
+                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..." @change="parseCsvData"></textarea>
+            </div>
+            <div class="textarea-container">
+                <label for="scriptInput">Script Text</label>
+                <textarea id="scriptInput" v-model="scriptInput" rows="10" placeholder="Paste text..."></textarea>
+            </div>
+        </div>
 
-<!-- Button -->
-<div class="button-panel">
-<button @click="clearCsvInput">Clear CSV Input</button>
-<button @click="importCsv">Import CSV</button>
-<button @click="defaultCsv">Default CSV</button>
-<button @click="processScript">Process Script</button>
-</div>
+        <!-- Button -->
+        <div class="button-panel">
+            <button @click="clearCsv">Clear CSV Input</button>
+            <button @click="importCsv">Import CSV</button>
+            <button @click="loadDefaultCsv">Default CSV</button>
+            <button @click="processScript">Process Script</button>
+        </div>
 
-<!-- Output -->
-<div class="output-container">
+        <!-- Output -->
+        <div class="output-container">
 
-<!-- normal Highlighted text -->
-<div class="output-display">
-<template v-for="(segment, index) in processedOutput" :key="index">
-<span v-if="segment.text !== '\n'" :class="segment.type" @click="showDetails(segment)">
-{{ segment.text }}
-</span>
-<br v-else> <!-- Insert <br> for newlines -->
-</template>
-</div>
+            <!-- normal Highlighted text -->
+``           <div v-if="processedOutput.values.length > 0" class="output-display">
+                <template v-for="(segment, index) in processedOutput" :key="index">
+                    <span v-if="segment.text !== '\n'" :class="segment.type" @click="showDetails(segment)">
+                        {{ segment.text }}
+                    </span>
+                    <br v-else> <!-- Insert <br> for newlines -->
+                </template>
+            </div>
 
-<!-- Info -->
-<div v-if="selectedSegmentDetails?.data" class="details-box">
-<div><h3>{{ selectedSegmentDetails.text }}</h3></div>
-<div v-for="(entry, idx) in selectedSegmentDetails.data" :key="idx">
-<div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
-<div><strong>Chapter:</strong> {{ entry.chapter }}</div>
-<div><strong>Category:</strong> {{ entry.category }}</div>
-<div><strong>Meaning:</strong> {{ entry.meaning }}</div>
-<hr v-if="idx < selectedSegmentDetails.data.length - 1">
-</div>
-</div>
+            <!-- Info -->
+            <div v-if="selectedSegmentDetails?.data" class="details-box">
+                <div><h3>{{ selectedSegmentDetails?.text }}</h3></div>
+                <div v-for="(entry, idx) in selectedSegmentDetails?.data" :key="idx">
+                    <div><strong>Pinyin:</strong> {{ entry.pinyin }}</div>
+                    <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
+                    <div><strong>Category:</strong> {{ entry.category }}</div>
+                    <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
+                    <hr v-if="idx < selectedSegmentDetails?.data.length - 1">
+                </div>
+            </div>
 
-<!-- Annotated Output -->
-<div class="output-container">
-<label for="output-annotated">Annotated</label>
-<div class="output-annotated">
-<template v-for="(segment, index) in processedOutput" :key="index">
-<span v-if="segment.text !== '\n'">
-<ruby v-if="segment.data && segment.data.length">
-{{ segment.text }}
-<rt :class="'tone-' + getToneNumber(segment.data[0].pinyin)">
-{{ segment.data[0].pinyin.replace(/\d$/, '') }}
-</rt>
-</ruby>
-<span v-else>{{ segment.text }}</span>
-</span>
-<br v-else>
-</template>
-</div>
-</div>
+            <!-- Annotated Output -->
+            <div v-if="processedOutput.length > 0" class="output-container">
+                <label for="output-annotated">Annotated</label>
+                <div class="output-annotated">
+                    <template v-for="(segment, index) in processedOutput" :key="index">
+                        <span v-if="segment.text !== '\n'">
+                            <ruby v-if="segment.data && segment.data.length">
+                                {{ segment.text }}
+                                <rt :class="'tone-' + getToneNumber(segment.data[0].pinyin)">
+                                    {{ segment.data[0].pinyin.replace(/\d$/, '') }}
+                                </rt>
+                            </ruby>
+                            <span v-else>{{ segment.text }}</span>
+                        </span>
+                        <br v-else>
+                    </template>
+                </div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- New Words List -->
-<div v-if="unknownWords.length > 0" class="new-words-container">
-<br>
-<label>New Words List</label>
-<br>
-<table>
-<thead>
-<tr>
-<th>Index</th>
-<th>Word</th>
-<th>Pinyin</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr v-for="word in unknownWords" :key="word.index">
-<td>{{ word.index }}</td>
-<td>{{ word.word }}</td>
-<td>{{ word.pinyin }}</td>
-<td>{{ word.meaning }}</td>
-</tr>
-</tbody>
-</table>
-</div>
+        <!-- New Words List -->
+        <div v-if="newWords.length > 0" class="new-words-container">
+            <br>
+            <label>New Words List</label>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Word</th>
+                        <th>Pinyin</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(word, index) in newWords" :key="index">
+                        <td>{{ index + 1 }}</td>
+                        <td>{{ word.text }}</td>
+                        <td>{{ word.data?.[0].pinyin }}</td>
+                        <td>{{ word.data?.[0].meaning }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-</div>
+    </div>
 </template>

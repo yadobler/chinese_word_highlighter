@@ -38,7 +38,7 @@ def decode_pinyin(s):
             t = ""
             tone_number = "0"  # Reset tone number
 
-    r += t
+    r
     return r
 
 def parse_cedict_line(line):
