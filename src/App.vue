@@ -49,28 +49,37 @@ const loadDefaultCsv = async () => {
 
 const importCsv = async () => {
     try {
-        const fileHandle = await (window as any).showOpenFilePicker({
-            types: [{ description: "CSV Files", accept: { "text/csv": [".csv"] } }],
-            multiple: false,
+        // Create an invisible file input element
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = ".csv, text/csv";
+        
+        // Wait for the user to select a file
+        input.addEventListener("change", async (event) => {
+            const target = event.target as HTMLInputElement;
+            if (!target.files || target.files.length === 0) {
+                alert("No file selected.");
+                return;
+            }
+
+            const file = target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                csvInput.value = e.target?.result?.toString() || "";
+                parseCsvData();
+            };
+
+            reader.readAsText(file);
         });
 
-        if (!fileHandle || fileHandle.length === 0) {
-            throw new Error("No file selected.");
-        }
-
-        const file = await fileHandle[0].getFile();
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            csvInput.value = e.target?.result?.toString() || '';
-            parseCsvData();
-        };
-
-        reader.readAsText(file);
+        // Trigger the file selection dialog
+        input.click();
     } catch (error) {
         alert("Error selecting or parsing CSV:\n" + error);
     }
 };
+
 
 // --- Lifecycle ---
 onMounted(async () => {
