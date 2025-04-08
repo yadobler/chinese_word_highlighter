@@ -377,8 +377,8 @@ const showDetails = (segment: ProcessedSegment) => {
 
         <!-- New Words List -->
         <div v-if="newWords.length > 0" class="new-words-container">
+                <label>New Words List</label>
             <br>
-            <label>New Words List</label>
             <br>
             <table>
                 <thead>
