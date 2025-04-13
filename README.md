@@ -2,6 +2,13 @@
 
 A quick project I threw together with some vibe coding, courtesy of Gemini 2.5 pro experimental, in like an hour. This is actually for my Chinese exam, because we all know the programmer's way of dealing with an issue is not to actually deal with it, but to waste 5x time trying to automate it.
 
+## Credits
+
+- CC-Cedict https://www.mdbg.net/chinese/dictionary?page=cedict
+- ChatGPT 4
+- Gemini 2.5 Pro
+- New Practical Chinese Reader textbook
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
