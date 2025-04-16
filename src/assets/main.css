@@ -145,6 +145,11 @@ br {
     color: black;
 }
 
+rt{
+    padding-top: 10px;
+    font-size: 0.8rem;
+}
+
 .not-found {
     color: red;
 }
@@ -187,7 +192,7 @@ br {
 }
 
 .tone-3 {
-    color: darkorange;
+    color: #ee9900;
 }
 
 .tone-4 {
