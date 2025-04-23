@@ -301,7 +301,7 @@ const showDetails = (segment: ProcessedSegment) => {
         <div class="input-area">
             <div class="textarea-container">
                 <label for="csvInput">Dictionary</label>
-                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Paste CSV data..."
+                <textarea id="csvInput" v-model="csvInput" rows="10" placeholder="Default CSV data is loading..."
                     @change="parseCsvData"></textarea>
             </div>
             <div class="textarea-container">
