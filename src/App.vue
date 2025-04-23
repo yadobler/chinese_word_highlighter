@@ -356,18 +356,23 @@ const showDetails = (segment: ProcessedSegment) => {
             <div v-if="processedOutput.length > 0" class="output-container">
                 <label for="output-annotated">Annotated</label>
                 <div class="output-annotated">
-                    <template v-for="(segment, index) in processedOutput" :key="index">
-                        <span v-if="segment.text !== '\n'">
+                    <template v-for="(segment, segmentIndex) in processedOutput" :key="segmentIndex">
+                        <br v-if="segment.text === '\n'">
+                        <span v-else-if="segment.text !== '\n'">
                             <template v-if="segment.data && segment.data.length">
-                                <ruby v-for="i in segment.text.length" :class="'tone-' + segment.data[0].tones[i - 1]">
-                                        {{ segment.text[i - 1] }}
-                                        <rt>{{ segment.data[0].pinyin[i - 1] }}</rt>
+                                <ruby v-for="(char, i) in segment.text.split('')" 
+                                    :key="i" 
+                                    :class="'tone-' + segment.data[0].tones[i]"> 
+                                    {{ char }}
+                                    <rt>{{ segment.data[0].pinyin[i] }}</rt> 
                                 </ruby>
                             </template>
-                        <span>|</span>
+                            <template v-else>
+                                <span>{{ segment.text }}</span>
+                            </template>
+                            <span>|</span>
                         </span>
                         <span v-else>{{ segment.text }}</span>
-                        <br v-else>
                     </template>
                 </div>
             </div>

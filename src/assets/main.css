@@ -220,3 +220,15 @@ table {
 .new-words-container {
     padding: 15px;
 }
+
+.clickable-segment {
+    cursor: pointer;
+    /* Optional: visual feedback on hover */
+    /* background-color: lightyellow; */ 
+}
+
+.multi-pronunciation {
+   /* Style characters that have multiple options */
+   text-decoration: underline dotted; 
+   /* or background-color: lightblue; */
+}
