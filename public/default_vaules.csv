@@ -1,0 +1,71 @@
+Simplified,Chapter,Pinyin,Category,Meaning
+一,,yī1,Num,one
+七,,qī1,Num,seven
+三,,sān1,Num,three
+九,,jiǔ1,Num,nine
+二,,èr1,Num,two
+五,,wǔ1,Num,five
+八,,bā1,Num,eight
+六,,liù1,Num,six
+十,,shí1,Num,ten
+千,,qiān1,Num,thousand
+四,,sì1,Num,four
+百,,bǎi1,Num,hundred
+，,,,Punct,comma
+、,,,Punct,enumeration comma
+·,,,Punct,name separating mark
+「,,,Punct,quotation marks
+」,,,Punct,quotation marks
+﹁,,,Punct,quotation marks
+﹂,,,Punct,quotation marks
+“,,,Punct,quotation marks
+”,,,Punct,quotation marks
+《,,,Punct,title opening brackets
+》,,,Punct,title closing brackets
+〈,,,Punct,title opening brackets
+〉,,,Punct,title closing brackets
+…,,,Punct,elipsis dots
+。,,,Punct,full stop
+-,,,Punct,hyphen
+：,,,Punct,colon
+；,,,Punct,semicolon
+",",,,Punct,comma
+.,,,Punct,period
+:,,,Punct,colon
+？,,,Punct,question mark
+！,,,Punct,exclaimation mark
+—,,,Punct,em-dash
+＞,,,Punct,idk what is this
+＜,,,Punct,idk what is this
+｝,,,Punct,closing curly brackets
+｛,,,Punct,opening curly brackets
+］,,,Punct,closing square brackets
+［,,,Punct,opening square brackets
+‘,,,Punct,quotation marks
+’,,,Punct,quotation marks
+～,,,Punct,em-tilde
+＾,,,Punct,carot
+｜,,,Punct,pipe
+\,,,Punct,backslash
+1,,,Num,one
+2,,,Num,two
+3,,,Num,three
+4,,,Num,four
+5,,,Num,five
+6,,,Num,six
+7,,,Num,seven
+8,,,Num,eight
+9,,,Num,nine
+0,,,Num,zero
+*,,,Punct,asterisk
+％,,,Punct,percentage sign
+/,,,Punct,shash
++,,,Punct,plus
+=,,,Punct,equals
+）,,,Punct,closing brackets
+（,,,Punct,opening brackets
+@,,,Punct,at sign
+＃,,,Punct,hash; pound
+£,,,Punct,pound
+＆,,,Punct,and
+_,,,Punct,underscore
