@@ -4,7 +4,7 @@ import { ungzip } from 'pako'
 import Papa from 'papaparse';
 
 // --- Types ---
-type RawSegment = { 
+type RawSegment = {
     pinyin: string[];
     tones: number[];
     meaning: string;
@@ -16,6 +16,7 @@ type ProcessedSegment = {
     text: string;
     type: 'found' | 'not-found' | 'unknown';
     data?: RawSegment[];
+    activeDefinitionIndex?: number;
 }
 
 
@@ -38,8 +39,7 @@ const useCh8_14 = ref(true);
 const useCh15_20 = ref(true);
 const useCh21_26 = ref(true);
 
-
-// --- Functions ---
+// --- Helper Functions ---
 function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number[] } {
 
     const pinyin_segments = pinyin_tones.split(" ");
@@ -48,7 +48,7 @@ function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number
     const pinyin = Array(0);
 
     pinyin_segments.forEach((word) => {
-        const match = word.match('([^\d]*)([0-5])')
+        const match = word.match('([^0-9]*)([0-5])')
         if (match) {
             tones.push(Number.parseInt(match[2]))
             pinyin.push(match[1])
@@ -60,6 +60,24 @@ function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number
     return {pinyin: pinyin, tones: tones};
 }
 
+function GetPhrasesInCsv(word: string): string[] | null {
+    if (csvDictionary.value[word]?.[0]) return [word]; // Direct match
+
+    // Generate all possible segmentations
+    const validSegments: string[] = [];
+    for (let i = 1; i < word.length; i++) {
+        const left = word.substring(0, i);
+        const right = word.substring(i);
+
+        if (csvDictionary.value[left] && csvDictionary.value[right]) {
+            validSegments.push(left, right);
+            return validSegments;
+        }
+    }
+    return null; // No valid segmentation found
+}
+
+// --- Functions ---
 const clearCsv = () => {
     csvInput.value = '';
     csvDictionary.value = {};
@@ -167,6 +185,15 @@ function parseCsvData() {
     console.log("CSV Dictionary populated:", csvDictionary.value);
 };
 
+function cycleDefinition(segment: ProcessedSegment) {
+    if (segment.data && segment.data.length > 1) {
+        const currentIndex = segment.activeDefinitionIndex ?? 0;
+        const nextIndex = (currentIndex + 1) % segment.data.length;
+        segment.activeDefinitionIndex = nextIndex;
+        console.log(`Cycled definition for "${segment.text}" to index: ${segment.activeDefinitionIndex}`);
+    }
+}
+
 // --- Process Script ---
 async function processScript() {
     if (!Object.keys(ccCedict.value).length) {
@@ -183,22 +210,6 @@ async function processScript() {
     const results: ProcessedSegment[] = [];
     const newWordsSet = new Set<string>();
 
-    function GetPhrasesInCsv(word: string): string[] | null {
-        if (csvDictionary.value[word]?.[0]) return [word]; // Direct match
-
-        // Generate all possible segmentations
-        const validSegments: string[] = [];
-        for (let i = 1; i < word.length; i++) {
-            const left = word.substring(0, i);
-            const right = word.substring(i);
-
-            if (csvDictionary.value[left] && csvDictionary.value[right]) {
-                validSegments.push(left, right);
-                return validSegments;
-            }
-        }
-        return null; // No valid segmentation found
-    }
 
     let i = 0;
     while (i < scriptText.length) {
@@ -212,11 +223,12 @@ async function processScript() {
             results.push({ 
                 text: scriptText[i], 
                 type: 'found',
+                activeDefinitionIndex: undefined,
                 data: [{
                     pinyin: [scriptText[i]],
                     meaning: scriptText[i],
                     tones: Array(1).fill(5),
-                }], 
+                }]
             });
             i += 1
             continue;
@@ -232,31 +244,27 @@ async function processScript() {
             if (scriptText.startsWith(word, i)) {
                 matchFound = true;
                 const ValidPhrases = GetPhrasesInCsv(word);
-
                 if (ValidPhrases) {
                     // Push each segment separately
                     for (const phrase of ValidPhrases) {
-                        results.push({
-                            text: phrase,
-                            type: 'found',
-                            data: [{
-                                pinyin: csvDictionary.value[phrase]?.[0].pinyin,
-                                tones: csvDictionary.value[phrase]?.[0].tones,
-                                meaning: csvDictionary.value[phrase]?.[0].meaning,
-                                chapter: csvDictionary.value[phrase]?.[0].chapter,
-                                category: csvDictionary.value[phrase]?.[0].category
-                            }]
-                        });
+                            const data = csvDictionary.value[phrase];
+                            results.push({
+                                text: phrase,
+                                type: 'found',
+                                data: data,
+                                activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
+                            });
                     }
                 } else {
+                    const data = ccCedict.value[word];
                     results.push({
                         text: word,
                         type: 'not-found',
-                        data: ccCedict.value[word]
+                        data: data,
+                        activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
                     });
                     newWordsSet.add(word); // Collect "not-found" words
                 }
-
                 i += word.length;
                 break;
             }
@@ -265,10 +273,12 @@ async function processScript() {
         if (!matchFound) {
             for (const word in csvDictionary.value) {
                 if (scriptText.startsWith(word, i)) {
+                    const data = csvDictionary.value[word];
                     results.push({
                         text: word,
                         type: 'found',
-                        data: csvDictionary.value[word]
+                        data: data,
+                        activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
                     });
                     i += word.length;
                     matchFound = true;
@@ -286,6 +296,7 @@ async function processScript() {
     newWords.value =  Array.from(newWordsSet).map((word: string) => ({
         text: word,
         type: 'not-found',
+        activeDefinitionIndex: undefined,
         data: ccCedict.value[word] || [{
             tones: Array(word.length).fill(5),
             pinyin: "",
@@ -296,9 +307,9 @@ async function processScript() {
 
 // --- Show Details ---
 const showDetails = (segment: ProcessedSegment) => {
-    if ((segment.type === 'found' || segment.type === 'not-found') && segment.data?.length) {
-        selectedSegmentDetails.value = segment;
-    } else {
+    if ((segment.type === 'found' || segment.type === 'not-found') && segment.data?.length) {
+        selectedSegmentDetails.value = segment;
+    } else {
          selectedSegmentDetails.value = null; // Clear details if no data
     }
 };
@@ -357,12 +368,12 @@ onMounted(async () => {
 
         <!-- Button -->
         <div class="checkbox-group">
-            <input type="checkbox" id="use_punctuations" v-model="usePunctuations"> Punctuations<br>
-            <input type="checkbox" id="use_ch1_7" v-model="useCh1_7"> Chapters 1–7<br>
-            <input type="checkbox" id="use_ch8_14" v-model="useCh8_14"> Chapters 8–14<br>
-            <input type="checkbox" id="use_ch15_20" v-model="useCh15_20"> Chapters 15–20<br>
-            <input type="checkbox" id="use_ch21_26" v-model="useCh21_26"> Chapters 21–26<br>
-        </div>
+                        <input type="checkbox" id="use_punctuations" v-model="usePunctuations"> Punctuations<br>
+                        <input type="checkbox" id="use_ch1_7" v-model="useCh1_7"> Chapters 1–7<br>
+                        <input type="checkbox" id="use_ch8_14" v-model="useCh8_14"> Chapters 8–14<br>
+                        <input type="checkbox" id="use_ch15_20" v-model="useCh15_20"> Chapters 15–20<br>
+                        <input type="checkbox" id="use_ch21_26" v-model="useCh21_26"> Chapters 21–26<br>
+                    </div>
         <div class="button-panel">
             <button @click="clearCsv">Clear CSV Input</button>
             <button @click="importCsv">Import CSV from file</button>
@@ -387,20 +398,24 @@ onMounted(async () => {
                 <div>
                     <h3>{{ selectedSegmentDetails?.text }}</h3>
                 </div>
+
                 <div v-for="(entry, idx) in selectedSegmentDetails?.data" :key="idx">
-                    <div><strong>Pinyin: </strong> 
-                            <template v-for="(tone, i) in entry.tones" :key="i">
-                                <span :class="'tone-' + tone">
-                                    {{ entry.pinyin[i] }}
-                                    <span> </span>
-                                </span>
-                            </template>
+                    <div>
+                        <strong>Pinyin: </strong> 
+                        <template v-for="(tone, i) in entry.tones" :key="i">
+                            <span :class="'tone-' + tone">
+                                {{ entry.pinyin[i] }}
+                                <span> </span>
+                            </span>
+                        </template>
                     </div>
+
                     <div><strong>Chapter:</strong> {{ entry.chapter }}</div>
                     <div><strong>Category:</strong> {{ entry.category }}</div>
                     <div><strong>Meaning:</strong> {{ entry.meaning }}</div>
                     <hr v-if="idx < selectedSegmentDetails?.data.length - 1">
                 </div>
+
             </div>
 
             <!-- Annotated Output -->
@@ -409,19 +424,24 @@ onMounted(async () => {
                 <div class="output-annotated">
                     <template v-for="(segment, segmentIndex) in processedOutput" :key="segmentIndex">
                         <br v-if="segment.text === '\n'">
-                        <span v-else-if="segment.text !== '\n'">
+                        <span v-else-if="segment.text.trim()"
+                            :class="[segment.type, {'clickable-segment': segment.data && segment.data.length > 1}]"
+                            @click="cycleDefinition(segment)">
                             <template v-if="segment.data && segment.data.length">
-                                <ruby v-for="(char, i) in segment.text.split('')" 
-                                    :key="i" 
-                                    :class="'tone-' + segment.data[0].tones[i]"> 
-                                    {{ char }}
-                                    <rt>{{ segment.data[0].pinyin[i] }}</rt> 
+                                    <span v-if="segment.data && segment.data.length > 1" class="subscript-number">
+                                        {{(segment.activeDefinitionIndex || 0) + 1}}
+                                    </span>
+                                <ruby v-for="(char, i) in segment.text.split('')"
+                                    :key="i"
+                                    :class="'tone-' + (segment.data[segment.activeDefinitionIndex || 0]?.tones?.[i] || 5)">
+                                    {{ char }} 
+                                    <rt>{{ segment.data[segment.activeDefinitionIndex || 0]?.pinyin?.[i] || '' }}</rt>
                                 </ruby>
                             </template>
                             <template v-else>
                                 <span>{{ segment.text }}</span>
                             </template>
-                            <span>&nbsp;</span>
+                            <span v-if="segment.text.trim()">&nbsp;</span>
                         </span>
                         <span v-else>{{ segment.text }}</span>
                     </template>
@@ -433,7 +453,7 @@ onMounted(async () => {
 
         <!-- New Words List -->
         <div v-if="newWords.length > 0" class="new-words-container">
-                <label>New Words List</label>
+            <label>New Words List (Found in CC-CEDICT but not your CSV)</label>
             <br>
             <br>
             <table>
@@ -446,25 +466,32 @@ onMounted(async () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(word, index) in newWords" :key="index">
-                        <td>{{ index + 1 }}</td>
-                        <td>
-                            <template v-for="(tone, i) in word.data?.[0].tones" :key="i">
-                                <span :class="'tone-' + tone">
-                                    {{ word.text.substring(i, i + 1) }}
-                                </span>
-                            </template>
-                        </td>
-                        <td>
-                            <template v-for="(tone, i) in word.data?.[0].tones" :key="i">
-                                <span :class="'tone-' + tone">
-                                    {{ word.data?.[0].pinyin[i]}} 
-                                    <span> </span>
-                                </span>
-                            </template>
-                        </td>
-                        <td>{{ word.data?.[0].meaning }}</td>
-                    </tr>
+                    <template v-for="(word, wordIndex) in newWords" :key="wordIndex">
+                        <tr v-for="(entry, entryIndex) in word.data" :key="wordIndex + '-' + entryIndex">
+                            <td>{{ wordIndex + 1 }}</td>
+
+                            <td>
+                                <template v-for="(char, i) in word.text.split('')" :key="i">
+                                    <span :class="'tone-' + (entry.tones?.[i] || 5)">
+                                        {{ char }}
+                                    </span>
+                                </template>
+                            </td>
+
+                            <td>
+                                <template v-for="(pinyinPart, i) in entry.pinyin" :key="i">
+                                    <span :class="'tone-' + (entry.tones?.[i] || 5)">
+                                        {{ pinyinPart}}
+                                        <span v-if="i < entry.pinyin.length - 1"> </span>
+                                    </span>
+                                </template>
+                            </td>
+
+                            <td>
+                                {{ entry.meaning }}
+                            </td>
+                        </tr>
+                    </template>
                 </tbody>
             </table>
         </div>

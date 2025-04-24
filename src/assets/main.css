@@ -85,6 +85,42 @@ textarea {
     /* Supports Pinyin */
 }
 
+/* Checkboxes */
+.checkbox-group {
+    padding: 2px;
+    gap: 10px;
+    margin: 10px;
+}
+
+/* Button Panel */
+.button-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    padding: 2px;
+    gap: 10px;
+    margin: 10px;
+}
+
+.button-panel > * {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.button-panel > *:hover {
+    background-color: #0056b3;
+}
+
+
 .output-container {
     display: flex;
     flex-wrap: wrap;
@@ -96,12 +132,15 @@ textarea {
 }
 
 
-
 .details-box {
     border: 1px solid #ddd;
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 4px;
+}
+
+.details-box > hr {
+    margin: 20px;
 }
 
 br {
@@ -154,41 +193,6 @@ rt{
     color: red;
 }
 
-/* Checkboxes */
-.checkbox-group {
-    padding: 2px;
-    gap: 10px;
-    margin: 10px;
-}
-
-/* Button Panel */
-.button-panel {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
-    padding: 2px;
-    gap: 10px;
-    margin: 10px;
-}
-
-.button-panel > * {
-    margin-top: 15px;
-    padding: 10px 25px;
-    font-size: 1.1em;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.button-panel > *:hover {
-    background-color: #0056b3;
-}
-
 /* Tone Coloring */
 .tone-1 {
     color: darkblue;
@@ -210,6 +214,14 @@ rt{
     color: black;
 }
 
+.clickable-segment {
+    cursor: pointer;
+}
+
+.subscript-number {
+   font-size: 0.5em; 
+}
+
 /* New Words Table */
 table,
 tr,
@@ -228,14 +240,3 @@ table {
     padding: 15px;
 }
 
-.clickable-segment {
-    cursor: pointer;
-    /* Optional: visual feedback on hover */
-    /* background-color: lightyellow; */ 
-}
-
-.multi-pronunciation {
-   /* Style characters that have multiple options */
-   text-decoration: underline dotted; 
-   /* or background-color: lightblue; */
-}
