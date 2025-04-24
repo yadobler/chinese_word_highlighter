@@ -31,37 +31,41 @@ const newWords = ref<ProcessedSegment[]>([]);
 
 const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 
-const getToneNumber = (chars: string) : { pinyin: string[], tones: number[] } => {
-    return {pinyin: [], tones: []};
-    // const entry = ccCedict.value[chars]?.[0];
-    // return {pinyin: entry.pinyin || [], tones: entry.tones || []};
-    // const tones = Array(num_text);
-    // const pinyin = Array(num_text);
-
-    // for(const word in pinyin_tones.split(" ")) {
-    //     if () {
-    //         tones.push(Number.parseInt(match[0]))
-    //         pinyin.push(word.slice(0, -1))
-    //     } else {
-    //         tones.push(5)
-    //         pinyin.push(word)
-    //     }
-    // }
-    // return {pinyin: pinyin, tones: tones};
-};
-
 const clearCsv = () => {
     csvInput.value = '';
 };
 
-const loadDefaultCsv = async () => {
-    const csvResponse = await fetch('/chinese_word_highlighter/default_values.csv');
-    if (!csvResponse.ok) throw new Error("Failed to load CSV dictionary.");
-    csvInput.value = await csvResponse.text();
-    parseCsvData();
-};
+// --- Functions ---
+async function loadDefaultCsv() {
+  const basePath = '/chinese_word_highlighter/default_values';
+  const selectedFiles: string[] = [];
 
-const importCsv = async () => {
+  if ((document.getElementById('use_punctuations') as HTMLInputElement).checked) {
+    selectedFiles.push(`${basePath}.csv`);
+  }
+  if ((document.getElementById('use_ch1_7') as HTMLInputElement).checked) {
+    selectedFiles.push(`${basePath}_1.csv`);
+  }
+  if ((document.getElementById('use_ch8_14') as HTMLInputElement).checked) {
+    selectedFiles.push(`${basePath}_2.csv`);
+  }
+  if ((document.getElementById('use_ch15_20') as HTMLInputElement).checked) {
+    selectedFiles.push(`${basePath}_3.csv`);
+  }
+  if ((document.getElementById('use_ch21_26') as HTMLInputElement).checked) {
+    selectedFiles.push(`${basePath}_4.csv`);
+  }
+
+  csvInput.value = "Simplified,Chapter,Pinyin,Category,Meaning\n";
+  for (const file of selectedFiles) {
+    console.log(file);
+    const response = await fetch(file);
+    const text = await response.text();
+    csvInput.value += text;
+  }
+}
+
+async function importCsv() {
     try {
         // Create an invisible file input element
         const input = document.createElement("input");
@@ -81,7 +85,6 @@ const importCsv = async () => {
 
             reader.onload = (e) => {
                 csvInput.value = e.target?.result?.toString() || "";
-                parseCsvData();
             };
 
             reader.readAsText(file);
@@ -94,40 +97,30 @@ const importCsv = async () => {
     }
 };
 
+function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number[] } {
 
-// --- Lifecycle ---
-onMounted(async () => {
-    try {
-        
-        // Load and decompress CC-CEDICT
-        const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
-        if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
-        const compressedData = await dictResponse.arrayBuffer();
-        const decompressedData = ungzip(new Uint8Array(compressedData));
-        ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
-        // Load default CSV dictionary
-        await loadDefaultCsv();
-    } catch (error) {
-        console.error("Error loading dictionaries:", error);
-        try {
-            // try 2
-            
-            // Load and decompress CC-CEDICT
-            const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
-            if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
-            ccCedict.value = JSON.parse(await dictResponse.text());
-            // Load default CSV dictionary
-            await loadDefaultCsv();
-            
-        } catch (error) {
-            console.error("Error loading dictionaries (backup):", error);
+    const pinyin_segments = pinyin_tones.split(" ");
+    
+    const tones = Array(0);
+    const pinyin = Array(0);
+
+    pinyin_segments.forEach((word) => {
+        const match = word.match('([^\d]*)([0-5])')
+        if (match) {
+            tones.push(Number.parseInt(match[2]))
+            pinyin.push(match[1])
+        } else {
+            tones.push(5)
+            pinyin.push(word)
         }
-    }
-});
+    })
+    return {pinyin: pinyin, tones: tones};
+}
 
 // --- Parse CSV Dictionary ---
-const parseCsvData = () => {
+function parseCsvData() {
     console.log("Parsing CSV data...");
+    csvDictionary.value = {}
 
     const result = Papa.parse(csvInput.value.trim(), {
         header: true, 
@@ -140,7 +133,7 @@ const parseCsvData = () => {
     parsedData.forEach((entry_raw) => {
         const simplified = entry_raw["Simplified"];
         if (simplified) {
-            const pinyin_tones = getToneNumber(simplified);
+            const pinyin_tones = getToneNumber(entry_raw["Pinyin"]);
             const entry = {
                 chapter: entry_raw["Chapter"].trim(),
                 pinyin: pinyin_tones["pinyin"],
@@ -161,12 +154,14 @@ const parseCsvData = () => {
 };
 
 // --- Process Script ---
-const processScript = () => {
+async function processScript() {
     if (!Object.keys(ccCedict.value).length) {
         console.warn("CC-CEDICT is empty. Cannot process script.");
         processedOutput.value.push({ text: 'Error: Dictionary not loaded or empty.', type: 'not-found' });
         return;
     }
+
+    parseCsvData();
 
     const scriptText = scriptInput.value;
     const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
@@ -230,8 +225,8 @@ const processScript = () => {
                             text: phrase,
                             type: 'found',
                             data: [{
-                                pinyin: ccCedict.value[phrase]?.[0].pinyin,
-                                tones: ccCedict.value[phrase]?.[0].tones,
+                                pinyin: csvDictionary.value[phrase]?.[0].pinyin,
+                                tones: csvDictionary.value[phrase]?.[0].tones,
                                 meaning: csvDictionary.value[phrase]?.[0].meaning,
                                 chapter: csvDictionary.value[phrase]?.[0].chapter,
                                 category: csvDictionary.value[phrase]?.[0].category
@@ -291,6 +286,33 @@ const showDetails = (segment: ProcessedSegment) => {
     }
 };
 
+// --- Lifecycle ---
+onMounted(async () => {
+    try {
+        // Load and decompress CC-CEDICT
+        const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
+        if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
+        const compressedData = await dictResponse.arrayBuffer();
+        const decompressedData = ungzip(new Uint8Array(compressedData));
+        ccCedict.value = JSON.parse(new TextDecoder().decode(decompressedData));
+    } catch (error) {
+        console.error("Error loading dictionaries:", error, "\nTrying backup");
+        try {
+            // try 2
+            // Load and decompress CC-CEDICT
+            const dictResponse = await fetch('/chinese_word_highlighter/cedict.json.gz');
+            if (!dictResponse.ok) throw new Error("Failed to load CC-CEDICT.");
+            ccCedict.value = JSON.parse(await dictResponse.text());
+        } catch (error) {
+            console.error("Error loading dictionaries (backup):", error);
+        }
+    }
+
+    // Load default CSV dictionary
+    await loadDefaultCsv();
+
+});
+
 </script>
 
 <template>
@@ -311,10 +333,16 @@ const showDetails = (segment: ProcessedSegment) => {
         </div>
 
         <!-- Button -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="use_punctuations" checked> Punctuations<br>
+            <input type="checkbox" id="use_ch1_7" checked> Chapters 1–7<br>
+            <input type="checkbox" id="use_ch8_14" checked> Chapters 8–14<br>
+            <input type="checkbox" id="use_ch15_20" checked> Chapters 15–20<br>
+            <input type="checkbox" id="use_ch21_26" checked> Chapters 21–26<br>
+        </div>
         <div class="button-panel">
             <button @click="clearCsv">Clear CSV Input</button>
-            <button @click="importCsv">Import CSV</button>
-            <button @click="loadDefaultCsv">Default CSV</button>
+            <button @click="importCsv">Import CSV from file</button>
             <button @click="processScript">Process Script</button>
         </div>
 

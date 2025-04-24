@@ -1,16 +1,15 @@
-Simplified,Chapter,Pinyin,Category,Meaning
 一,,yī1,Num,one
 七,,qī1,Num,seven
 三,,sān1,Num,three
-九,,jiǔ1,Num,nine
-二,,èr1,Num,two
-五,,wǔ1,Num,five
+九,,jiǔ3,Num,nine
+二,,èr4,Num,two
+五,,wǔ3,Num,five
 八,,bā1,Num,eight
-六,,liù1,Num,six
-十,,shí1,Num,ten
+六,,liù4,Num,six
+十,,shí2,Num,ten
 千,,qiān1,Num,thousand
-四,,sì1,Num,four
-百,,bǎi1,Num,hundred
+四,,sì4,Num,four
+百,,bǎi3,Num,hundred
 ，,,,Punct,comma
 、,,,Punct,enumeration comma
 ·,,,Punct,name separating mark

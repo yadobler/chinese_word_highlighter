@@ -154,10 +154,17 @@ rt{
     color: red;
 }
 
+/* Checkboxes */
+.checkbox-group {
+    padding: 2px;
+    gap: 10px;
+    margin: 10px;
+}
+
 /* Button Panel */
 .button-panel {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
