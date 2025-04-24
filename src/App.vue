@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { ungzip } from 'pako'
 import Papa from 'papaparse';
 
@@ -31,14 +31,45 @@ const newWords = ref<ProcessedSegment[]>([]);
 
 const selectedSegmentDetails = ref<ProcessedSegment | null>(null);
 
-const clearCsv = () => {
-    csvInput.value = '';
-};
+// Reactive state for checkboxes
+const usePunctuations = ref(true);
+const useCh1_7 = ref(true);
+const useCh8_14 = ref(true);
+const useCh15_20 = ref(true);
+const useCh21_26 = ref(true);
+
 
 // --- Functions ---
+function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number[] } {
+
+    const pinyin_segments = pinyin_tones.split(" ");
+    
+    const tones = Array(0);
+    const pinyin = Array(0);
+
+    pinyin_segments.forEach((word) => {
+        const match = word.match('([^\d]*)([0-5])')
+        if (match) {
+            tones.push(Number.parseInt(match[2]))
+            pinyin.push(match[1])
+        } else {
+            tones.push(5)
+            pinyin.push(word)
+        }
+    })
+    return {pinyin: pinyin, tones: tones};
+}
+
+const clearCsv = () => {
+    csvInput.value = '';
+    csvDictionary.value = {};
+};
+
 async function loadDefaultCsv() {
   const basePath = '/chinese_word_highlighter/default_values';
   const selectedFiles: string[] = [];
+
+  clearCsv()
 
   if ((document.getElementById('use_punctuations') as HTMLInputElement).checked) {
     selectedFiles.push(`${basePath}.csv`);
@@ -63,9 +94,12 @@ async function loadDefaultCsv() {
     const text = await response.text();
     csvInput.value += text;
   }
+
+  parseCsvData()
 }
 
 async function importCsv() {
+    clearCsv()
     try {
         // Create an invisible file input element
         const input = document.createElement("input");
@@ -95,32 +129,12 @@ async function importCsv() {
     } catch (error) {
         alert("Error selecting or parsing CSV:\n" + error);
     }
+    parseCsvData();
 };
-
-function getToneNumber(pinyin_tones: string) : { pinyin: string[], tones: number[] } {
-
-    const pinyin_segments = pinyin_tones.split(" ");
-    
-    const tones = Array(0);
-    const pinyin = Array(0);
-
-    pinyin_segments.forEach((word) => {
-        const match = word.match('([^\d]*)([0-5])')
-        if (match) {
-            tones.push(Number.parseInt(match[2]))
-            pinyin.push(match[1])
-        } else {
-            tones.push(5)
-            pinyin.push(word)
-        }
-    })
-    return {pinyin: pinyin, tones: tones};
-}
 
 // --- Parse CSV Dictionary ---
 function parseCsvData() {
     console.log("Parsing CSV data...");
-    csvDictionary.value = {}
 
     const result = Papa.parse(csvInput.value.trim(), {
         header: true, 
@@ -161,7 +175,8 @@ async function processScript() {
         return;
     }
 
-    parseCsvData();
+    // Incase csv is manually edited
+    parseCsvData()
 
     const scriptText = scriptInput.value;
     const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
@@ -281,10 +296,18 @@ async function processScript() {
 
 // --- Show Details ---
 const showDetails = (segment: ProcessedSegment) => {
-    if (segment.type === 'found' && segment.data?.length) {
-        selectedSegmentDetails.value = segment;
+    if ((segment.type === 'found' || segment.type === 'not-found') && segment.data?.length) {
+        selectedSegmentDetails.value = segment;
+    } else {
+         selectedSegmentDetails.value = null; // Clear details if no data
     }
 };
+
+// --- Watchers ---
+// Watch the checkbox refs and trigger reload/reparse when any change
+watch([usePunctuations, useCh1_7, useCh8_14, useCh15_20, useCh21_26], () => {
+    loadDefaultCsv();
+});
 
 // --- Lifecycle ---
 onMounted(async () => {
@@ -334,12 +357,12 @@ onMounted(async () => {
 
         <!-- Button -->
         <div class="checkbox-group">
-            <input type="checkbox" id="use_punctuations" checked> Punctuations<br>
-            <input type="checkbox" id="use_ch1_7" checked> Chapters 1–7<br>
-            <input type="checkbox" id="use_ch8_14" checked> Chapters 8–14<br>
-            <input type="checkbox" id="use_ch15_20" checked> Chapters 15–20<br>
-            <input type="checkbox" id="use_ch21_26" checked> Chapters 21–26<br>
-        </div>
+            <input type="checkbox" id="use_punctuations" v-model="usePunctuations"> Punctuations<br>
+            <input type="checkbox" id="use_ch1_7" v-model="useCh1_7"> Chapters 1–7<br>
+            <input type="checkbox" id="use_ch8_14" v-model="useCh8_14"> Chapters 8–14<br>
+            <input type="checkbox" id="use_ch15_20" v-model="useCh15_20"> Chapters 15–20<br>
+            <input type="checkbox" id="use_ch21_26" v-model="useCh21_26"> Chapters 21–26<br>
+        </div>
         <div class="button-panel">
             <button @click="clearCsv">Clear CSV Input</button>
             <button @click="importCsv">Import CSV from file</button>
@@ -398,7 +421,7 @@ onMounted(async () => {
                             <template v-else>
                                 <span>{{ segment.text }}</span>
                             </template>
-                            <span>|</span>
+                            <span>&nbsp;</span>
                         </span>
                         <span v-else>{{ segment.text }}</span>
                     </template>
