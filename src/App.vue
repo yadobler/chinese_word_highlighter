@@ -206,103 +206,101 @@ async function processScript() {
     parseCsvData()
 
     const scriptText = scriptInput.value;
-    const cedictWords = Object.keys(ccCedict.value).sort((a, b) => b.length - a.length); // Sort longest first
     const results: ProcessedSegment[] = [];
     const newWordsSet = new Set<string>();
 
+    // precedence to csv, hoping javascript sort is stable
+    const combinedDict:Record<string, RawSegment[]> = {
+        ...csvDictionary.value,
+        ...ccCedict.value
+    }
+    const words = Object.keys(combinedDict).sort((a, b) => b.length - a.length); // Sort longest first
 
     let i = 0;
     while (i < scriptText.length) {
-        if (scriptText[i] == '\n') {
+        if (scriptText[i] === '\n') {
             results.push({ text: '\n', type: 'unknown' });
             i += 1
+            continue;
+        }
+        
+        if (!scriptText[i].trim()) {
+            i += 1;
             continue;
         }
 
         if (scriptText[i].match(/[a-z]/i)) {
             results.push({ 
                 text: scriptText[i], 
-                type: 'found',
+                type: 'unknown',
                 activeDefinitionIndex: undefined,
                 data: [{
                     pinyin: [scriptText[i]],
                     meaning: scriptText[i],
-                    tones: Array(1).fill(5),
+                    tones: [5],
                 }]
             });
             i += 1
             continue;
         }
-
-        if (!scriptText[i].trim()) {
-            i += 1;
-            continue;
-        }
-
+        
         let matchFound = false;
-        for (const word of cedictWords) {
+        for (const word of words) {
             if (scriptText.startsWith(word, i)) {
-                matchFound = true;
-                const ValidPhrases = GetPhrasesInCsv(word);
-                if (ValidPhrases) {
-                    // Push each segment separately
-                    for (const phrase of ValidPhrases) {
-                            const data = csvDictionary.value[phrase];
-                            results.push({
-                                text: phrase,
-                                type: 'found',
-                                data: data,
-                                activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
-                            });
-                    }
-                } else {
-                    const data = ccCedict.value[word];
-                    results.push({
-                        text: word,
-                        type: 'not-found',
-                        data: data,
-                        activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
-                    });
-                    newWordsSet.add(word); // Collect "not-found" words
+
+                const isFoundInCsv = !!csvDictionary.value[word]?.length;
+                const sourceData = combinedDict[word];
+
+                const segment: ProcessedSegment = {
+                    text: word,
+                    type: isFoundInCsv ? 'found' : 'not-found',
+                    data: sourceData,
+                    activeDefinitionIndex: (sourceData && sourceData.length > 0) ? 0 : undefined
                 }
+                results.push(segment);
+
+                if (!isFoundInCsv && sourceData) {
+                    newWordsSet.add(word);
+                }
+
                 i += word.length;
-                break;
-            }
+                matchFound = true;
+                break
+            } 
         }
-
         if (!matchFound) {
-            for (const word in csvDictionary.value) {
-                if (scriptText.startsWith(word, i)) {
-                    const data = csvDictionary.value[word];
-                    results.push({
-                        text: word,
-                        type: 'found',
-                        data: data,
-                        activeDefinitionIndex: (data && data.length > 0) ? 0 : undefined
-                    });
-                    i += word.length;
-                    matchFound = true;
-                    break;
-                }
-            }
-        }
-
-        if (!matchFound) {
-            i += 1; // Move to the next character
+            results.push({
+                text: scriptText[i],
+                type: 'unknown',
+                data: undefined,
+                activeDefinitionIndex: undefined
+            });
+            i += 1;
         }
     }
 
     processedOutput.value = results;
-    newWords.value =  Array.from(newWordsSet).map((word: string) => ({
-        text: word,
-        type: 'not-found',
-        activeDefinitionIndex: undefined,
-        data: ccCedict.value[word] || [{
-            tones: Array(word.length).fill(5),
-            pinyin: "",
-            meaning: ""
-        }]
-    }));
+
+    newWords.value = Array
+    .from(newWordsSet)
+    .map((word: string) => {
+        const cedictData = ccCedict.value[word];
+        if (cedictData?.length) {
+            return {
+                text: word,
+                type: 'not-found',
+                activeDefinitionIndex: 0,
+                data: cedictData
+            }
+        } else {
+            return {
+                text: scriptText[i],
+                type: 'unknown',
+                data: undefined,
+                activeDefinitionIndex: undefined
+            }
+        }
+    }).filter(segment => segment.type !== 'unknown');;
 };
 
 // --- Show Details ---
@@ -453,7 +451,7 @@ onMounted(async () => {
 
         <!-- New Words List -->
         <div v-if="newWords.length > 0" class="new-words-container">
-            <label>New Words List (Found in CC-CEDICT but not your CSV)</label>
+            <label>New Words List (Multiple rows for multiple definitions / pronunciations)</label>
             <br>
             <br>
             <table>
@@ -495,6 +493,5 @@ onMounted(async () => {
                 </tbody>
             </table>
         </div>
-
     </div>
 </template>

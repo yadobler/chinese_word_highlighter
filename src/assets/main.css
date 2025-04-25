@@ -151,46 +151,40 @@ br {
 .output-display,
 .details-box {
     align-items: flex-start;
-    /* Align items to the top if they have different heights */
     border-radius: 8px;
     border: 1px solid #aaa;
     display: inline-block;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* Align content to the left */
     margin-top: 20px;
     min-width: 300px;
     gap: 1px;
-    /* Reduce gap slightly if needed */
     padding: 10px;
     text-align: justify;
     white-space: normal;
-    /* Ensures wrapping works */
     width: 100%;
 }
 
+.output-display>.not-found,
 .output-display>.found {
     color: black;
-    border: 1px solid #aaa;
     padding: 2px;
     cursor: pointer;
 }
 
-.output-display>.found:hover {
-    background-color: #aaa;
+.output-display>.found:hover,
+.output-display>.not-found:hover {
+    background-color: #ddd;
 }
 
-.output-annotated>.found {
-    color: black;
+.output-display>.not-found {
+    color: red;
 }
+
 
 rt{
     padding-top: 10px;
     font-size: 0.7rem;
-}
-
-.not-found {
-    color: red;
 }
 
 /* Tone Coloring */
@@ -216,6 +210,10 @@ rt{
 
 .clickable-segment {
     cursor: pointer;
+}
+
+.clickable-segment:hover {
+    background-color: #ddd;
 }
 
 .subscript-number {
