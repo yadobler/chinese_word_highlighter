@@ -283,24 +283,25 @@ async function processScript() {
 
     newWords.value = Array
     .from(newWordsSet)
-    .map((word: string) => {
-        const cedictData = ccCedict.value[word];
-        if (cedictData?.length) {
-            return {
-                text: word,
-                type: 'not-found',
-                activeDefinitionIndex: 0,
-                data: cedictData
+    .map((word: string): ProcessedSegment => {
+            const cedictData = ccCedict.value[word];
+            if (cedictData?.length) {
+                return {
+                    text: word,
+                    type: 'not-found',
+                    activeDefinitionIndex: 0,
+                    data: cedictData
+                };
+            } else {
+                return {
+                    text: word,
+                    type: 'unknown',
+                    data: undefined,
+                    activeDefinitionIndex: undefined
+                };
             }
-        } else {
-            return {
-                text: scriptText[i],
-                type: 'unknown',
-                data: undefined,
-                activeDefinitionIndex: undefined
-            }
-        }
-    }).filter(segment => segment.type !== 'unknown');;
+        })
+    .filter((segment): segment is ProcessedSegment => segment.type !== 'unknown');
 };
 
 // --- Show Details ---
