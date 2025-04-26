@@ -218,6 +218,8 @@ async function processScript() {
 
     let i = 0;
     while (i < scriptText.length) {
+
+        // non dictionary character 
         if (scriptText[i] === '\n') {
             results.push({ text: '\n', type: 'unknown' });
             i += 1
@@ -243,13 +245,14 @@ async function processScript() {
             i += 1
             continue;
         }
-        
+       
+        // dictionary characters
         let matchFound = false;
         for (const word of words) {
             if (scriptText.startsWith(word, i)) {
 
                 const isFoundInCsv = !!csvDictionary.value[word]?.length;
-                const sourceData = combinedDict[word];
+                const sourceData = isFoundInCsv ? csvDictionary.value[word] : ccCedict.value[word];
 
                 const segment: ProcessedSegment = {
                     text: word,
