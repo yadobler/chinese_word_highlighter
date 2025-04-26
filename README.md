@@ -23,11 +23,11 @@ Introducing: Chinese Word Highlighter —
 because why do something manually when you can dramatically over-engineer it?
 
 Features:
-✅ Upload your vocabulary CSV and auto-match words in any script  
-✅ Annotate characters with tones, pinyin, and definitions  
-✅ Click to toggle multiple readings (还 can flip from hái to huán!)  
-✅ Insert a space if words aren't splitting the way you want (东 西 instead of 东西)  
-✅ Auto-generate a New Words table, ready to paste into your homework  
+- [x] Upload your vocabulary CSV and auto-match words in any script  
+- [x]  Annotate characters with tones, pinyin, and definitions  
+- [x] Click to toggle multiple readings (还 can flip from hái to huán!)  
+- [x] Insert a space if words aren't splitting the way you want (东 西 instead of 东西)  
+- [x] Auto-generate a New Words table, ready to paste into your homework  
 
 Might've been "extra" but hey — now it's an actual tool I (and maybe others?) can reuse!
 
